@@ -1,4 +1,4 @@
-import { Timestamp } from "@google-cloud/firestore";
+import { Timestamp } from '@google-cloud/firestore';
 
 export interface ConversationValue {
   templateId?: string;
@@ -22,8 +22,8 @@ export type ConversationPermissions = {
 };
 
 export const CONVERSATION_PERMISSIONS = {
-  gameplan: "Show my gameplan",
-  gameplanEdits: "Allow to edit my gameplan",
-  successAndSetbackCounts: "Share success and setback counts",
-  debriefNotes: "Share my debrief notes",
+  logs: 'Share my logs',
+  tactics: 'Share my tactics',
+  tacticsEdit: 'Allow to edit my tactics',
+  insights: 'Share my insights',
 };
