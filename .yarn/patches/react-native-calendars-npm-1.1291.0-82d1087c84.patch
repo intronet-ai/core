@@ -1,0 +1,25 @@
+diff --git a/src/calendar/day/period/style.js b/src/calendar/day/period/style.js
+index bbbdc78220405ca91b159c8275f67539f64fbc62..dd1fc5386806887d31cbad2e0d17114172edddac 100644
+--- a/src/calendar/day/period/style.js
++++ b/src/calendar/day/period/style.js
+@@ -1,6 +1,6 @@
+ import { StyleSheet } from 'react-native';
+ import * as defaultStyle from '../../../style';
+-const FILLER_HEIGHT = 34;
++const FILLER_HEIGHT = 32;
+ export default function styleConstructor(theme = {}) {
+     const appStyle = { ...defaultStyle, ...theme };
+     return StyleSheet.create({
+diff --git a/src/expandableCalendar/WeekCalendar/new.js b/src/expandableCalendar/WeekCalendar/new.js
+index a0142fc1141229b1a3a51e3c1c3dfaa782bfaf58..0a44f6596c569e212f61e82bf52355aa89baee5d 100644
+--- a/src/expandableCalendar/WeekCalendar/new.js
++++ b/src/expandableCalendar/WeekCalendar/new.js
+@@ -59,7 +59,7 @@ const WeekCalendar = (props) => {
+           <WeekDaysNames firstDay={firstDay} style={style.current.dayHeader}/>
+         </View>)}
+       <View>
+-        <InfiniteList key="week-list" isHorizontal ref={list} data={items} renderItem={renderItem} reloadPages={reloadPages} onReachNearEdgeThreshold={Math.round(NUMBER_OF_PAGES * 0.4)} extendedState={extraData} style={style.current.container} initialPageIndex={NUMBER_OF_PAGES} pageHeight={48} pageWidth={containerWidth} onPageChange={onPageChange} scrollViewProps={{
++        <InfiniteList key="week-list" isHorizontal ref={list} data={items} renderItem={renderItem} reloadPages={reloadPages} onReachNearEdgeThreshold={Math.round(NUMBER_OF_PAGES * 0.4)} extendedState={extraData} style={style.current.container} initialPageIndex={NUMBER_OF_PAGES} pageHeight={60} pageWidth={containerWidth} onPageChange={onPageChange} scrollViewProps={{
+             showsHorizontalScrollIndicator: false
+         }}/>
+       </View>
