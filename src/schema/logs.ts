@@ -1,11 +1,11 @@
-import { Timestamp } from "@google-cloud/firestore";
-import * as Location from "expo-location";
-import { WithId } from "../types/types";
-import { DebriefQuestionValue } from "./debriefQuestion";
-import { PatternValue } from "./pattern";
-import { TacticValue } from "./tactic";
-import { TagValue } from "./tag";
-import { TagCategoryValue } from "./tagCategory";
+import { Timestamp } from '@google-cloud/firestore';
+import * as Location from 'expo-location';
+import { WithId } from '../types/types';
+import { DebriefQuestionValue } from './debriefQuestion';
+import { PatternValue } from './pattern';
+import { TacticValue } from './tactic';
+import { TagValue } from './tag';
+import { TagCategoryValue } from './tagCategory';
 
 // In this file are types for "checkIn" and "impulse" records. I anticipate merging these into one
 // collection, "logs", where a log can have different amounts of data.
@@ -13,7 +13,7 @@ export type RecordsWithMeta<R, M> = ({
   record: WithId<R>;
 } & M)[];
 
-export type Outcome = "success" | "setback" | "indeterminate";
+export type Outcome = 'success' | 'setback' | 'indeterminate';
 
 export interface BaseLog {
   uid: string;
@@ -46,7 +46,7 @@ interface DebriefProperties {
   debriefed?: boolean;
   debriefedAt?: Timestamp;
   isPracticeMode?: boolean;
-  practiceNotes: string;
+  practiceNotes?: string;
 
   // We keep copies of these records with metadata
   debriefQuestions: RecordsWithMeta<DebriefQuestionValue, { response: string }>;
@@ -55,16 +55,16 @@ interface DebriefProperties {
 }
 
 export type ImpulseValue = {
-  type: "impulse";
+  type: 'impulse';
   rescueMode?: boolean;
 } & BaseLog &
   TrackProperties &
   ActProperties &
   DebriefProperties & { pressCount?: number };
 
-export type CheckInValue = { type: "checkIn" } & BaseLog & TrackProperties;
+export type CheckInValue = { type: 'checkIn' } & BaseLog & TrackProperties;
 
 export type BoosterValue = {
-  type: "booster";
+  type: 'booster';
 } & BaseLog &
   ActProperties;

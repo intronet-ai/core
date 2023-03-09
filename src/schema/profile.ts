@@ -1,5 +1,5 @@
-import { Timestamp } from "@google-cloud/firestore";
-import { AppStateStatus } from "react-native";
+import { Timestamp } from '@google-cloud/firestore';
+import { AppStateStatus } from 'react-native';
 
 export type CheckInTagEntry = {
   from: { id: string; name: string; emoji: string };
@@ -21,7 +21,7 @@ export interface ProfileValue {
   showStorybook?: boolean;
   lastActiveAt?: Timestamp;
   expoPushToken?: string;
-  releaseChannel?: "default" | "canary";
+  releaseChannel?: 'default' | 'canary';
   debriefAfterSeconds: number;
 
   // We track a few flags that relate to the state of the profile and onboarding
@@ -33,8 +33,4 @@ export interface ProfileValue {
   timezone: string;
   invitationCode: string;
   checkInEntries: CheckInTagEntry[];
-  impulseNotification: {
-    title: string;
-    body: string;
-  };
 }

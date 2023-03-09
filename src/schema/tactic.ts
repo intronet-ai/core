@@ -1,4 +1,4 @@
-import { Timestamp } from "@google-cloud/firestore";
+import { Timestamp } from '@google-cloud/firestore';
 
 export interface ImageValue {
   createdAt: Timestamp;
@@ -20,14 +20,12 @@ interface TacticValueBase<K> {
   createdAt: Timestamp;
   ordinal: number;
   text: string;
-  title: string;
+  title?: string;
   subtitle: string;
-  image: { uri: string };
+  image?: { uri: string };
   language: string;
-  href: string;
-  commentCount: number;
+  href?: string;
   isSharingEnabled: boolean;
-  description: string;
   showTitleField?: boolean;
 
   // In impulse moments, do we want to show a field for collecting a response? This is the case for
@@ -38,16 +36,14 @@ interface TacticValueBase<K> {
   deviceRemindersDigest?: string;
   dataDigest?: string;
 
+  patternIds: Array<string>;
   tags?: Array<string>;
 
   // Reminders
-  patternIds: Array<string>;
-  reminderTimes: Array<{ days: Array<string>; seconds: number }>;
-  reminderLocations: [];
   remindersSummary?: string;
 }
 
-export type SpotifyEpisodeTactic = TacticValueBase<"spotifyEpisode"> & {
+export type SpotifyEpisodeTactic = TacticValueBase<'spotifyEpisode'> & {
   metadata: {
     episodeId: string;
     durationMs: number;
@@ -55,17 +51,17 @@ export type SpotifyEpisodeTactic = TacticValueBase<"spotifyEpisode"> & {
   };
 };
 
-export type SpotifyTrackTactic = TacticValueBase<"spotifyTrack"> & {
+export type SpotifyTrackTactic = TacticValueBase<'spotifyTrack'> & {
   metadata: {
     episodeId: string;
     durationMs: number;
   };
 };
 
-type YouTubeTactic = TacticValueBase<"youtube">;
-type WebsiteTactic = TacticValueBase<"website">;
-type QuestionTactic = TacticValueBase<"question">;
-type TaskTactic = TacticValueBase<"task">;
+type YouTubeTactic = TacticValueBase<'youtube'>;
+type WebsiteTactic = TacticValueBase<'website'>;
+type QuestionTactic = TacticValueBase<'question'>;
+type TaskTactic = TacticValueBase<'task'>;
 
 export type TacticValue =
   | SpotifyEpisodeTactic
