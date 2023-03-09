@@ -1,6 +1,6 @@
-import { Timestamp } from "@google-cloud/firestore";
-import { ExpoPushMessage } from "expo-server-sdk";
-export interface Notification {
+import { Timestamp } from '@google-cloud/firestore';
+import { ExpoPushMessage } from 'expo-server-sdk';
+export interface NotificationValue {
     uid: string;
     createdAt: Timestamp;
     key: string;

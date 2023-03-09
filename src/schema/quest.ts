@@ -1,5 +1,5 @@
-import { Timestamp } from "@google-cloud/firestore";
-import { ImpulseValue } from "./logs";
+import { Timestamp } from '@google-cloud/firestore';
+import { ImpulseLogValue } from './logs';
 
 export interface QuestValue {
   uid: string;
@@ -12,7 +12,7 @@ export interface QuestValue {
   completedAt?: Timestamp;
   patternId: string;
 
-  measure: "impulses" | "motionLogs";
+  measure: 'impulses' | 'motionLogs';
   dailyMinimum?: number;
   dailyMaximum?: number;
 
@@ -27,6 +27,6 @@ export interface QuestValue {
   currentDayCount: number;
 
   requirements: {
-    outcome: ImpulseValue["outcome"];
+    outcome: ImpulseLogValue['outcome'];
   };
 }

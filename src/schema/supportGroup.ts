@@ -1,29 +1,36 @@
 import { Timestamp } from '@google-cloud/firestore';
 
-export interface ConversationValue {
+export interface SupportGroupValue {
+  createdAt: Timestamp;
   templateId?: string;
   everythingPermissions?: boolean;
   participantUids: Array<string>;
   groupName: string;
+  groupNameAliases?: Record<string, string>;
+  groupDescription?: string;
+  creatorName: string;
+  creatorUid: string;
   thumbnailUrl: string;
   lastUpdated: Timestamp;
   lastMessagePreview?: string;
+  invitationCode?: string;
+  invitationUrl?: string;
   lastMessageUid?: string;
   isTemplate?: boolean;
   unreadCounts: { [uid: string]: number };
-  permissions: ConversationPermissions;
+  permissions: SupportGroupPermissions;
 }
 
 export type PermissionKey = keyof typeof CONVERSATION_PERMISSIONS;
-export type ConversationPermissions = {
-  [patternId: string]: {
+export type SupportGroupPermissions = {
+  [uid: string]: Partial<{
     [key in PermissionKey]: boolean;
-  };
+  }>;
 };
 
 export const CONVERSATION_PERMISSIONS = {
-  logs: 'Share my logs',
-  tactics: 'Share my tactics',
-  tacticsEdit: 'Allow to edit my tactics',
-  insights: 'Share my insights',
+  logs: 'Show my logs',
+  tactics: 'Show my tactics',
+  editTactics: 'Allow to edit my tactics',
+  insights: 'Show my insights',
 };

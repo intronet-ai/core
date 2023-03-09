@@ -1136,15 +1136,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@google-cloud/firestore@npm:^6.5.0":
-  version: 6.5.0
-  resolution: "@google-cloud/firestore@npm:6.5.0"
+"@google-cloud/firestore@npm:6.4.1":
+  version: 6.4.1
+  resolution: "@google-cloud/firestore@npm:6.4.1"
   dependencies:
     fast-deep-equal: ^3.1.1
     functional-red-black-tree: ^1.0.1
-    google-gax: ^3.5.7
+    google-gax: ^3.5.1
     protobufjs: ^7.0.0
-  checksum: dd9cf4eee263a976239232143d5caf213c34850a352c6b6cb15b7b17cfddc2c6bee5e72eed0d188f4317eb5cb6a898372d02c54be8a30bbdc7ffbd360e138cb7
+  checksum: 7bd79d7444cefd8ffe8f768c28dbd1f0b32628ff5b611b4bdaa9b415428436f5368a8e258a002948d084381762b64501a574828c51c5cea7c054cc604f93b6d6
   languageName: node
   linkType: hard
 
@@ -5622,7 +5622,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"google-gax@npm:^3.5.7":
+"google-gax@npm:^3.5.1":
   version: 3.5.7
   resolution: "google-gax@npm:3.5.7"
   dependencies:
@@ -6023,7 +6023,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "impulse-core@workspace:."
   dependencies:
-    "@google-cloud/firestore": ^6.5.0
+    "@google-cloud/firestore": 6.4.1
     "@ryansonshine/commitizen": ^4.2.8
     "@ryansonshine/cz-conventional-changelog": ^3.3.4
     "@types/jest": ^27.5.2

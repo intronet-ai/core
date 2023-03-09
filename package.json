@@ -113,6 +113,6 @@
     ]
   },
   "dependencies": {
-    "@google-cloud/firestore": "^6.5.0"
+    "@google-cloud/firestore": "6.4.1"
   }
 }

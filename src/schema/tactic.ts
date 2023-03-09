@@ -14,19 +14,20 @@ export interface ImageValue {
 // }
 
 interface TacticValueBase<K> {
-  type: K;
+  type?: K;
   uid: string;
   originalId?: string;
   createdAt: Timestamp;
   ordinal: number;
   text: string;
   title?: string;
-  subtitle: string;
+  subtitle?: string;
   image?: { uri: string };
-  language: string;
+  language?: string;
   href?: string;
   isSharingEnabled: boolean;
   showTitleField?: boolean;
+  isTemplate?: boolean;
 
   // In impulse moments, do we want to show a field for collecting a response? This is the case for
   // questions, like "How are you feeling right now?"
