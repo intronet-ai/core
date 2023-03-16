@@ -59,6 +59,7 @@ export type SpotifyTrackTactic = TacticValueBase<'spotifyTrack'> & {
   };
 };
 
+type FeelingsTactic = TacticValueBase<'feelings'>;
 type YouTubeTactic = TacticValueBase<'youtube'>;
 type WebsiteTactic = TacticValueBase<'website'>;
 type QuestionTactic = TacticValueBase<'question'>;
@@ -70,4 +71,5 @@ export type TacticValue =
   | YouTubeTactic
   | WebsiteTactic
   | QuestionTactic
+  | FeelingsTactic
   | TaskTactic;

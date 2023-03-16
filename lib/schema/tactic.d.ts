@@ -41,9 +41,10 @@ export type SpotifyTrackTactic = TacticValueBase<'spotifyTrack'> & {
         durationMs: number;
     };
 };
+type FeelingsTactic = TacticValueBase<'feelings'>;
 type YouTubeTactic = TacticValueBase<'youtube'>;
 type WebsiteTactic = TacticValueBase<'website'>;
 type QuestionTactic = TacticValueBase<'question'>;
 type TaskTactic = TacticValueBase<'task'>;
-export type TacticValue = SpotifyEpisodeTactic | SpotifyTrackTactic | YouTubeTactic | WebsiteTactic | QuestionTactic | TaskTactic;
+export type TacticValue = SpotifyEpisodeTactic | SpotifyTrackTactic | YouTubeTactic | WebsiteTactic | QuestionTactic | FeelingsTactic | TaskTactic;
 export {};

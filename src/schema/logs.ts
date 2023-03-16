@@ -18,6 +18,7 @@ interface BaseLogValue {
   startTime: Timestamp;
   timezone: string;
   location: Partial<Location.LocationObjectCoords>;
+  locationIsFetching: boolean;
   locationFormatted?: string;
   buttonPressSecondsSinceEpoch?: number;
   checkInText?: string;

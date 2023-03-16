@@ -1,4 +1,4 @@
-import { Timestamp } from "@google-cloud/firestore";
+import { Timestamp } from '@google-cloud/firestore';
 
 export interface TagCategoryValue {
   uid: string;
@@ -6,5 +6,4 @@ export interface TagCategoryValue {
   name: string;
   prompt: string;
   ordinal: number;
-  showCheckInLinkInGameplan?: boolean;
 }
