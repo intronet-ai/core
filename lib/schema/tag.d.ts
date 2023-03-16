@@ -4,7 +4,6 @@ export interface TagValue {
     createdAt: Timestamp;
     defaultSelected?: boolean;
     tacticId: string;
-    tacticName?: string;
     ordinal: number;
     name: string;
     subtext?: string;

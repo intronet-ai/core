@@ -14,7 +14,6 @@ interface BaseLogValue {
   uid: string;
   createdAt: Timestamp;
   isDisplayable: boolean;
-  isTemplate: boolean;
   startTime: Timestamp;
   timezone: string;
   location: Partial<Location.LocationObjectCoords>;
@@ -24,11 +23,14 @@ interface BaseLogValue {
   checkInText?: string;
   // We store all impulse types, tactics and tags that were offered at the time, plus the ids of
   // those that were applied/selected
-  tags: RecordsWithMeta<WithId<TagValue>, { applied: boolean; value?: number }>;
+  tags: RecordsWithMeta<
+    WithId<TagValue>,
+    { applied: boolean; value?: number | null }
+  >;
   tagIds: Array<string>;
   tactics: RecordsWithMeta<
     TacticValue,
-    { applied: boolean; response?: string }
+    { applied: boolean; response?: string | null }
   >;
   tacticIds: Array<string>;
 }

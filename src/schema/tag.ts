@@ -7,7 +7,6 @@ export interface TagValue {
   createdAt: Timestamp;
   defaultSelected?: boolean;
   tacticId: string;
-  tacticName?: string; // This is written into impulse documents for easy reading
   ordinal: number;
   name: string;
   subtext?: string;

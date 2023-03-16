@@ -14,7 +14,7 @@ export { MotionLogValue } from './motionLogs';
 export { NotificationValue } from './notification';
 export { PatternValue } from './pattern';
 export { PressValue } from './press';
-export { CheckInTagEntry, ProfileValue } from './profile';
+export { ProfileValue } from './profile';
 export { QuestValue } from './quest';
 export { ReminderValue } from './reminder';
 export { SpotifyCredentials } from './spotifyCredentials';

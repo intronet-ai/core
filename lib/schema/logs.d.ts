@@ -10,7 +10,6 @@ interface BaseLogValue {
     uid: string;
     createdAt: Timestamp;
     isDisplayable: boolean;
-    isTemplate: boolean;
     startTime: Timestamp;
     timezone: string;
     location: Partial<Location.LocationObjectCoords>;
@@ -20,12 +19,12 @@ interface BaseLogValue {
     checkInText?: string;
     tags: RecordsWithMeta<WithId<TagValue>, {
         applied: boolean;
-        value?: number;
+        value?: number | null;
     }>;
     tagIds: Array<string>;
     tactics: RecordsWithMeta<TacticValue, {
         applied: boolean;
-        response?: string;
+        response?: string | null;
     }>;
     tacticIds: Array<string>;
 }

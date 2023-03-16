@@ -1,12 +1,6 @@
 import { Timestamp } from '@google-cloud/firestore';
 import { AppStateStatus } from 'react-native';
 
-export type CheckInTagEntry = {
-  from: { id: string; name: string; emoji: string };
-  to: { id: string; name: string; emoji: string };
-  value: number | null;
-};
-
 export interface ProfileValue {
   uid: string;
   createdAt: Timestamp;
@@ -37,5 +31,4 @@ export interface ProfileValue {
   isButtonSetupSkipped?: boolean;
 
   invitationCode: string;
-  checkInEntries: CheckInTagEntry[];
 }
