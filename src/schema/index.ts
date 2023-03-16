@@ -21,4 +21,3 @@ export { SpotifyCredentials } from './spotifyCredentials';
 export { SupportGroupValue } from './supportGroup';
 export { ImageValue, TacticValue } from './tactic';
 export { TagValue } from './tag';
-export { TagCategoryValue } from './tagCategory';

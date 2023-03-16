@@ -5,12 +5,12 @@ import { DebriefQuestionValue } from './debriefQuestion';
 import { PatternValue } from './pattern';
 import { TacticValue } from './tactic';
 import { TagValue } from './tag';
-import { TagCategoryValue } from './tagCategory';
 export type Outcome = 'success' | 'setback' | 'indeterminate';
 interface BaseLogValue {
     uid: string;
     createdAt: Timestamp;
     isDisplayable: boolean;
+    isTemplate: boolean;
     startTime: Timestamp;
     timezone: string;
     location: Partial<Location.LocationObjectCoords>;
@@ -18,7 +18,6 @@ interface BaseLogValue {
     locationFormatted?: string;
     buttonPressSecondsSinceEpoch?: number;
     checkInText?: string;
-    tagCategories: RecordsWithMeta<WithId<TagCategoryValue>, {}>;
     tags: RecordsWithMeta<WithId<TagValue>, {
         applied: boolean;
         value?: number;

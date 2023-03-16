@@ -1,4 +1,6 @@
 import { Timestamp } from '@google-cloud/firestore';
+import { WithId } from '../types/types';
+import { TagValue } from './tag';
 
 export interface ImageValue {
   createdAt: Timestamp;
@@ -38,7 +40,7 @@ interface TacticValueBase<K> {
   dataDigest?: string;
 
   patternIds: Array<string>;
-  tags?: Array<string>;
+  tags?: Array<WithId<TagValue>>;
 
   // Reminders
   remindersSummary?: string;
@@ -59,7 +61,11 @@ export type SpotifyTrackTactic = TacticValueBase<'spotifyTrack'> & {
   };
 };
 
-type FeelingsTactic = TacticValueBase<'feelings'>;
+export type FeelingsTactic = TacticValueBase<'feelings'> & {
+  metadata: {
+    tags: Array<WithId<TagValue>>;
+  };
+};
 type YouTubeTactic = TacticValueBase<'youtube'>;
 type WebsiteTactic = TacticValueBase<'website'>;
 type QuestionTactic = TacticValueBase<'question'>;

@@ -5,7 +5,6 @@ import { DebriefQuestionValue } from './debriefQuestion';
 import { PatternValue } from './pattern';
 import { TacticValue } from './tactic';
 import { TagValue } from './tag';
-import { TagCategoryValue } from './tagCategory';
 
 // Logs are records of either impulses (cravings or urges), or applied tactics (actions that we
 // take)
@@ -15,6 +14,7 @@ interface BaseLogValue {
   uid: string;
   createdAt: Timestamp;
   isDisplayable: boolean;
+  isTemplate: boolean;
   startTime: Timestamp;
   timezone: string;
   location: Partial<Location.LocationObjectCoords>;
@@ -24,7 +24,6 @@ interface BaseLogValue {
   checkInText?: string;
   // We store all impulse types, tactics and tags that were offered at the time, plus the ids of
   // those that were applied/selected
-  tagCategories: RecordsWithMeta<WithId<TagCategoryValue>, {}>;
   tags: RecordsWithMeta<WithId<TagValue>, { applied: boolean; value?: number }>;
   tagIds: Array<string>;
   tactics: RecordsWithMeta<
