@@ -7,6 +7,7 @@ export { FeedbackValue } from './feedback';
 export { GameplanValue } from './gameplan';
 export { GuidelineValue } from './guideline';
 export { InvitationValue } from './invitation';
+export { LocationValue } from './location';
 export { ImpulseLogValue, TacticsLogValue } from './logs';
 export { MessageValue } from './message';
 export { MotionLogValue } from './motionLogs';

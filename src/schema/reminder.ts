@@ -1,5 +1,4 @@
-import { Timestamp } from "@google-cloud/firestore";
-import * as Location from "expo-location";
+import { Timestamp } from '@google-cloud/firestore';
 
 interface ReminderValueBase {
   uid: string;
@@ -8,7 +7,7 @@ interface ReminderValueBase {
 }
 
 export type TimeReminderValue = ReminderValueBase & {
-  type: "time";
+  type: 'time';
   weekdays: Array<number>; // 1 = sun, 2 = mon, 3 = tue, etc
   hour: number;
   minute: number;
@@ -16,9 +15,9 @@ export type TimeReminderValue = ReminderValueBase & {
 };
 
 export type LocationReminderValue = ReminderValueBase & {
-  type: "location";
-  location: Location.LocationObjectCoords;
-  locationName: string;
+  type: 'location';
+  locationId: string;
+  mode: 'enter' | 'exit';
 };
 
-export type ReminderValue = TimeReminderValue; //| LocationReminderValue;
+export type ReminderValue = TimeReminderValue | LocationReminderValue;

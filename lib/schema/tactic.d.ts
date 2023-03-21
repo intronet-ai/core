@@ -37,12 +37,13 @@ interface TacticValueBase<K> {
     showTitleField?: boolean;
     isTemplate?: boolean;
     showResponseBox?: boolean;
-    deviceRemindersDigest?: string;
+    deviceTimeRemindersDigest?: string;
+    deviceLocationRemindersDigest?: string;
     dataDigest?: string;
     patternIds: Array<string>;
     allPatterns?: boolean;
     checkInEntries?: CheckInTagEntry[];
-    remindersSummary?: string;
+    remindersSummary?: Array<string>;
 }
 export type SpotifyEpisodeTactic = TacticValueBase<'spotifyEpisode'> & {
     metadata: {

@@ -8,8 +8,8 @@ export interface PatternValue {
   unit: 'time' | 'custom';
   customUnit?: string;
   setbackDefinition?: string;
+  setbackUnitMaximum?: number;
   debriefAfterMinutes: number;
-
   notification?: {
     title: string;
     body: string;

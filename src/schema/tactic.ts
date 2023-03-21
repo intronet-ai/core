@@ -41,8 +41,10 @@ interface TacticValueBase<K> {
   // questions, like "How are you feeling right now?"
   showResponseBox?: boolean;
 
-  // An MD5 hash that represents the state of reminders synced with the phone
-  deviceRemindersDigest?: string;
+  // MD5 hashes that represent the state of reminders synced with the phone
+  deviceTimeRemindersDigest?: string;
+  deviceLocationRemindersDigest?: string;
+
   dataDigest?: string;
 
   patternIds: Array<string>;
@@ -50,7 +52,7 @@ interface TacticValueBase<K> {
   checkInEntries?: CheckInTagEntry[];
 
   // Reminders
-  remindersSummary?: string;
+  remindersSummary?: Array<string>;
 }
 
 export type SpotifyEpisodeTactic = TacticValueBase<'spotifyEpisode'> & {
