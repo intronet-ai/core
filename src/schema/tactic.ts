@@ -28,6 +28,7 @@ interface TacticValueBase<K> {
   createdAt: Timestamp;
   ordinal: number;
   text: string;
+  delaySeconds?: number;
   title?: string;
   subtitle?: string;
   image?: { uri: string };
@@ -36,6 +37,8 @@ interface TacticValueBase<K> {
   isSharingEnabled: boolean;
   showTitleField?: boolean;
   isTemplate?: boolean;
+  isBooster?: boolean;
+  tagsSummary?: Record<string, string>;
 
   // In impulse moments, do we want to show a field for collecting a response? This is the case for
   // questions, like "How are you feeling right now?"

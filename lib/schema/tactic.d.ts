@@ -26,6 +26,7 @@ interface TacticValueBase<K> {
     createdAt: Timestamp;
     ordinal: number;
     text: string;
+    delaySeconds?: number;
     title?: string;
     subtitle?: string;
     image?: {
@@ -36,6 +37,8 @@ interface TacticValueBase<K> {
     isSharingEnabled: boolean;
     showTitleField?: boolean;
     isTemplate?: boolean;
+    isBooster?: boolean;
+    tagsSummary?: Record<string, string>;
     showResponseBox?: boolean;
     deviceTimeRemindersDigest?: string;
     deviceLocationRemindersDigest?: string;

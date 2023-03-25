@@ -3,7 +3,6 @@ export const DATE_FORMAT = 'yyyy-MM-dd';
 export { ApplicationValue } from './application';
 export { ButtonValue } from './button';
 export { ContactValue } from './contact';
-export { DebriefQuestionValue } from './debriefQuestion';
 export { FeedbackValue } from './feedback';
 export { GameplanValue } from './gameplan';
 export { GuidelineValue } from './guideline';

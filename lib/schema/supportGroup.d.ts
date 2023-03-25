@@ -9,6 +9,7 @@ export interface SupportGroupValue {
     groupDescription?: string;
     creatorName: string;
     creatorUid: string;
+    icon: 'bugs' | 'team' | 'group' | 'tactics';
     thumbnailUrl: string;
     lastUpdated: Timestamp;
     lastMessagePreview?: string;
