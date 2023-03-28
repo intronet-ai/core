@@ -2,6 +2,7 @@ export const DATE_FORMAT = 'yyyy-MM-dd';
 
 export { ApplicationValue } from './application';
 export { ButtonValue } from './button';
+export { ChallengeValue } from './challenge';
 export { ContactValue } from './contact';
 export { FeedbackValue } from './feedback';
 export { GameplanValue } from './gameplan';
@@ -15,7 +16,6 @@ export { NotificationValue } from './notification';
 export { PatternValue } from './pattern';
 export { PressValue } from './press';
 export { ProfileValue } from './profile';
-export { QuestValue } from './quest';
 export { ReminderValue } from './reminder';
 export { SpotifyCredentials } from './spotifyCredentials';
 export { SupportGroupValue } from './supportGroup';
