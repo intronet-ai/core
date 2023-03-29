@@ -17,6 +17,8 @@ export interface ChallengeValue {
   days: number; // The target number of days
   dailyMinimum?: number; // The minimum number of eligible logs per day
   dailyMaximum?: number; // The maximum number of eligible logs per day
+  consecutive: boolean;
+
   // What makes an individual log eligible
   logEligibilityRequirements: {
     type?: LogValue['type'];

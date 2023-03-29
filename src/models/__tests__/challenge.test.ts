@@ -15,7 +15,6 @@ describe('Challenge', () => {
       ordinal: 0,
       description: 'Do it',
       icon: 'test',
-      patternId: 'abc123',
       days: 4,
       logEligibilityRequirements: {
         type: 'impulse',
@@ -23,6 +22,8 @@ describe('Challenge', () => {
       eligibleLogDatesById: {},
       datesCumulativeProgress: {},
       currentDayCount: 0,
+      isTemplate: false,
+      consecutive: true,
     });
     describe('with an eligible log', () => {
       const log: ImpulseLogValue = {
@@ -76,7 +77,7 @@ describe('Challenge', () => {
 
   describe('recalculateProgress', () => {
     describe('with a set of dates', () => {
-      const date = Timestamp.fromDate(new Date('2023-03-28'));
+      const date = Timestamp.fromDate(new Date('2023-03-25'));
       const challenge = new Challenge('id', {
         uid: 'abc123',
         createdAt: date,
@@ -84,21 +85,37 @@ describe('Challenge', () => {
         ordinal: 0,
         description: 'Do it',
         icon: 'test',
-        patternId: 'abc123',
         days: 4,
         logEligibilityRequirements: {
           type: 'impulse',
         },
-        eligibleLogDatesById: {},
+        dailyMinimum: 1,
+        eligibleLogDatesById: {
+          abc123: '2023-03-25',
+          def456: '2023-03-26',
+        },
         datesCumulativeProgress: {},
         currentDayCount: 0,
+        consecutive: true,
+        isTemplate: false,
       });
 
       it('writes the datesCumulativeProgress and currentDayCount properties', () => {
         const result = challenge.recalculateProgress();
         expect(result).toEqual({
-          datesCumulativeProgress: {},
-          currentDayCount: 1,
+          countsByDate: {
+            '2023-03-24': 0,
+            '2023-03-25': 1,
+            '2023-03-26': 1,
+            '2023-03-27': 0,
+          },
+          datesCumulativeProgress: {
+            '2023-03-24': 0,
+            '2023-03-25': 1,
+            '2023-03-26': 2,
+            '2023-03-27': 0,
+          },
+          currentDayCount: 0,
         });
       });
     });

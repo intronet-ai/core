@@ -17,6 +17,7 @@ interface BaseLogValue {
   locationIsFetching: boolean;
   locationFormatted?: string;
   tacticsSummary?: Record<string, string>;
+  patternsSummary?: Record<string, string>;
 }
 
 // Tactics logs are recorded when the user tracks tactics, standalone
@@ -30,6 +31,11 @@ export type MotionLogValue = BaseLogValue & {
   type: 'motion';
 };
 
+export type ButtonLogValue = BaseLogValue & {
+  type: 'button';
+  characteristics: Record<string, unknown>;
+};
+
 // Impulse logs are recorded when the user presses the impulse button
 export type ImpulseLogValue = BaseLogValue & {
   type: 'impulse';
@@ -37,8 +43,13 @@ export type ImpulseLogValue = BaseLogValue & {
   outcome: Outcome;
   buttonPressSecondsSinceEpoch?: number;
   patternIds: Array<string>;
+  debriefNotes?: string;
   debriefReminderSentAt?: Timestamp | null;
   debriefedAt?: Timestamp | null;
 };
 
-export type LogValue = TacticsLogValue | ImpulseLogValue | MotionLogValue;
+export type LogValue =
+  | TacticsLogValue
+  | ImpulseLogValue
+  | MotionLogValue
+  | ButtonLogValue;

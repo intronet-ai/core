@@ -13,6 +13,7 @@ interface BaseLogValue {
     locationIsFetching: boolean;
     locationFormatted?: string;
     tacticsSummary?: Record<string, string>;
+    patternsSummary?: Record<string, string>;
 }
 export type TacticsLogValue = BaseLogValue & {
     type: 'tactic';
@@ -21,14 +22,19 @@ export type TacticsLogValue = BaseLogValue & {
 export type MotionLogValue = BaseLogValue & {
     type: 'motion';
 };
+export type ButtonLogValue = BaseLogValue & {
+    type: 'button';
+    characteristics: Record<string, unknown>;
+};
 export type ImpulseLogValue = BaseLogValue & {
     type: 'impulse';
     pressCount?: number;
     outcome: Outcome;
     buttonPressSecondsSinceEpoch?: number;
     patternIds: Array<string>;
+    debriefNotes?: string;
     debriefReminderSentAt?: Timestamp | null;
     debriefedAt?: Timestamp | null;
 };
-export type LogValue = TacticsLogValue | ImpulseLogValue | MotionLogValue;
+export type LogValue = TacticsLogValue | ImpulseLogValue | MotionLogValue | ButtonLogValue;
 export {};

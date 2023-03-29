@@ -1,5 +1,5 @@
 import { addDays, format, isBefore } from 'date-fns';
-import { groupBy, mapValues, toLength, unset } from 'lodash';
+import { groupBy, identity, mapValues, unset, values } from 'lodash';
 import { ChallengeValue, DATE_FORMAT } from '../schema';
 import { ImpulseLogValue, LogValue } from '../schema/logs';
 
@@ -26,12 +26,12 @@ export class Challenge {
 
   // This is run after every update to the quest that changes the dates by Id
   recalculateProgress() {
-    const { createdAt } = this.data;
+    const { createdAt, consecutive, days } = this.data;
     const countsByDate = this.countsByDate();
 
     const startDate = createdAt.toDate();
     let endDate = new Date();
-    let currentDayCount = 0;
+    let dayCount = 0;
     const datesCumulativeProgress: Record<string, number> = {};
 
     for (let i = startDate; isBefore(i, endDate); i = addDays(i, 1)) {
@@ -42,9 +42,15 @@ export class Challenge {
 
       const eligibile = this.isDayLogCountEligible(countsByDate[dateString]);
 
-      currentDayCount = eligibile ? currentDayCount + 1 : 0;
-      datesCumulativeProgress[dateString] = currentDayCount;
+      // If we're eligible, then increment the day count. If we're not eligible, reset the current
+      // day count if there's a requirement for consecutiveness. Otherwise, keep the count the same.
+      dayCount = eligibile ? dayCount + 1 : consecutive ? 0 : dayCount;
+
+      datesCumulativeProgress[dateString] = dayCount;
+      if (dayCount >= days) break;
     }
+
+    const currentDayCount = Math.min(days, dayCount);
 
     return { datesCumulativeProgress, currentDayCount };
   }
@@ -92,15 +98,8 @@ export class Challenge {
     const { eligibleLogDatesById } = this.data;
 
     return mapValues(
-      groupBy(
-        // TODO: clean this up?
-        Object.keys(eligibleLogDatesById || {}).map(id => ({
-          id,
-          date: eligibleLogDatesById[id],
-        })),
-        'date'
-      ),
-      toLength
+      groupBy(values(eligibleLogDatesById), identity),
+      ary => ary.length
     );
   }
 }

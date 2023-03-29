@@ -12,6 +12,7 @@ export interface ChallengeValue {
     days: number;
     dailyMinimum?: number;
     dailyMaximum?: number;
+    consecutive: boolean;
     logEligibilityRequirements: {
         type?: LogValue['type'];
         outcome?: ImpulseLogValue['outcome'];
