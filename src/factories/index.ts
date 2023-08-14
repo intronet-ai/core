@@ -1,4 +1,6 @@
 import { TimestampStub } from '../utils/TimestampStub';
+import { makeAssessmentFactory } from './assessment';
+import { makeAssessmentRequestFactory } from './assessmentRequest';
 import { makeResponseFactory } from './response';
 
 // Our admin and client apps use the same factories, but the firebase-admin versus firebase client
@@ -6,6 +8,8 @@ import { makeResponseFactory } from './response';
 // injected dependency
 export function makeFactories(TimestampKlass: typeof TimestampStub) {
   return {
+    assessmentFactory: makeAssessmentFactory(TimestampKlass),
+    assessmentRequestFactory: makeAssessmentRequestFactory(TimestampKlass),
     responseFactory: makeResponseFactory(TimestampKlass),
   };
 }

@@ -7,4 +7,7 @@ export interface ResponseValue {
   email: string;
   communityId: string;
   uid: string;
+  workingOn: string;
+  helpWanted: string;
+  canOffer: string;
 }
