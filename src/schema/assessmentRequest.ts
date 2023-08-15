@@ -13,8 +13,10 @@ export interface AssessmentRequestValue {
   // Currently this is typed to chatGPT's API schema
   rawResponse?: ChatGPTCompletionResult;
   responseReceivedAt: null | TimestampStub;
+  approved?: true;
   error: null | string;
-  apiCostCents?: number;
+  actualApiCostCents?: number;
+  estimatedApiCostCents?: number;
 }
 
 interface ChatGPTCompletionResult {

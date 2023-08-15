@@ -11,8 +11,10 @@ export interface AssessmentRequestValue {
     sentAt: null | TimestampStub;
     rawResponse?: ChatGPTCompletionResult;
     responseReceivedAt: null | TimestampStub;
+    approved?: true;
     error: null | string;
-    apiCostCents?: number;
+    actualApiCostCents?: number;
+    estimatedApiCostCents?: number;
 }
 interface ChatGPTCompletionResult {
     created: number;

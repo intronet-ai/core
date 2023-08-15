@@ -9,6 +9,7 @@ export const makeAssessmentFactory = (TimestampKlass: typeof TimestampStub) =>
     assessmentRequestId: Factory.each(i => String(i)),
     providerResponseId: Factory.each(i => String(i)),
     seekerResponseId: Factory.each(i => String(i)),
+    runId: Factory.each(i => String(i)),
     score: 0.5,
     explanation:
       'Person A may be able to help Person B because they are really smart',

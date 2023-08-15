@@ -5,6 +5,8 @@ export interface AssessmentValue {
     assessmentRequestId: string;
     seekerResponseId: string;
     providerResponseId: string;
+    runId: string;
     score: number;
     explanation: string;
+    isSelected?: boolean;
 }
