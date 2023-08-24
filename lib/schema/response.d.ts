@@ -1,3 +1,4 @@
+import { LinkedinProfile } from '../factories/exampleData/linkedin';
 import { TimestampStub } from '../utils/TimestampStub';
 export interface ResponseValue {
     createdAt: TimestampStub;
@@ -6,7 +7,8 @@ export interface ResponseValue {
     email: string;
     communityId: string;
     uid: string;
-    workingOn: string;
     helpWanted: string;
     canOffer: string;
+    linkedinProfileUrl?: string;
+    linkedinProfile?: LinkedinProfile;
 }

@@ -14,7 +14,6 @@ export const makeResponseFactory = (TimestampKlass: typeof TimestampStub) =>
     communityId: faker.random.alphaNumeric(28),
     canOffer: Factory.each(() => sample(canOfferSamples) as string),
     helpWanted: Factory.each(() => sample(helpWantedSamples) as string),
-    workingOn: Factory.each(() => sample(workingOnSamples) as string),
   });
 
 const canOfferSamples = [
