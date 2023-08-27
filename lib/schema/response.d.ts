@@ -6,7 +6,7 @@ export interface ResponseValue {
     name: string;
     email: string;
     communityId: string;
-    uid: string;
+    uid?: string;
     helpWanted: string;
     canOffer: string;
     linkedinProfileUrl?: string;
