@@ -10,7 +10,6 @@ export const makeResponseFactory = (TimestampKlass: typeof TimestampStub) =>
     updatedAt: TimestampKlass.now(),
     name: faker.name.firstName(),
     email: faker.internet.email(),
-    uid: faker.random.alphaNumeric(28),
     communityId: faker.random.alphaNumeric(28),
     canOffer: Factory.each(() => sample(canOfferSamples) as string),
     helpWanted: Factory.each(() => sample(helpWantedSamples) as string),
