@@ -6,9 +6,16 @@ export interface AssessmentValue {
   assessmentRequestId: string;
   seekerResponseId: string;
   providerResponseId: string;
-  providerName?: string;
   runId: string;
   score: number;
   explanation: string;
   isSelected?: boolean;
+  introRequestedAt?: TimestampStub;
+  introRequestText?: string;
+  communityName?: string;
+  providerName?: string;
+  providerEmail?: string;
+  providerHeadline?: string;
+  seekerName?: string;
+  seekerEmail?: string;
 }
