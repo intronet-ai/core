@@ -5,6 +5,7 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
     responseFactory: import("factory.ts").Factory<import("..").ResponseValue, keyof import("..").ResponseValue>;
     runFactory: import("factory.ts").Factory<import("..").RunValue, keyof import("..").RunValue>;
     communityFactory: import("factory.ts").Factory<import("..").CommunityValue, keyof import("..").CommunityValue>;
+    profileFactory: import("factory.ts").Factory<import("..").ProfileValue, keyof import("..").ProfileValue>;
 };
 export { exampleLinkedinProfile } from './exampleData/linkedin';
 export declare const responseFactory: import("factory.ts").Factory<import("..").ResponseValue, keyof import("..").ResponseValue>;

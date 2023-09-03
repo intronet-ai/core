@@ -2,6 +2,7 @@ import { TimestampStub } from '../utils/TimestampStub';
 import { makeAssessmentFactory } from './assessment';
 import { makeAssessmentRequestFactory } from './assessmentRequest';
 import { makeCommunityFactory } from './community';
+import { makeProfileFactory } from './profile';
 import { makeResponseFactory } from './response';
 import { makeRunFactory } from './run';
 
@@ -15,6 +16,7 @@ export function makeFactories(TimestampKlass: typeof TimestampStub) {
     responseFactory: makeResponseFactory(TimestampKlass),
     runFactory: makeRunFactory(TimestampKlass),
     communityFactory: makeCommunityFactory(TimestampKlass),
+    profileFactory: makeProfileFactory(TimestampKlass),
   };
 }
 
