@@ -16,6 +16,7 @@ export interface AssessmentValue {
   providerName?: string;
   providerEmail?: string;
   providerHeadline?: string;
+  providerPhotoStoragePath?: string;
   seekerName?: string;
   seekerEmail?: string;
 }

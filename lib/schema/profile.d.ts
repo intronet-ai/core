@@ -5,4 +5,5 @@ export interface ProfileValue {
     ask: string;
     offer: string;
     headline?: string;
+    photoStoragePath?: string;
 }
