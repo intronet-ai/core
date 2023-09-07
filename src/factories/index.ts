@@ -21,7 +21,3 @@ export function makeFactories(TimestampKlass: typeof TimestampStub) {
 }
 
 export { exampleLinkedinProfile } from './exampleData/linkedin';
-
-// We also directly export all factories, using our "TimestampStub" class, for unit testing in this
-// library
-export const { responseFactory } = makeFactories(TimestampStub);

@@ -8,4 +8,3 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
     profileFactory: import("factory.ts").Factory<import("..").ProfileValue, keyof import("..").ProfileValue>;
 };
 export { exampleLinkedinProfile } from './exampleData/linkedin';
-export declare const responseFactory: import("factory.ts").Factory<import("..").ResponseValue, keyof import("..").ResponseValue>;
