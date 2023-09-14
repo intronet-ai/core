@@ -1,880 +1,1251 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:o="urn:schemas-microsoft-com:office:office">
-<script type="text/javascript"
-  src="chrome-extension://mdnleldcmiljblolnjhpnblkcekpdkpa/libs/customElements.js"
-  class="__REQUESTLY__SCRIPT"></script>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+>
+  <script
+    type="text/javascript"
+    src="chrome-extension://mdnleldcmiljblolnjhpnblkcekpdkpa/libs/customElements.js"
+    class="__REQUESTLY__SCRIPT"
+  ></script>
 
-<head>
-  <!--[if gte mso 15]>
-  <xml>
-  <o:OfficeDocumentSettings>
-  <o:AllowPNG/>
-  <o:PixelsPerInch>96</o:PixelsPerInch>
-  </o:OfficeDocumentSettings>
-  </xml>
-  <![endif]-->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Meet your matches</title>
-  <style>
-    img {
-      -ms-interpolation-mode: bicubic;
-    }
+  <head>
+    <!--[if gte mso 15]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG />
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    <![endif]-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meet your matches</title>
+    <style>
+      img {
+        -ms-interpolation-mode: bicubic;
+      }
 
-    table,
-    td {
-      mso-table-lspace: 0pt;
-      mso-table-rspace: 0pt;
-    }
-
-    .mceStandardButton,
-    .mceStandardButton td,
-    .mceStandardButton td a {
-      mso-hide: all !important;
-    }
-
-    p,
-    a,
-    li,
-    td,
-    blockquote {
-      mso-line-height-rule: exactly;
-    }
-
-    p,
-    a,
-    li,
-    td,
-    body,
-    table,
-    blockquote {
-      -ms-text-size-adjust: 100%;
-      -webkit-text-size-adjust: 100%;
-    }
-
-    @media only screen and (max-width: 480px) {
-
-      body,
       table,
-      td,
+      td {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+
+      .mceStandardButton,
+      .mceStandardButton td,
+      .mceStandardButton td a {
+        mso-hide: all !important;
+      }
+
       p,
       a,
       li,
+      td,
       blockquote {
-        -webkit-text-size-adjust: none !important;
+        mso-line-height-rule: exactly;
       }
-    }
 
-    .mcnPreviewText {
-      display: none !important;
-    }
+      p,
+      a,
+      li,
+      td,
+      body,
+      table,
+      blockquote {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
 
-    .bodyCell {
-      margin: 0 auto;
-      padding: 0;
-      width: 100%;
-    }
+      @media only screen and (max-width: 480px) {
+        body,
+        table,
+        td,
+        p,
+        a,
+        li,
+        blockquote {
+          -webkit-text-size-adjust: none !important;
+        }
+      }
 
-    .ExternalClass,
-    .ExternalClass p,
-    .ExternalClass td,
-    .ExternalClass div,
-    .ExternalClass span,
-    .ExternalClass font {
-      line-height: 100%;
-    }
+      .mcnPreviewText {
+        display: none !important;
+      }
 
-    .ReadMsgBody {
-      width: 100%;
-    }
+      .bodyCell {
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+      }
 
-    .ExternalClass {
-      width: 100%;
-    }
+      .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass td,
+      .ExternalClass div,
+      .ExternalClass span,
+      .ExternalClass font {
+        line-height: 100%;
+      }
 
-    a[x-apple-data-detectors] {
-      color: inherit !important;
-      text-decoration: none !important;
-      font-size: inherit !important;
-      font-family: inherit !important;
-      font-weight: inherit !important;
-      line-height: inherit !important;
-    }
+      .ReadMsgBody {
+        width: 100%;
+      }
 
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      background: #ffffff;
-    }
+      .ExternalClass {
+        width: 100%;
+      }
 
-    p {
-      margin: 0;
-      padding: 0;
-    }
+      a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
 
-    table {
-      border-collapse: collapse;
-    }
-
-    td,
-    p,
-    a {
-      word-break: break-word;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      display: block;
-      margin: 0;
-      padding: 0;
-    }
-
-    img,
-    a img {
-      border: 0;
-      height: auto;
-      outline: none;
-      text-decoration: none;
-    }
-
-    a[href^="tel"],
-    a[href^="sms"] {
-      color: inherit;
-      cursor: default;
-      text-decoration: none;
-    }
-
-    li p {
-      margin: 0 !important;
-    }
-
-    .ProseMirror a {
-      pointer-events: none;
-    }
-
-    @media only screen and (max-width: 480px) {
       body {
-        width: 100% !important;
-        min-width: 100% !important;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: #ffffff;
       }
 
-      body.mobile-native {
-        -webkit-user-select: none;
-        user-select: none;
-        transition: transform 0.2s ease-in;
-        transform-origin: top center;
+      p {
+        margin: 0;
+        padding: 0;
       }
 
-      body.mobile-native.selection-allowed a,
-      body.mobile-native.selection-allowed .ProseMirror {
-        user-select: auto;
-        -webkit-user-select: auto;
+      table {
+        border-collapse: collapse;
       }
 
-      colgroup {
-        display: none;
+      td,
+      p,
+      a {
+        word-break: break-word;
       }
 
-      img {
-        height: auto !important;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        display: block;
+        margin: 0;
+        padding: 0;
       }
 
-      .mceWidthContainer {
-        max-width: 660px !important;
+      img,
+      a img {
+        border: 0;
+        height: auto;
+        outline: none;
+        text-decoration: none;
       }
 
-      .mceColumn {
-        display: block !important;
-        width: 100% !important;
+      a[href^='tel'],
+      a[href^='sms'] {
+        color: inherit;
+        cursor: default;
+        text-decoration: none;
       }
 
-      .mceColumn-forceSpan {
-        display: table-cell !important;
-        width: auto !important;
+      li p {
+        margin: 0 !important;
       }
 
-      .mceBlockContainer {
-        padding-right: 16px !important;
-        padding-left: 16px !important;
+      .ProseMirror a {
+        pointer-events: none;
       }
 
-      .mceBlockContainerE2E {
-        padding-right: 0px;
-        padding-left: 0px;
+      @media only screen and (max-width: 480px) {
+        body {
+          width: 100% !important;
+          min-width: 100% !important;
+        }
+
+        body.mobile-native {
+          -webkit-user-select: none;
+          user-select: none;
+          transition: transform 0.2s ease-in;
+          transform-origin: top center;
+        }
+
+        body.mobile-native.selection-allowed a,
+        body.mobile-native.selection-allowed .ProseMirror {
+          user-select: auto;
+          -webkit-user-select: auto;
+        }
+
+        colgroup {
+          display: none;
+        }
+
+        img {
+          height: auto !important;
+        }
+
+        .mceWidthContainer {
+          max-width: 660px !important;
+        }
+
+        .mceColumn {
+          display: block !important;
+          width: 100% !important;
+        }
+
+        .mceColumn-forceSpan {
+          display: table-cell !important;
+          width: auto !important;
+        }
+
+        .mceBlockContainer {
+          padding-right: 16px !important;
+          padding-left: 16px !important;
+        }
+
+        .mceBlockContainerE2E {
+          padding-right: 0px;
+          padding-left: 0px;
+        }
+
+        .mceSpacing-24 {
+          padding-right: 16px !important;
+          padding-left: 16px !important;
+        }
+
+        .mceFooterSection .mceText,
+        .mceFooterSection .mceText p {
+          font-size: 16px !important;
+          line-height: 140% !important;
+        }
+
+        .mceText,
+        .mceText p {
+          font-size: 16px !important;
+          line-height: 140% !important;
+        }
+
+        h1 {
+          font-size: 30px !important;
+          line-height: 120% !important;
+        }
+
+        h2 {
+          font-size: 26px !important;
+          line-height: 120% !important;
+        }
+
+        h3 {
+          font-size: 20px !important;
+          line-height: 125% !important;
+        }
+
+        h4 {
+          font-size: 18px !important;
+          line-height: 125% !important;
+        }
       }
 
-      .mceSpacing-24 {
-        padding-right: 16px !important;
-        padding-left: 16px !important;
+      @media only screen and (max-width: 640px) {
+        .mceClusterLayout td {
+          padding: 4px !important;
+        }
       }
 
-      .mceFooterSection .mceText,
-      .mceFooterSection .mceText p {
-        font-size: 16px !important;
-        line-height: 140% !important;
+      div[contenteditable='true'] {
+        outline: 0;
+      }
+
+      .ProseMirror .empty-node,
+      .ProseMirror:empty {
+        position: relative;
+      }
+
+      .ProseMirror .empty-node::before,
+      .ProseMirror:empty::before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        color: rgba(0, 0, 0, 0.2);
+        cursor: text;
+      }
+
+      .ProseMirror .empty-node:hover::before,
+      .ProseMirror:empty:hover::before {
+        color: rgba(0, 0, 0, 0.3);
+      }
+
+      .ProseMirror h1.empty-node:only-child::before,
+      .ProseMirror h2.empty-node:only-child::before,
+      .ProseMirror h3.empty-node:only-child::before,
+      .ProseMirror h4.empty-node:only-child::before {
+        content: 'Heading';
+      }
+
+      .ProseMirror p.empty-node:only-child::before,
+      .ProseMirror:empty::before {
+        content: 'Start typing...';
+      }
+
+      a .ProseMirror p.empty-node::before,
+      a .ProseMirror:empty::before {
+        content: '';
+      }
+
+      body,
+      #bodyTable {
+        background-color: rgb(244, 244, 244);
       }
 
       .mceText,
-      .mceText p {
-        font-size: 16px !important;
-        line-height: 140% !important;
+      .mceLabel {
+        font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
       }
 
-      h1 {
-        font-size: 30px !important;
-        line-height: 120% !important;
+      .mceText,
+      .mceLabel {
+        color: rgb(0, 0, 0);
       }
 
-      h2 {
-        font-size: 26px !important;
-        line-height: 120% !important;
-      }
-
-      h3 {
-        font-size: 20px !important;
-        line-height: 125% !important;
-      }
-
-      h4 {
-        font-size: 18px !important;
-        line-height: 125% !important;
-      }
-    }
-
-    @media only screen and (max-width: 640px) {
-      .mceClusterLayout td {
-        padding: 4px !important;
-      }
-    }
-
-    div[contenteditable="true"] {
-      outline: 0;
-    }
-
-    .ProseMirror .empty-node,
-    .ProseMirror:empty {
-      position: relative;
-    }
-
-    .ProseMirror .empty-node::before,
-    .ProseMirror:empty::before {
-      position: absolute;
-      left: 0;
-      right: 0;
-      color: rgba(0, 0, 0, 0.2);
-      cursor: text;
-    }
-
-    .ProseMirror .empty-node:hover::before,
-    .ProseMirror:empty:hover::before {
-      color: rgba(0, 0, 0, 0.3);
-    }
-
-    .ProseMirror h1.empty-node:only-child::before,
-    .ProseMirror h2.empty-node:only-child::before,
-    .ProseMirror h3.empty-node:only-child::before,
-    .ProseMirror h4.empty-node:only-child::before {
-      content: 'Heading';
-    }
-
-    .ProseMirror p.empty-node:only-child::before,
-    .ProseMirror:empty::before {
-      content: 'Start typing...';
-    }
-
-    a .ProseMirror p.empty-node::before,
-    a .ProseMirror:empty::before {
-      content: '';
-    }
-
-    .mceText,
-    .ProseMirror {
-      white-space: pre-wrap;
-    }
-
-    body,
-    #bodyTable {
-      background-color: rgb(244, 244, 244);
-    }
-
-    .mceText,
-    .mceLabel {
-      font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
-    }
-
-    .mceText,
-    .mceLabel {
-      color: rgb(0, 0, 0);
-    }
-
-    .mceText h1 {
-      margin-bottom: 0px;
-    }
-
-    .mceText p {
-      margin-bottom: 0px;
-    }
-
-    .mceText label {
-      margin-bottom: 0px;
-    }
-
-    .mceText input {
-      margin-bottom: 0px;
-    }
-
-    .mceSpacing-12 .mceInput+.mceErrorMessage {
-      margin-top: -6px;
-    }
-
-    .mceText h1 {
-      margin-bottom: 0px;
-    }
-
-    .mceText p {
-      margin-bottom: 0px;
-    }
-
-    .mceText label {
-      margin-bottom: 0px;
-    }
-
-    .mceText input {
-      margin-bottom: 0px;
-    }
-
-    .mceSpacing-24 .mceInput+.mceErrorMessage {
-      margin-top: -12px;
-    }
-
-    .mceInput {
-      background-color: transparent;
-      border: 2px solid rgb(208, 208, 208);
-      width: 60%;
-      color: rgb(77, 77, 77);
-      display: block;
-    }
-
-    .mceInput[type="radio"],
-    .mceInput[type="checkbox"] {
-      float: left;
-      margin-right: 12px;
-      display: inline;
-      width: auto !important;
-    }
-
-    .mceLabel>.mceInput {
-      margin-bottom: 0px;
-      margin-top: 2px;
-    }
-
-    .mceLabel {
-      display: block;
-    }
-
-    .mceText p {
-      color: rgb(0, 0, 0);
-      font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
-      font-size: 16px;
-      font-weight: normal;
-      line-height: 1.5;
-      text-align: center;
-      letter-spacing: 0px;
-      direction: ltr;
-    }
-
-    .mceText h1 {
-      color: rgb(0, 0, 0);
-      font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
-      font-size: 31px;
-      font-weight: bold;
-      line-height: 1.5;
-      text-align: center;
-      letter-spacing: 0px;
-      direction: ltr;
-    }
-
-    .mceText a {
-      color: rgb(0, 0, 0);
-      font-style: normal;
-      font-weight: normal;
-      text-decoration: underline;
-      direction: ltr;
-    }
-
-    @media only screen and (max-width: 480px) {
-      .mceText p {
-        font-size: 16px !important;
-        line-height: 1.5 !important;
-      }
-    }
-
-    @media only screen and (max-width: 480px) {
       .mceText h1 {
-        font-size: 31px !important;
-        line-height: 1.5 !important;
+        margin-bottom: 0px;
       }
-    }
 
-    @media only screen and (max-width: 480px) {
-      .mceBlockContainer {
-        padding-left: 16px !important;
-        padding-right: 16px !important;
+      .mceText p {
+        margin-bottom: 0px;
       }
-    }
 
-    #dataBlockId-9 p,
-    #dataBlockId-9 h1,
-    #dataBlockId-9 h2,
-    #dataBlockId-9 h3,
-    #dataBlockId-9 h4,
-    #dataBlockId-9 ul {
-      text-align: center;
-    }
-  </style>
-  <script async="" crossorigin="anonymous" src="https://edge.fullstory.com/s/fs.js"></script>
-</head>
+      .mceText label {
+        margin-bottom: 0px;
+      }
 
-<body>
-  <!--*|IF:MC_PREVIEW_TEXT|*-->
-  <!--[if !gte mso 9]><!----><span class="mcnPreviewText"
-    style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">*|MC_PREVIEW_TEXT|*</span><!--<![endif]-->
-  <!--*|END:IF|*-->
-  <center>
-    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable"
-      style="background-color: rgb(244, 244, 244);">
-      <tbody>
-        <tr>
-          <td class="bodyCell" align="center" valign="top">
-            <table id="root" border="0" cellpadding="0" cellspacing="0" width="100%">
-              <tbody data-block-id="13" class="mceWrapper">
-                <tr>
-                  <td align="center" valign="top" class="mceWrapperOuter">
-                    <!--[if (gte mso 9)|(IE)]><table align="center" border="0" cellspacing="0" cellpadding="0" width="660" style="width:660px;"><tr><td><![endif]-->
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%"
-                      style="max-width:660px" role="presentation">
-                      <tbody>
-                        <tr>
-                          <td
-                            style="background-color:#ffffff;background-position:center;background-repeat:no-repeat;background-size:cover"
-                            class="mceWrapperInner" valign="top">
-                            <table align="center" border="0" cellpadding="0" cellspacing="0"
-                              width="100%" role="presentation" data-block-id="12">
-                              <tbody>
-                                <tr class="mceRow">
-                                  <td
-                                    style="background-position:center;background-repeat:no-repeat;background-size:cover"
-                                    valign="top">
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%"
-                                      role="presentation">
-                                      <tbody>
-                                        <tr>
-                                          <td style="padding-top:0;padding-bottom:0"
-                                            class="mceColumn" data-block-id="-4" valign="top"
-                                            colspan="12" width="100%">
-                                            <table border="0" cellpadding="0" cellspacing="0"
-                                              width="100%" role="presentation">
-                                              <tbody>
-                                                <tr>
-                                                  <td
-                                                    style="padding-top:12px;padding-bottom:12px;padding-right:48px;padding-left:48px"
-                                                    class="mceBlockContainer" align="center"
-                                                    valign="top"><img data-block-id="2" width="130"
-                                                      height="auto"
-                                                      style="width:130px;height:auto;max-width:100%;display:block"
-                                                      alt="Logo"
-                                                      src="https://cdn-images.mailchimp.com/template_images/email/logo-placeholder.png"
-                                                      class=""></td>
-                                                </tr>
-                                                <tr>
-                                                  <td
-                                                    style="padding-top:12px;padding-bottom:12px;padding-right:24px;padding-left:24px"
-                                                    class="mceBlockContainer" valign="top">
-                                                    <div data-block-id="3" class="mceText"
-                                                      id="dataBlockId-3" style="width:100%">
-                                                      <h1>Meet your Angel Squad matches!</h1>
-                                                      <p><br></p>
-                                                      <p><em>Into the hat, ASKs and OFFERs we
-                                                          cast,</em></p>
-                                                      <p><em>Out came your matches, tailored and
-                                                          fast!</em></p>
-                                                      <p><em>Thanks for your spirit, and community
-                                                          cheer,</em></p>
-                                                      <p><em>Hoping from here, new friendships are
-                                                          near!</em></p>
-                                                      <p class="last-child"><em>​</em></p>
-                                                    </div>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td
-                                                    style="padding-top:12px;padding-bottom:12px;padding-right:24px;padding-left:24px"
-                                                    class="mceBlockContainer" align="center"
-                                                    valign="top">
-                                                    <table align="center" border="0" cellpadding="0"
-                                                      cellspacing="0" role="presentation"
-                                                      data-block-id="25">
-                                                      <tbody>
-                                                        <tr class="mceStandardButton">
-                                                          <td
-                                                            style="background-color:#000000;border-radius:0;text-align:center"
-                                                            class="mceButton" valign="top"><a
-                                                              href="" target="_blank"
-                                                              style="background-color:#000000;border-radius:0;border:2px solid #000000;color:#ffffff;display:block;font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;font-size:16px;font-weight:normal;font-style:normal;padding:16px 28px;text-decoration:none;min-width:30px;text-align:center;direction:ltr;letter-spacing:0px">View
-                                                              your matches →</a></td>
-                                                        </tr>
-                                                        <tr>
-                                                          <!--[if mso]>
-  <td align="center">
-  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:w="urn:schemas-microsoft-com:office:word"
-  href=""
-  style="v-text-anchor:middle; width:215.88px; height:55px;"
-  arcsize="0%"
-  strokecolor="#000000"
-  strokeweight="2px"
-  fillcolor="#000000">
-  <v:stroke dashstyle="solid"/>
-  <w:anchorlock />
-  <center style="
-  color: #ffffff;
-  display: block;
-  font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
-  font-size: 16;
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: 0px;
-  text-decoration: none;
-  text-align: center;
-  direction: ltr;"
-  >
-  <p>View your matches →</p>
-  </center>
-  </v:roundrect>
-  </td>
-  <![endif]-->
-                                                        </tr>
-                                                      </tbody>
-                                                    </table>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td
-                                                    style="padding-top:12px;padding-bottom:12px;padding-right:0;padding-left:0"
-                                                    class="mceBlockContainer" align="center"
-                                                    valign="top"><img data-block-id="42" width="140"
-                                                      height="auto"
-                                                      style="width:140px;height:auto;max-width:100%;display:block"
-                                                      alt=""
-                                                      src="https://mcusercontent.com/d4596874e9526c73eb5b6bae7/images/704f93da-237b-0aac-f8bd-32ac16d15ee4.jpeg"
-                                                      role="presentation" class="imageDropZone">
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td
-                                                    style="padding-top:12px;padding-bottom:12px;padding-right:24px;padding-left:24px"
-                                                    class="mceBlockContainer" valign="top">
-                                                    <div data-block-id="43" class="mceText"
-                                                      id="dataBlockId-43" style="width:100%">
-                                                      <h1 class="last-child">Mark Shreyans</h1>
-                                                    </div>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td
-                                                    style="padding-top:12px;padding-bottom:12px;padding-right:24px;padding-left:24px"
-                                                    class="mceBlockContainer" valign="top">
-                                                    <div data-block-id="44" class="mceText"
-                                                      id="dataBlockId-44" style="width:100%">
-                                                      <p class="last-child"><em>Alien diplomacy
-                                                          officer at Meta</em></p>
-                                                    </div>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td
-                                                    style="padding-top:12px;padding-bottom:12px;padding-right:24px;padding-left:24px"
-                                                    class="mceBlockContainer" valign="top">
-                                                    <div data-block-id="48" class="mceText"
-                                                      id="dataBlockId-48" style="width:100%">
-                                                      <p class="last-child">Mark can help Harry as
-                                                        he has expertise in financial trading/market
-                                                        data which could be related to Harry's
-                                                        consulting practice for embedded finance.
-                                                        Moreover, Mark may possibly have connections
-                                                        within his trading markets that could be
-                                                        potential clients for Harry's project.</p>
-                                                    </div>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td
-                                                    style="padding-top:12px;padding-bottom:12px;padding-right:24px;padding-left:24px"
-                                                    class="mceBlockContainer" align="center"
-                                                    valign="top">
-                                                    <table align="center" border="0" cellpadding="0"
-                                                      cellspacing="0" role="presentation"
-                                                      data-block-id="5">
-                                                      <tbody>
-                                                        <tr class="mceStandardButton">
-                                                          <td
-                                                            style="background-color:#000000;border-radius:0;text-align:center"
-                                                            class="mceButton" valign="top"><a
-                                                              href="" target="_blank"
-                                                              style="background-color:#000000;border-radius:0;border:2px solid #000000;color:#ffffff;display:block;font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;font-size:16px;font-weight:normal;font-style:normal;padding:16px 28px;text-decoration:none;min-width:30px;text-align:center;direction:ltr;letter-spacing:0px">View
-                                                              all your matches →</a></td>
-                                                        </tr>
-                                                        <tr>
-                                                          <!--[if mso]>
-  <td align="center">
-  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:w="urn:schemas-microsoft-com:office:word"
-  href=""
-  style="v-text-anchor:middle; width:236.02px; height:55px;"
-  arcsize="0%"
-  strokecolor="#000000"
-  strokeweight="2px"
-  fillcolor="#000000">
-  <v:stroke dashstyle="solid"/>
-  <w:anchorlock />
-  <center style="
-  color: #ffffff;
-  display: block;
-  font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
-  font-size: 16;
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: 0px;
-  text-decoration: none;
-  text-align: center;
-  direction: ltr;"
-  >
-  View all your matches →
-  </center>
-  </v:roundrect>
-  </td>
-  <![endif]-->
-                                                        </tr>
-                                                      </tbody>
-                                                    </table>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td
-                                                    style="background-color:transparent;padding-top:20px;padding-bottom:20px;padding-right:24px;padding-left:24px"
-                                                    class="mceBlockContainer" valign="top">
-                                                    <table border="0" cellpadding="0"
-                                                      cellspacing="0" width="100%"
-                                                      style="background-color:transparent"
-                                                      role="presentation" data-block-id="6">
-                                                      <tbody>
-                                                        <tr>
-                                                          <td
-                                                            style="min-width:100%;border-top:2px solid #000000"
-                                                            valign="top"></td>
-                                                        </tr>
-                                                      </tbody>
-                                                    </table>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td
-                                                    style="padding-top:8px;padding-bottom:8px;padding-right:8px;padding-left:8px"
-                                                    class="mceLayoutContainer" valign="top">
-                                                    <table align="center" border="0" cellpadding="0"
-                                                      cellspacing="0" width="100%"
-                                                      role="presentation" data-block-id="11"
-                                                      id="section_68c048960255384ac59a1e1d144d2dab"
-                                                      class="mceFooterSection">
-                                                      <tbody>
-                                                        <tr class="mceRow">
-                                                          <td
-                                                            style="background-position:center;background-repeat:no-repeat;background-size:cover"
-                                                            valign="top">
-                                                            <table border="0" cellpadding="0"
-                                                              cellspacing="12" width="100%"
-                                                              role="presentation">
-                                                              <tbody>
-                                                                <tr>
-                                                                  <td
-                                                                    style="padding-top:0;padding-bottom:0;margin-bottom:12px"
-                                                                    class="mceColumn"
-                                                                    data-block-id="-3" valign="top"
-                                                                    colspan="12" width="100%">
-                                                                    <table border="0"
-                                                                      cellpadding="0"
-                                                                      cellspacing="0" width="100%"
-                                                                      role="presentation">
-                                                                      <tbody>
-                                                                        <tr>
-                                                                          <td
-                                                                            style="padding-top:12px;padding-bottom:12px;padding-right:48px;padding-left:48px"
-                                                                            class="mceBlockContainer"
-                                                                            align="center"
-                                                                            valign="top"><img
-                                                                              data-block-id="8"
-                                                                              width="130"
-                                                                              height="auto"
-                                                                              style="width:130px;height:auto;max-width:100%;display:block"
-                                                                              alt="Logo"
-                                                                              src="https://cdn-images.mailchimp.com/template_images/email/logo-placeholder.png"
-                                                                              class=""></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                          <td
-                                                                            style="padding-top:12px;padding-bottom:12px;padding-right:16px;padding-left:16px"
-                                                                            class="mceBlockContainer"
-                                                                            align="center"
-                                                                            valign="top">
-                                                                            <div data-block-id="9"
-                                                                              class="mceText"
-                                                                              id="dataBlockId-9"
-                                                                              style="display:inline-block;width:100%">
-                                                                              <p class="last-child">
-                                                                                <em><span
-                                                                                    style="font-size: 12px">Copyright
-                                                                                    (C)
-                                                                                    *|CURRENT_YEAR|*
-                                                                                    *|LIST:COMPANY|*.
-                                                                                    All rights
-                                                                                    reserved.</span></em><br><span
-                                                                                  style="font-size: 12px">*|IFNOT:ARCHIVE_PAGE|**|LIST:DESCRIPTION|**|END:IF|*</span><br><br><span
-                                                                                  style="font-size: 12px">Our
-                                                                                  mailing address
-                                                                                  is:</span><br><span
-                                                                                  style="font-size: 12px">*|IFNOT:ARCHIVE_PAGE|**|HTML:LIST_ADDRESS|**|END:IF|*</span><br><br><span
-                                                                                  style="font-size: 12px">Want
-                                                                                  to change how you
-                                                                                  receive these
-                                                                                  emails?</span><br><span
-                                                                                  style="font-size: 12px">You
-                                                                                  can </span><a
-                                                                                  href="*|UPDATE_PROFILE|*"><span
-                                                                                    style="font-size: 12px">update
-                                                                                    your
-                                                                                    preferences</span></a><span
-                                                                                  style="font-size: 12px">
-                                                                                  or </span><a
-                                                                                  href="*|UNSUB|*"><span
-                                                                                    style="font-size: 12px">unsubscribe</span></a>
-                                                                              </p>
-                                                                            </div>
-                                                                          </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                          <td
-                                                                            class="mceLayoutContainer"
-                                                                            align="center"
-                                                                            valign="top">
-                                                                            <table align="center"
-                                                                              border="0"
-                                                                              cellpadding="0"
-                                                                              cellspacing="0"
-                                                                              width="100%"
-                                                                              role="presentation"
-                                                                              data-block-id="-2">
-                                                                              <tbody>
-                                                                                <tr class="mceRow">
-                                                                                  <td
-                                                                                    style="background-position:center;background-repeat:no-repeat;background-size:cover"
-                                                                                    valign="top">
-                                                                                    <table
-                                                                                      border="0"
-                                                                                      cellpadding="0"
-                                                                                      cellspacing="0"
-                                                                                      width="100%"
-                                                                                      role="presentation">
-                                                                                      <tbody>
-                                                                                        <tr>
-                                                                                          <td
-                                                                                            class="mceColumn"
-                                                                                            data-block-id="-5"
-                                                                                            valign="top"
-                                                                                            colspan="12"
-                                                                                            width="100%">
-                                                                                            <table
-                                                                                              border="0"
-                                                                                              cellpadding="0"
-                                                                                              cellspacing="0"
-                                                                                              width="100%"
-                                                                                              role="presentation">
-                                                                                              <tbody>
-                                                                                                <tr>
-                                                                                                  <td
-                                                                                                    align="center"
-                                                                                                    valign="top">
-                                                                                                    <div>
-                                                                                                      <div
-                                                                                                        data-block-id="10">
-                                                                                                        <a href="http://eepurl.com/iyW1YE"
-                                                                                                          target="_blank"
-                                                                                                          rel="noopener noreferrer"><img
-                                                                                                            style="max-width:100%"
-                                                                                                            width="137"
-                                                                                                            height="53"
-                                                                                                            alt="Email Marketing Powered by Mailchimp"
-                                                                                                            title="Mailchimp Email Marketing"
-                                                                                                            src="https://cdn-images.mailchimp.com/monkey_rewards/intuit-mc-rewards-1.png"></a>
-                                                                                                      </div>
-                                                                                                    </div>
-                                                                                                  </td>
-                                                                                                </tr>
-                                                                                              </tbody>
-                                                                                            </table>
-                                                                                          </td>
-                                                                                        </tr>
-                                                                                      </tbody>
-                                                                                    </table>
-                                                                                  </td>
-                                                                                </tr>
-                                                                              </tbody>
-                                                                            </table>
-                                                                          </td>
-                                                                        </tr>
-                                                                      </tbody>
-                                                                    </table>
-                                                                  </td>
-                                                                </tr>
-                                                              </tbody>
-                                                            </table>
-                                                          </td>
-                                                        </tr>
-                                                      </tbody>
-                                                    </table>
-                                                  </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table><!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </center>
-  <script type="text/javascript"
-    src="/m2-Jh6/WYEL/wC3/NFQ/cQRQ0KbRKC4/XYX94GDtwX/RhRKT3wpKgg/Iis/fbik6eTc"></script>
-</body>
+      .mceText input {
+        margin-bottom: 0px;
+      }
 
+      .mceSpacing-12 .mceInput + .mceErrorMessage {
+        margin-top: -6px;
+      }
+
+      .mceText h1 {
+        margin-bottom: 0px;
+      }
+
+      .mceText p {
+        margin-bottom: 0px;
+      }
+
+      .mceText label {
+        margin-bottom: 0px;
+      }
+
+      .mceText input {
+        margin-bottom: 0px;
+      }
+
+      .mceSpacing-24 .mceInput + .mceErrorMessage {
+        margin-top: -12px;
+      }
+
+      .mceInput {
+        background-color: transparent;
+        border: 2px solid rgb(208, 208, 208);
+        width: 60%;
+        color: rgb(77, 77, 77);
+        display: block;
+      }
+
+      .mceInput[type='radio'],
+      .mceInput[type='checkbox'] {
+        float: left;
+        margin-right: 12px;
+        display: inline;
+        width: auto !important;
+      }
+
+      .mceLabel > .mceInput {
+        margin-bottom: 0px;
+        margin-top: 2px;
+      }
+
+      .mceLabel {
+        display: block;
+      }
+
+      .mceText p {
+        color: rgb(0, 0, 0);
+        font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.5;
+        text-align: center;
+        letter-spacing: 0px;
+        direction: ltr;
+      }
+
+      .mceText h1 {
+        color: rgb(0, 0, 0);
+        font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+        font-size: 31px;
+        font-weight: bold;
+        line-height: 1.5;
+        text-align: center;
+        letter-spacing: 0px;
+        direction: ltr;
+      }
+
+      .mceText a {
+        color: rgb(0, 0, 0);
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: underline;
+        direction: ltr;
+      }
+
+      @media only screen and (max-width: 480px) {
+        .mceText p {
+          font-size: 16px !important;
+          line-height: 1.5 !important;
+        }
+      }
+
+      @media only screen and (max-width: 480px) {
+        .mceText h1 {
+          font-size: 31px !important;
+          line-height: 1.5 !important;
+        }
+      }
+
+      @media only screen and (max-width: 480px) {
+        .mceBlockContainer {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+      }
+
+      #dataBlockId-9 p,
+      #dataBlockId-9 h1,
+      #dataBlockId-9 h2,
+      #dataBlockId-9 h3,
+      #dataBlockId-9 h4,
+      #dataBlockId-9 ul {
+        text-align: center;
+      }
+    </style>
+    <script
+      async=""
+      crossorigin="anonymous"
+      src="https://edge.fullstory.com/s/fs.js"
+    ></script>
+  </head>
+
+  <body>
+    <!--*|IF:MC_PREVIEW_TEXT|*-->
+    <!--[if !gte mso 9]><!----><span
+      class="mcnPreviewText"
+      style="
+        display: none;
+        font-size: 0px;
+        line-height: 0px;
+        max-height: 0px;
+        max-width: 0px;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        mso-hide: all;
+      "
+      >*|MC_PREVIEW_TEXT|*</span
+    ><!--<![endif]-->
+    <!--*|END:IF|*-->
+    <center>
+      <table
+        border="0"
+        cellpadding="0"
+        cellspacing="0"
+        height="100%"
+        width="100%"
+        id="bodyTable"
+        style="background-color: rgb(244, 244, 244)"
+      >
+        <tbody>
+          <tr>
+            <td class="bodyCell" align="center" valign="top">
+              <table
+                id="root"
+                border="0"
+                cellpadding="0"
+                cellspacing="0"
+                width="100%"
+              >
+                <tbody data-block-id="13" class="mceWrapper">
+                  <tr>
+                    <td align="center" valign="top" class="mceWrapperOuter">
+                      <!--[if (gte mso 9)|(IE)]><table align="center" border="0" cellspacing="0" cellpadding="0" width="660" style="width:660px;"><tr><td><![endif]-->
+                      <table
+                        border="0"
+                        cellpadding="0"
+                        cellspacing="0"
+                        width="100%"
+                        style="max-width: 660px"
+                        role="presentation"
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              style="
+                                background-color: #ffffff;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                              "
+                              class="mceWrapperInner"
+                              valign="top"
+                            >
+                              <table
+                                align="center"
+                                border="0"
+                                cellpadding="0"
+                                cellspacing="0"
+                                width="100%"
+                                role="presentation"
+                                data-block-id="12"
+                              >
+                                <tbody>
+                                  <tr class="mceRow">
+                                    <td
+                                      style="
+                                        background-position: center;
+                                        background-repeat: no-repeat;
+                                        background-size: cover;
+                                      "
+                                      valign="top"
+                                    >
+                                      <table
+                                        border="0"
+                                        cellpadding="0"
+                                        cellspacing="0"
+                                        width="100%"
+                                        role="presentation"
+                                      >
+                                        <tbody>
+                                          <tr>
+                                            <td
+                                              style="
+                                                padding-top: 0;
+                                                padding-bottom: 0;
+                                              "
+                                              class="mceColumn"
+                                              data-block-id="-4"
+                                              valign="top"
+                                              colspan="12"
+                                              width="100%"
+                                            >
+                                              <table
+                                                border="0"
+                                                cellpadding="0"
+                                                cellspacing="0"
+                                                width="100%"
+                                                role="presentation"
+                                              >
+                                                <tbody>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        padding-top: 12px;
+                                                        padding-bottom: 12px;
+                                                        padding-right: 48px;
+                                                        padding-left: 48px;
+                                                      "
+                                                      class="mceBlockContainer"
+                                                      align="center"
+                                                      valign="top"
+                                                    >
+                                                      <img
+                                                        data-block-id="2"
+                                                        width="130"
+                                                        height="auto"
+                                                        style="
+                                                          width: 130px;
+                                                          height: auto;
+                                                          max-width: 100%;
+                                                          display: block;
+                                                        "
+                                                        alt="Logo"
+                                                        src="https://firebasestorage.googleapis.com/v0/b/intronet-88bc5.appspot.com/o/mail-assets%2Fintronet-logo-transparent.png?alt=media&token=6a9ceb69-2e4c-498d-8a7d-a97c405309e7"
+                                                        class=""
+                                                      />
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        padding-top: 12px;
+                                                        padding-bottom: 12px;
+                                                        padding-right: 24px;
+                                                        padding-left: 24px;
+                                                      "
+                                                      class="mceBlockContainer"
+                                                      valign="top"
+                                                    >
+                                                      <div
+                                                        data-block-id="3"
+                                                        class="mceText"
+                                                        id="dataBlockId-3"
+                                                        style="width: 100%"
+                                                      >
+                                                        <h1>
+                                                          Meet your Angel Squad
+                                                          matches!
+                                                        </h1>
+                                                        <p><br /></p>
+                                                        <p>
+                                                          <em
+                                                            >Into the hat, ASKs
+                                                            and OFFERs we
+                                                            cast,</em
+                                                          >
+                                                        </p>
+                                                        <p>
+                                                          <em
+                                                            >Out came your
+                                                            matches, tailored
+                                                            and fast!</em
+                                                          >
+                                                        </p>
+                                                        <p>
+                                                          <em
+                                                            >Thanks for your
+                                                            time, and community
+                                                            cheer,</em
+                                                          >
+                                                        </p>
+                                                        <p>
+                                                          <em
+                                                            >Hoping from here,
+                                                            new friendships are
+                                                            near!</em
+                                                          >
+                                                        </p>
+                                                        <p class="last-child">
+                                                          <em>​</em>
+                                                        </p>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        padding-top: 12px;
+                                                        padding-bottom: 12px;
+                                                        padding-right: 24px;
+                                                        padding-left: 24px;
+                                                      "
+                                                      class="mceBlockContainer"
+                                                      align="center"
+                                                      valign="top"
+                                                    >
+                                                      <table
+                                                        align="center"
+                                                        border="0"
+                                                        cellpadding="0"
+                                                        cellspacing="0"
+                                                        role="presentation"
+                                                        data-block-id="25"
+                                                      >
+                                                        <tbody>
+                                                          <tr
+                                                            class="mceStandardButton"
+                                                          >
+                                                            <td
+                                                              style="
+                                                                background-color: #000000;
+                                                                border-radius: 0;
+                                                                text-align: center;
+                                                              "
+                                                              class="mceButton"
+                                                              valign="top"
+                                                            >
+                                                              <a
+                                                                href="{{viewAllMatchesUrl}}"
+                                                                target="_blank"
+                                                                style="
+                                                                  background-color: #000000;
+                                                                  border-radius: 0;
+                                                                  border: 2px
+                                                                    solid
+                                                                    #000000;
+                                                                  color: #ffffff;
+                                                                  display: block;
+                                                                  font-family: 'Helvetica Neue',
+                                                                    Helvetica,
+                                                                    Arial,
+                                                                    Verdana,
+                                                                    sans-serif;
+                                                                  font-size: 16px;
+                                                                  font-weight: normal;
+                                                                  font-style: normal;
+                                                                  padding: 16px
+                                                                    28px;
+                                                                  text-decoration: none;
+                                                                  min-width: 30px;
+                                                                  text-align: center;
+                                                                  direction: ltr;
+                                                                  letter-spacing: 0px;
+                                                                "
+                                                                >View your
+                                                                matches →</a
+                                                              >
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <!--[if mso]>
+                                                              <td
+                                                                align="center"
+                                                              >
+                                                                <v:roundrect
+                                                                  xmlns:v="urn:schemas-microsoft-com:vml"
+                                                                  xmlns:w="urn:schemas-microsoft-com:office:word"
+                                                                  href=""
+                                                                  style="
+                                                                    v-text-anchor: middle;
+                                                                    width: 215.88px;
+                                                                    height: 55px;
+                                                                  "
+                                                                  arcsize="0%"
+                                                                  strokecolor="#000000"
+                                                                  strokeweight="2px"
+                                                                  fillcolor="#000000"
+                                                                >
+                                                                  <v:stroke
+                                                                    dashstyle="solid"
+                                                                  />
+                                                                  <w:anchorlock />
+                                                                  <center
+                                                                    style="
+                                                                      color: #ffffff;
+                                                                      display: block;
+                                                                      font-family: 'Helvetica Neue',
+                                                                        Helvetica,
+                                                                        Arial,
+                                                                        Verdana,
+                                                                        sans-serif;
+                                                                      font-size: 16;
+                                                                      font-style: normal;
+                                                                      font-weight: normal;
+                                                                      letter-spacing: 0px;
+                                                                      text-decoration: none;
+                                                                      text-align: center;
+                                                                      direction: ltr;
+                                                                    "
+                                                                  >
+                                                                    <p>
+                                                                      View your
+                                                                      matches →
+                                                                    </p>
+                                                                  </center>
+                                                                </v:roundrect>
+                                                              </td>
+                                                            <![endif]-->
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        padding-top: 12px;
+                                                        padding-bottom: 6px;
+                                                        padding-right: 0;
+                                                        padding-left: 0;
+                                                      "
+                                                      class="mceBlockContainer"
+                                                      align="center"
+                                                      valign="top"
+                                                    >
+                                                      <img
+                                                        data-block-id="42"
+                                                        width="140"
+                                                        height="auto"
+                                                        style="
+                                                          width: 140px;
+                                                          height: auto;
+                                                          max-width: 100%;
+                                                          display: block;
+                                                        "
+                                                        alt=""
+                                                        src="https://mcusercontent.com/d4596874e9526c73eb5b6bae7/images/704f93da-237b-0aac-f8bd-32ac16d15ee4.jpeg"
+                                                        role="presentation"
+                                                        class="imageDropZone"
+                                                      />
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        padding-top: 6px;
+                                                        padding-bottom: 12px;
+                                                        padding-right: 24px;
+                                                        padding-left: 24px;
+                                                      "
+                                                      class="mceBlockContainer"
+                                                      valign="top"
+                                                    >
+                                                      <div
+                                                        data-block-id="43"
+                                                        class="mceText"
+                                                        id="dataBlockId-43"
+                                                        style="width: 100%"
+                                                      >
+                                                        <h1 class="last-child">
+                                                          {{firstMatchName}}
+                                                        </h1>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        padding-top: 12px;
+                                                        padding-bottom: 12px;
+                                                        padding-right: 24px;
+                                                        padding-left: 24px;
+                                                      "
+                                                      class="mceBlockContainer"
+                                                      valign="top"
+                                                    >
+                                                      <div
+                                                        data-block-id="44"
+                                                        class="mceText"
+                                                        id="dataBlockId-44"
+                                                        style="width: 100%"
+                                                      >
+                                                        <p class="last-child">
+                                                          <em
+                                                            >{{firstMatchHeadline}}</em
+                                                          >
+                                                        </p>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        padding-top: 12px;
+                                                        padding-bottom: 12px;
+                                                        padding-right: 24px;
+                                                        padding-left: 24px;
+                                                      "
+                                                      class="mceBlockContainer"
+                                                      valign="top"
+                                                    >
+                                                      <div
+                                                        data-block-id="48"
+                                                        class="mceText"
+                                                        id="dataBlockId-48"
+                                                        style="width: 100%"
+                                                      >
+                                                        <p class="last-child">
+                                                          {{firstMatchExplanation}}
+                                                        </p>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        padding-top: 12px;
+                                                        padding-bottom: 12px;
+                                                        padding-right: 24px;
+                                                        padding-left: 24px;
+                                                      "
+                                                      class="mceBlockContainer"
+                                                      align="center"
+                                                      valign="top"
+                                                    >
+                                                      <table
+                                                        align="center"
+                                                        border="0"
+                                                        cellpadding="0"
+                                                        cellspacing="0"
+                                                        role="presentation"
+                                                        data-block-id="5"
+                                                      >
+                                                        <tbody>
+                                                          <tr
+                                                            class="mceStandardButton"
+                                                          >
+                                                            <td
+                                                              style="
+                                                                background-color: #000000;
+                                                                border-radius: 0;
+                                                                text-align: center;
+                                                              "
+                                                              class="mceButton"
+                                                              valign="top"
+                                                            >
+                                                              <a
+                                                                href="{{viewAllMatchesUrl}}"
+                                                                target="_blank"
+                                                                style="
+                                                                  background-color: #000000;
+                                                                  border-radius: 0;
+                                                                  border: 2px
+                                                                    solid
+                                                                    #000000;
+                                                                  color: #ffffff;
+                                                                  display: block;
+                                                                  font-family: 'Helvetica Neue',
+                                                                    Helvetica,
+                                                                    Arial,
+                                                                    Verdana,
+                                                                    sans-serif;
+                                                                  font-size: 16px;
+                                                                  font-weight: normal;
+                                                                  font-style: normal;
+                                                                  padding: 16px
+                                                                    28px;
+                                                                  text-decoration: none;
+                                                                  min-width: 30px;
+                                                                  text-align: center;
+                                                                  direction: ltr;
+                                                                  letter-spacing: 0px;
+                                                                "
+                                                                >View all your
+                                                                matches →</a
+                                                              >
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <!--[if mso]>
+                                                              <td
+                                                                align="center"
+                                                              >
+                                                                <v:roundrect
+                                                                  xmlns:v="urn:schemas-microsoft-com:vml"
+                                                                  xmlns:w="urn:schemas-microsoft-com:office:word"
+                                                                  href=""
+                                                                  style="
+                                                                    v-text-anchor: middle;
+                                                                    width: 236.02px;
+                                                                    height: 55px;
+                                                                  "
+                                                                  arcsize="0%"
+                                                                  strokecolor="#000000"
+                                                                  strokeweight="2px"
+                                                                  fillcolor="#000000"
+                                                                >
+                                                                  <v:stroke
+                                                                    dashstyle="solid"
+                                                                  />
+                                                                  <w:anchorlock />
+                                                                  <center
+                                                                    style="
+                                                                      color: #ffffff;
+                                                                      display: block;
+                                                                      font-family: 'Helvetica Neue',
+                                                                        Helvetica,
+                                                                        Arial,
+                                                                        Verdana,
+                                                                        sans-serif;
+                                                                      font-size: 16;
+                                                                      font-style: normal;
+                                                                      font-weight: normal;
+                                                                      letter-spacing: 0px;
+                                                                      text-decoration: none;
+                                                                      text-align: center;
+                                                                      direction: ltr;
+                                                                    "
+                                                                  >
+                                                                    View all
+                                                                    your matches
+                                                                    →
+                                                                  </center>
+                                                                </v:roundrect>
+                                                              </td>
+                                                            <![endif]-->
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        background-color: transparent;
+                                                        padding-top: 20px;
+                                                        padding-bottom: 20px;
+                                                        padding-right: 24px;
+                                                        padding-left: 24px;
+                                                      "
+                                                      class="mceBlockContainer"
+                                                      valign="top"
+                                                    >
+                                                      <table
+                                                        border="0"
+                                                        cellpadding="0"
+                                                        cellspacing="0"
+                                                        width="100%"
+                                                        style="
+                                                          background-color: transparent;
+                                                        "
+                                                        role="presentation"
+                                                        data-block-id="6"
+                                                      >
+                                                        <tbody>
+                                                          <tr>
+                                                            <td
+                                                              style="
+                                                                min-width: 100%;
+                                                                border-top: 2px
+                                                                  solid #000000;
+                                                              "
+                                                              valign="top"
+                                                            ></td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        padding-top: 8px;
+                                                        padding-bottom: 8px;
+                                                        padding-right: 8px;
+                                                        padding-left: 8px;
+                                                      "
+                                                      class="mceLayoutContainer"
+                                                      valign="top"
+                                                    >
+                                                      <table
+                                                        align="center"
+                                                        border="0"
+                                                        cellpadding="0"
+                                                        cellspacing="0"
+                                                        width="100%"
+                                                        role="presentation"
+                                                        data-block-id="11"
+                                                        id="section_68c048960255384ac59a1e1d144d2dab"
+                                                        class="mceFooterSection"
+                                                      >
+                                                        <tbody>
+                                                          <tr class="mceRow">
+                                                            <td
+                                                              style="
+                                                                background-position: center;
+                                                                background-repeat: no-repeat;
+                                                                background-size: cover;
+                                                              "
+                                                              valign="top"
+                                                            >
+                                                              <table
+                                                                border="0"
+                                                                cellpadding="0"
+                                                                cellspacing="12"
+                                                                width="100%"
+                                                                role="presentation"
+                                                              >
+                                                                <tbody>
+                                                                  <tr>
+                                                                    <td
+                                                                      style="
+                                                                        padding-top: 0;
+                                                                        padding-bottom: 0;
+                                                                        margin-bottom: 12px;
+                                                                      "
+                                                                      class="mceColumn"
+                                                                      data-block-id="-3"
+                                                                      valign="top"
+                                                                      colspan="12"
+                                                                      width="100%"
+                                                                    >
+                                                                      <table
+                                                                        border="0"
+                                                                        cellpadding="0"
+                                                                        cellspacing="0"
+                                                                        width="100%"
+                                                                        role="presentation"
+                                                                      >
+                                                                        <tbody>
+                                                                          <tr>
+                                                                            <td
+                                                                              style="
+                                                                                padding-top: 12px;
+                                                                                padding-bottom: 12px;
+                                                                                padding-right: 48px;
+                                                                                padding-left: 48px;
+                                                                              "
+                                                                              class="mceBlockContainer"
+                                                                              align="center"
+                                                                              valign="top"
+                                                                            >
+                                                                              <img
+                                                                                data-block-id="8"
+                                                                                width="130"
+                                                                                height="auto"
+                                                                                style="
+                                                                                  width: 130px;
+                                                                                  height: auto;
+                                                                                  max-width: 100%;
+                                                                                  display: block;
+                                                                                "
+                                                                                alt="Logo"
+                                                                                src="https://firebasestorage.googleapis.com/v0/b/intronet-88bc5.appspot.com/o/mail-assets%2Fintronet-logo-transparent.png?alt=media&token=6a9ceb69-2e4c-498d-8a7d-a97c405309e7"
+                                                                                class=""
+                                                                              />
+                                                                            </td>
+                                                                          </tr>
+                                                                          <tr>
+                                                                            <td
+                                                                              style="
+                                                                                padding-top: 12px;
+                                                                                padding-bottom: 12px;
+                                                                                padding-right: 16px;
+                                                                                padding-left: 16px;
+                                                                              "
+                                                                              class="mceBlockContainer"
+                                                                              align="center"
+                                                                              valign="top"
+                                                                            >
+                                                                              <div
+                                                                                data-block-id="9"
+                                                                                class="mceText"
+                                                                                id="dataBlockId-9"
+                                                                                style="
+                                                                                  display: inline-block;
+                                                                                  width: 100%;
+                                                                                "
+                                                                              >
+                                                                                <p
+                                                                                  class="last-child"
+                                                                                >
+                                                                                  <em
+                                                                                    ><span
+                                                                                      style="
+                                                                                        font-size: 12px;
+                                                                                      "
+                                                                                      >Copyright
+                                                                                      (C)
+                                                                                      {{currentYear}}
+                                                                                      Intronet
+                                                                                      AI,
+                                                                                      Inc.
+                                                                                      All
+                                                                                      rights
+                                                                                      reserved.</span
+                                                                                    ></em
+                                                                                  ><br /><span
+                                                                                    style="
+                                                                                      font-size: 12px;
+                                                                                    "
+                                                                                  >
+                                                                                    {{listDescription}}</span
+                                                                                  ><br /><br /><span
+                                                                                    style="
+                                                                                      font-size: 12px;
+                                                                                    "
+                                                                                    >Our
+                                                                                    mailing
+                                                                                    address
+                                                                                    is:</span
+                                                                                  ><br /><span
+                                                                                    style="
+                                                                                      font-size: 12px;
+                                                                                    "
+                                                                                    >{{mailingAddress}}</span
+                                                                                  ><br /><br /><span
+                                                                                    style="
+                                                                                      font-size: 12px;
+                                                                                    "
+                                                                                    >Want
+                                                                                    to
+                                                                                    change
+                                                                                    how
+                                                                                    you
+                                                                                    receive
+                                                                                    these
+                                                                                    emails?</span
+                                                                                  ><br /><span
+                                                                                    style="
+                                                                                      font-size: 12px;
+                                                                                    "
+                                                                                    >You
+                                                                                    can </span
+                                                                                  ><a
+                                                                                    href="{{updatePreferencesUrl}}"
+                                                                                    ><span
+                                                                                      style="
+                                                                                        font-size: 12px;
+                                                                                      "
+                                                                                      >update
+                                                                                      your
+                                                                                      preferences</span
+                                                                                    ></a
+                                                                                  ><span
+                                                                                    style="
+                                                                                      font-size: 12px;
+                                                                                    "
+                                                                                  >
+                                                                                    or </span
+                                                                                  ><a
+                                                                                    href="{{unsubscribeUrl}}"
+                                                                                    ><span
+                                                                                      style="
+                                                                                        font-size: 12px;
+                                                                                      "
+                                                                                      >unsubscribe</span
+                                                                                    ></a
+                                                                                  >
+                                                                                </p>
+                                                                              </div>
+                                                                            </td>
+                                                                          </tr>
+                                                                        </tbody>
+                                                                      </table>
+                                                                    </td>
+                                                                  </tr>
+                                                                </tbody>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+    <script
+      type="text/javascript"
+      src="/m2-Jh6/WYEL/wC3/NFQ/cQRQ0KbRKC4/XYX94GDtwX/RhRKT3wpKgg/Iis/fbik6eTc"
+    ></script>
+  </body>
 </html>
