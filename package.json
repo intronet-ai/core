@@ -16,7 +16,8 @@
     "semantic-release": "semantic-release",
     "test:watch": "jest --watch",
     "test": "jest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "console": "FIREBASE_PROJECT=$(firebase use) NODE_ENV=$@ node_modules/.bin/ts-node repl.ts"
   },
   "repository": {
     "type": "git",
@@ -118,6 +119,7 @@
     "@faker-js/faker": "^7.6.0",
     "date-fns": "^2.29.3",
     "factory.ts": "^1.4.0",
+    "firebase-admin": "^11.10.1",
     "lodash": "^4.17.21",
     "pluralize": "^8.0.0"
   }
