@@ -4,5 +4,6 @@ export * from './assessmentRequest';
 export * from './community';
 export * from './mailTemplate';
 export * from './profile';
+export * from './request';
 export * from './response';
 export * from './run';
