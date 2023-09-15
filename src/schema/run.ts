@@ -1,6 +1,6 @@
 import { TimestampStub } from '../utils/TimestampStub';
 
-type Model = 'original' | 'differentiated-asks';
+export type Model = 'original'; // | 'differentiated-asks';
 
 export interface RunValue {
   createdAt: TimestampStub;
@@ -16,4 +16,5 @@ export interface RunValue {
   approvedAt: TimestampStub | null;
   estimatedApiCostCents?: number;
   actualApiCostCents?: number;
+  // type: 'extracting_requests' | 'matching';
 }

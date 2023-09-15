@@ -1,6 +1,9 @@
 import { TimestampStub } from '../utils/TimestampStub';
 import { makeAssessmentFactory } from './assessment';
-import { makeAssessmentRequestFactory } from './assessmentRequest';
+import {
+  // makeDifferentiatedAsksAssessmentRequestFactory,
+  makeOriginalAssessmentRequestFactory,
+} from './assessmentRequest';
 import { makeCommunityFactory } from './community';
 import { makeProfileFactory } from './profile';
 import { makeResponseFactory } from './response';
@@ -12,7 +15,10 @@ import { makeRunFactory } from './run';
 export function makeFactories(TimestampKlass: typeof TimestampStub) {
   return {
     assessmentFactory: makeAssessmentFactory(TimestampKlass),
-    assessmentRequestFactory: makeAssessmentRequestFactory(TimestampKlass),
+    originalAssessmentRequestFactory:
+      makeOriginalAssessmentRequestFactory(TimestampKlass),
+    // differentiatedAsksAssessmentRequestFactory:
+    //   makeDifferentiatedAsksAssessmentRequestFactory(TimestampKlass),
     responseFactory: makeResponseFactory(TimestampKlass),
     runFactory: makeRunFactory(TimestampKlass),
     communityFactory: makeCommunityFactory(TimestampKlass),

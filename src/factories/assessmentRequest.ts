@@ -1,11 +1,14 @@
 import * as Factory from 'factory.ts';
-import { AssessmentRequestValue } from '../schema';
+import {
+  // DifferentiatedAsksAssessmentRequest,
+  OriginalAssessmentRequest,
+} from '../schema';
 import { TimestampStub } from '../utils/TimestampStub';
 
-export const makeAssessmentRequestFactory = (
+export const makeOriginalAssessmentRequestFactory = (
   TimestampKlass: typeof TimestampStub
 ) =>
-  Factory.makeFactory<AssessmentRequestValue>({
+  Factory.makeFactory<OriginalAssessmentRequest>({
     createdAt: TimestampKlass.now(),
     updatedAt: TimestampKlass.now(),
     seekerResponseId: 'abc-123',
@@ -15,6 +18,7 @@ export const makeAssessmentRequestFactory = (
     error: null,
     communityId: 'abc-123',
     runId: 'def-456',
+    type: 'original',
     prompt: JSON.stringify({
       seeker: {
         id: 'abc-123',
@@ -45,3 +49,20 @@ export const makeAssessmentRequestFactory = (
     "PROVIDER-2-ID": { score: 0.2, explanation: "PROVIDER-2-NAME might assist SEEKER-NAME because ..." },
     ...`,
   });
+
+// export const makeDifferentiatedAsksAssessmentRequestFactory = (
+//   TimestampKlass: typeof TimestampStub
+// ) =>
+//   Factory.makeFactory<DifferentiatedAsksAssessmentRequest>({
+//     createdAt: TimestampKlass.now(),
+//     updatedAt: TimestampKlass.now(),
+//     sentAt: null,
+//     responseReceivedAt: null,
+//     error: null,
+//     communityId: 'abc-123',
+//     runId: 'def-456',
+//     type: 'differentiated-asks',
+//     prompt: 'Help with dancing; learning to juggle; finding a job in Singapore',
+//     systemMessage: `You'll be given free-form text from a user indicating what they are asking for help with. The user may be asking for one or multiple things. Please identify the separate things that the user is asking for, and return them in a JSON array. The input may or may not be delimited by a semicolon character. E.g. if the input was: "Help with finding connections in the Singaporean startup scene; Help with finding a job in Singapore", you should return ["finding connections in the Singaporean startup scene", "finding a job in Singapore"]. Please note that the user's requests might not always be separated by semicolons, and they might not always be phrased as 'Help with...'. Your API should be designed to handle a variety of input formats and phrasings.`,
+//     seekerResponseId: 'abc-123',
+//   });

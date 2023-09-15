@@ -1,13 +1,13 @@
 import { TimestampStub } from '../utils/TimestampStub';
+import { Model } from './run';
 
-export interface AssessmentRequestValue {
+export type AssessmentRequestValueBase<T extends Model, F> = F & {
+  type: T;
   createdAt: TimestampStub;
   updatedAt: TimestampStub;
   prompt: string;
   runId: string;
   communityId: string;
-  seekerResponseId: string;
-  providerResponseIds: Array<string>;
   systemMessage: string;
   sentAt: null | TimestampStub;
   // Currently this is typed to chatGPT's API schema
@@ -17,9 +17,27 @@ export interface AssessmentRequestValue {
   error: null | string;
   actualApiCostCents?: number;
   estimatedApiCostCents?: number;
-}
+};
 
-interface ChatGPTCompletionResult {
+export type OriginalAssessmentRequest = AssessmentRequestValueBase<
+  'original',
+  {
+    seekerResponseId: string;
+    providerResponseIds: Array<string>;
+  }
+>;
+
+// export type DifferentiatedAsksAssessmentRequest = AssessmentRequestValueBase<
+//   'differentiated-asks',
+//   {
+//     seekerResponseId: string;
+//   }
+// >;
+
+export type AssessmentRequestValue = OriginalAssessmentRequest;
+// | DifferentiatedAsksAssessmentRequest;
+
+export interface ChatGPTCompletionResult {
   created: number;
   usage: {
     completion_tokens: number;

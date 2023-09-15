@@ -1,5 +1,5 @@
 import { TimestampStub } from '../utils/TimestampStub';
-type Model = 'original' | 'differentiated-asks';
+export type Model = 'original';
 export interface RunValue {
     createdAt: TimestampStub;
     updatedAt: TimestampStub;
@@ -15,4 +15,3 @@ export interface RunValue {
     estimatedApiCostCents?: number;
     actualApiCostCents?: number;
 }
-export {};
