@@ -14,4 +14,5 @@ export const makeRunFactory = (TimestampKlass: typeof TimestampStub) =>
     communityId: '1',
     approvedAt: null,
     batchSize: 5,
+    model: 'original',
   });

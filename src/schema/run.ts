@@ -1,10 +1,13 @@
 import { TimestampStub } from '../utils/TimestampStub';
 
+type Model = 'original' | 'differentiated-asks';
+
 export interface RunValue {
   createdAt: TimestampStub;
   updatedAt: TimestampStub;
   assessmentRequestCount: number;
   assessmentCount: number;
+  model: Model;
   responseCount: number;
   communityId: string;
   batchSize: number;
