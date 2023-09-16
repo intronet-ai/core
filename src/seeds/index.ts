@@ -2,6 +2,8 @@ import { makeFactories } from '../factories';
 import { TimestampStub } from '../utils/TimestampStub';
 import { seedMailTemplates } from './mailTemplates';
 
+export { seedMailTemplates };
+
 // Seed the minimum required data to run e2e tests
 export function seedForTests(firestore: any) {
   return Promise.all([seedMailTemplates(firestore)]);
