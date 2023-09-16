@@ -9,8 +9,9 @@ export const makeAssessmentFactory = (TimestampKlass: typeof TimestampStub) =>
     updatedAt: TimestampKlass.now(),
     assessmentRequestId: Factory.each(i => String(i)),
     providerResponseId: Factory.each(i => String(i)),
-    providerName: faker.name.firstName(),
     seekerResponseId: Factory.each(i => String(i)),
+    providerName: faker.name.firstName(),
+    seekerAskId: Factory.each(i => String(i)),
     runId: Factory.each(i => String(i)),
     score: 0.5,
     explanation:

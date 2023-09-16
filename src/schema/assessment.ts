@@ -5,6 +5,7 @@ export interface AssessmentValue {
   updatedAt: TimestampStub;
   assessmentRequestId: string;
   seekerResponseId: string;
+  seekerAskId: string;
   providerResponseId: string;
   runId: string;
   score: number;
