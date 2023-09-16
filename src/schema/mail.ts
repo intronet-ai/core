@@ -1,6 +1,8 @@
+import { MailgunEvent } from '../factories/exampleData/mailgunWebhook';
 import { TimestampStub } from '../utils/TimestampStub';
 
 export interface MailValue {
+  // These properties are provided by the firebase mail extension...
   template: {
     data: unknown;
     name: string;
@@ -21,4 +23,6 @@ export interface MailValue {
     };
     attempts: number;
   };
+  // ... while these are provided by the mailgun event webhook (we manually add them to mail docs)
+  events: Array<MailgunEvent>;
 }

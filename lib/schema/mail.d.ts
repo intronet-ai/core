@@ -1,3 +1,4 @@
+import { MailgunEvent } from '../factories/exampleData/mailgunWebhook';
 import { TimestampStub } from '../utils/TimestampStub';
 export interface MailValue {
     template: {
@@ -20,4 +21,5 @@ export interface MailValue {
         };
         attempts: number;
     };
+    events: Array<MailgunEvent>;
 }

@@ -4,6 +4,7 @@ export * from './assessmentRequest';
 export * from './community';
 export * from './mail';
 export * from './mailTemplate';
+export * from './mailgunWebhook';
 export * from './profile';
 export * from './request';
 export * from './response';
