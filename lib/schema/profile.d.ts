@@ -1,5 +1,5 @@
 import { TimestampStub } from '../utils/TimestampStub';
-type EmailPreferenceKey = 'emailWithAsks' | 'emailWithOffers';
+type EmailPreferenceKey = 'emailInsideCommunities' | 'emailOutsideCommunities';
 export interface ProfileValue {
     createdAt: TimestampStub;
     updatedAt: TimestampStub;
@@ -13,4 +13,7 @@ export interface ProfileValue {
         [key in EmailPreferenceKey]: boolean;
     };
 }
+export declare const DEFAULT_EMAIL_PREFERENCES: {
+    [key in EmailPreferenceKey]: boolean;
+};
 export {};

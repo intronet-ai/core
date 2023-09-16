@@ -1,6 +1,6 @@
 import { TimestampStub } from '../utils/TimestampStub';
 
-type EmailPreferenceKey = 'emailWithAsks' | 'emailWithOffers';
+type EmailPreferenceKey = 'emailInsideCommunities' | 'emailOutsideCommunities';
 
 export interface ProfileValue {
   createdAt: TimestampStub;
@@ -13,3 +13,10 @@ export interface ProfileValue {
   photoStoragePath?: string;
   emailPreferences?: { [key in EmailPreferenceKey]: boolean };
 }
+
+export const DEFAULT_EMAIL_PREFERENCES: {
+  [key in EmailPreferenceKey]: boolean;
+} = {
+  emailInsideCommunities: true,
+  emailOutsideCommunities: true,
+};
