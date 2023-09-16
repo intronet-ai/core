@@ -27,3 +27,4 @@ export function makeFactories(TimestampKlass: typeof TimestampStub) {
 }
 
 export { exampleLinkedinProfile } from './exampleData/linkedin';
+export { exampleMail } from './exampleData/mail';
