@@ -1,21 +1,21 @@
 import * as Factory from 'factory.ts';
-import { OriginalAssessmentRequest } from '../schema';
+import { AssessmentRequestValue } from '../schema';
 import { TimestampStub } from '../utils/TimestampStub';
 
 export const makeAssessmentRequestFactory = (
   TimestampKlass: typeof TimestampStub
 ) =>
-  Factory.makeFactory<OriginalAssessmentRequest>({
+  Factory.makeFactory<AssessmentRequestValue>({
     createdAt: TimestampKlass.now(),
     updatedAt: TimestampKlass.now(),
     seekerResponseId: 'abc-123',
+    seekerAskId: 'def-456',
     providerResponseIds: ['def456', 'ghi789'],
     sentAt: null,
     responseReceivedAt: null,
     error: null,
     communityId: 'abc-123',
     runId: 'def-456',
-    type: 'original',
     prompt: JSON.stringify({
       seeker: {
         id: 'abc-123',

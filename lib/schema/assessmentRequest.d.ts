@@ -1,12 +1,13 @@
 import { TimestampStub } from '../utils/TimestampStub';
-import { Model } from './run';
-export type AssessmentRequestValueBase<T extends Model, F> = F & {
-    type: T;
+export interface AssessmentRequestValue {
     createdAt: TimestampStub;
     updatedAt: TimestampStub;
     prompt: string;
     runId: string;
     communityId: string;
+    seekerResponseId: string;
+    seekerAskId: string;
+    providerResponseIds: Array<string>;
     systemMessage: string;
     sentAt: null | TimestampStub;
     rawResponse?: ChatGPTCompletionResult;
@@ -15,12 +16,7 @@ export type AssessmentRequestValueBase<T extends Model, F> = F & {
     error: null | string;
     actualApiCostCents?: number;
     estimatedApiCostCents?: number;
-};
-export type OriginalAssessmentRequest = AssessmentRequestValueBase<'original', {
-    seekerResponseId: string;
-    providerResponseIds: Array<string>;
-}>;
-export type AssessmentRequestValue = OriginalAssessmentRequest;
+}
 export interface ChatGPTCompletionResult {
     created: number;
     usage: {

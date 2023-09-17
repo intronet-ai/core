@@ -1,7 +1,7 @@
 import { TimestampStub } from '../utils/TimestampStub';
 export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
     assessmentFactory: import("factory.ts").Factory<import("..").AssessmentValue, keyof import("..").AssessmentValue>;
-    assessmentRequestFactory: import("factory.ts").Factory<import("..").OriginalAssessmentRequest, "createdAt" | "updatedAt" | "seekerResponseId" | "runId" | "providerResponseIds" | "type" | "prompt" | "communityId" | "systemMessage" | "sentAt" | "rawResponse" | "responseReceivedAt" | "approved" | "error" | "actualApiCostCents" | "estimatedApiCostCents">;
+    assessmentRequestFactory: import("factory.ts").Factory<import("..").AssessmentRequestValue, keyof import("..").AssessmentRequestValue>;
     responseFactory: import("factory.ts").Factory<import("..").ResponseValue, keyof import("..").ResponseValue>;
     runFactory: import("factory.ts").Factory<import("..").RunValue, keyof import("..").RunValue>;
     communityFactory: import("factory.ts").Factory<import("..").CommunityValue, keyof import("..").CommunityValue>;
