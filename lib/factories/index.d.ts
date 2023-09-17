@@ -1,5 +1,6 @@
 import { TimestampStub } from '../utils/TimestampStub';
 export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
+    askFactory: import("factory.ts").Factory<import("..").AskValue, keyof import("..").AskValue>;
     assessmentFactory: import("factory.ts").Factory<import("..").AssessmentValue, keyof import("..").AssessmentValue>;
     assessmentRequestFactory: import("factory.ts").Factory<import("..").AssessmentRequestValue, keyof import("..").AssessmentRequestValue>;
     responseFactory: import("factory.ts").Factory<import("..").ResponseValue, keyof import("..").ResponseValue>;
