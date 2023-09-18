@@ -1,8 +1,8 @@
 import { MailgunEvent } from '../factories/exampleData/mailgunWebhook';
 import { TimestampStub } from '../utils/TimestampStub';
-export interface MailValue {
+export interface MailValue<T> {
     template: {
-        data: unknown;
+        data: T;
         name: string;
     };
     to: string;

@@ -1,10 +1,10 @@
 import { MailgunEvent } from '../factories/exampleData/mailgunWebhook';
 import { TimestampStub } from '../utils/TimestampStub';
 
-export interface MailValue {
+export interface MailValue<T> {
   // These properties are provided by the firebase mail extension...
   template: {
-    data: unknown;
+    data: T;
     name: string;
   };
   to: string;
