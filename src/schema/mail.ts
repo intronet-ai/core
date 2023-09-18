@@ -24,5 +24,5 @@ export interface MailValue<T> {
     attempts: number;
   };
   // ... while these are provided by the mailgun event webhook (we manually add them to mail docs)
-  events: Array<MailgunEvent>;
+  events?: Array<MailgunEvent>;
 }

@@ -3,6 +3,7 @@ import { makeAskFactory } from './ask';
 import { makeAssessmentFactory } from './assessment';
 import { makeAssessmentRequestFactory } from './assessmentRequest';
 import { makeCommunityFactory } from './community';
+import { makeMailFactory } from './mail';
 import { makeProfileFactory } from './profile';
 import { makeResponseFactory } from './response';
 import { makeRunFactory } from './run';
@@ -19,6 +20,7 @@ export function makeFactories(TimestampKlass: typeof TimestampStub) {
     runFactory: makeRunFactory(TimestampKlass),
     communityFactory: makeCommunityFactory(TimestampKlass),
     profileFactory: makeProfileFactory(TimestampKlass),
+    mailFactory: makeMailFactory(TimestampKlass),
   };
 }
 

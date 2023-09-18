@@ -21,5 +21,5 @@ export interface MailValue<T> {
         };
         attempts: number;
     };
-    events: Array<MailgunEvent>;
+    events?: Array<MailgunEvent>;
 }
