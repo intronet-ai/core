@@ -21,5 +21,7 @@ export interface MailValue<T> {
         };
         attempts: number;
     };
+    subject?: string;
     events?: Array<MailgunEvent>;
+    eventsSummary?: Record<MailgunEvent['event'], TimestampStub>;
 }
