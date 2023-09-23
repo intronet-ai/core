@@ -11,11 +11,17 @@ export interface AssessmentRequestValue {
     systemMessage: string;
     sentAt: null | TimestampStub;
     rawResponse?: ChatGPTCompletionResult;
+    response?: LLMCompletionResult;
     responseReceivedAt: null | TimestampStub;
     approved?: true;
     error: null | string;
     actualApiCostCents?: number;
     estimatedApiCostCents?: number;
+}
+export interface LLMCompletionResult {
+    response: string;
+    costCents: number;
+    model: string;
 }
 export interface ChatGPTCompletionResult {
     created: number;

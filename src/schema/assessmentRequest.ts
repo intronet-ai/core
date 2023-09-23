@@ -11,13 +11,23 @@ export interface AssessmentRequestValue {
   providerResponseIds: Array<string>;
   systemMessage: string;
   sentAt: null | TimestampStub;
-  // Currently this is typed to chatGPT's API schema
+
+  // Deprecated
   rawResponse?: ChatGPTCompletionResult;
+  // Replaced with:
+  response?: LLMCompletionResult;
+
   responseReceivedAt: null | TimestampStub;
   approved?: true;
   error: null | string;
   actualApiCostCents?: number;
   estimatedApiCostCents?: number;
+}
+
+export interface LLMCompletionResult {
+  response: string;
+  costCents: number;
+  model: string;
 }
 
 export interface ChatGPTCompletionResult {
