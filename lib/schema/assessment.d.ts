@@ -8,6 +8,7 @@ export interface AssessmentValue {
     providerResponseId: string;
     runId: string;
     score: number;
+    humanScore?: number;
     explanation: string;
     isSelected?: boolean;
     introRequestedAt?: TimestampStub;
