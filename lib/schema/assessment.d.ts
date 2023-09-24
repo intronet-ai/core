@@ -20,4 +20,5 @@ export interface AssessmentValue {
     providerPhotoStoragePath?: string;
     seekerName?: string;
     seekerEmail?: string;
+    askSummary?: string;
 }
