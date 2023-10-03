@@ -4,7 +4,7 @@ import { TimestampStub } from '../utils/TimestampStub';
 export interface ResponseValue {
   createdAt: TimestampStub;
   updatedAt: TimestampStub;
-  finalizedAt?: TimestampStub;
+  finalizedAt?: TimestampStub | null;
   name: string;
   email: string;
   communityId: string;
