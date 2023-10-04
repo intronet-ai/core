@@ -14,6 +14,7 @@ export interface AssessmentValue {
   isSelected?: boolean;
   introRequestedAt?: TimestampStub;
   introRequestText?: string;
+  communityId: string;
   communityName?: string;
   providerName?: string;
   providerEmail?: string;

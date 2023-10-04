@@ -11,6 +11,7 @@ export const makeAssessmentFactory = (TimestampKlass: typeof TimestampStub) =>
     providerResponseId: Factory.each(i => String(i)),
     seekerResponseId: Factory.each(i => String(i)),
     providerName: faker.name.firstName(),
+    communityId: Factory.each(i => String(i)),
     seekerAskId: Factory.each(i => String(i)),
     runId: Factory.each(i => String(i)),
     score: 0.5,
