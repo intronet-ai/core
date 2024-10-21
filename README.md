@@ -1,5 +1,3 @@
-# Impulse Core
+# Intronet Core
 
-Types and other shared utilities for all impulse npm projects.
-
-I envision eventually merging the firebase functions project with this project.
+This project contains types and other shared utilities used in other intronet packages.

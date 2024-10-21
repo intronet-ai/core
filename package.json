@@ -1,5 +1,5 @@
 {
-  "name": "impulse-core",
+  "name": "intronet-core",
   "version": "0.0.1",
   "description": "Core types and other shared resources for impulse typescript projects",
   "main": "./lib/index.js",
