@@ -1,13 +1,6 @@
 import { z } from 'zod';
 import { timestampStubSchema } from './common';
-
-// Zod schema for LinkedinProfile
-const linkedinProfileSchema = z.object({
-  name: z.string(),
-  headline: z.string(),
-  photoUrl: z.string(),
-  linkedinProfileUrl: z.string(),
-});
+import { linkedinProfileSchema } from './linkedin';
 
 // Zod schema for ResponseValue
 export const responseValueSchema = z.object({
@@ -25,5 +18,4 @@ export const responseValueSchema = z.object({
 });
 
 // TypeScript types inferred from zod schemas
-export type LinkedinProfile = z.infer<typeof linkedinProfileSchema>;
 export type ResponseValue = z.infer<typeof responseValueSchema>;

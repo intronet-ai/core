@@ -84,10 +84,55 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         email: string;
         linkedinProfileUrl?: string | undefined;
         linkedinProfile?: {
-            name: string;
+            state: string;
             headline: string;
-            photoUrl: string;
-            linkedinProfileUrl: string;
+            accomplishment_patents: any[];
+            country: string;
+            occupation: string;
+            education: any[];
+            gender: string;
+            city: string;
+            people_also_viewed: any[];
+            birth_date: string | null;
+            inferred_salary: {
+                min: number | null;
+                max: number | null;
+            };
+            background_cover_image_url: string;
+            industry: string;
+            follower_count: number | null;
+            recommendations: string[];
+            skills: string[];
+            accomplishment_publications: any[];
+            extra: {
+                github_profile_id: string | null;
+                twitter_profile_id: string | null;
+                facebook_profile_id: string | null;
+            };
+            personal_numbers: any[];
+            volunteer_work: any[];
+            public_identifier: string;
+            profile_pic_url: string;
+            first_name: string;
+            connections: number;
+            summary: string;
+            similarly_named_profiles: any[];
+            languages: string[];
+            accomplishment_courses: any[];
+            groups: any[];
+            last_name: string;
+            certifications: any[];
+            experiences: any[];
+            country_full_name: string;
+            full_name: string;
+            accomplishment_organisations: any[];
+            activities: any[];
+            personal_emails: string[];
+            accomplishment_test_scores: any[];
+            interests: any[];
+            articles: any[];
+            accomplishment_projects: any[];
+            accomplishment_honors_awards: any[];
         } | undefined;
     }, ("createdAt" | "updatedAt" | "communityId" | "name" | "uid" | "helpWanted" | "canOffer" | "finalizedAt" | "email") | ("linkedinProfileUrl" | "linkedinProfile")>;
     runFactory: import("factory.ts").Factory<{

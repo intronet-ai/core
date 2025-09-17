@@ -1,0 +1,57 @@
+import { z } from 'zod';
+
+// Zod schema for LinkedinProfile
+export const linkedinProfileSchema = z.object({
+  accomplishment_patents: z.array(z.any()),
+  country: z.string(),
+  occupation: z.string(),
+  education: z.array(z.any()),
+  gender: z.string(),
+  city: z.string(),
+  people_also_viewed: z.array(z.any()),
+  birth_date: z.string().nullable(),
+  inferred_salary: z.object({
+    min: z.number().nullable(),
+    max: z.number().nullable(),
+  }),
+  background_cover_image_url: z.string(),
+  industry: z.string(),
+  follower_count: z.number().nullable(),
+  recommendations: z.array(z.string()),
+  skills: z.array(z.string()),
+  accomplishment_publications: z.array(z.any()),
+  extra: z.object({
+    github_profile_id: z.string().nullable(),
+    twitter_profile_id: z.string().nullable(),
+    facebook_profile_id: z.string().nullable(),
+  }),
+  personal_numbers: z.array(z.any()),
+  state: z.string(),
+  volunteer_work: z.array(z.any()),
+  public_identifier: z.string(),
+  profile_pic_url: z.string(),
+  first_name: z.string(),
+  headline: z.string(),
+  connections: z.number(),
+  summary: z.string(),
+  similarly_named_profiles: z.array(z.any()),
+  languages: z.array(z.string()),
+  accomplishment_courses: z.array(z.any()),
+  groups: z.array(z.any()),
+  last_name: z.string(),
+  certifications: z.array(z.any()),
+  experiences: z.array(z.any()),
+  country_full_name: z.string(),
+  full_name: z.string(),
+  accomplishment_organisations: z.array(z.any()),
+  activities: z.array(z.any()),
+  personal_emails: z.array(z.string()),
+  accomplishment_test_scores: z.array(z.any()),
+  interests: z.array(z.any()),
+  articles: z.array(z.any()),
+  accomplishment_projects: z.array(z.any()),
+  accomplishment_honors_awards: z.array(z.any()),
+});
+
+// TypeScript type inferred from zod schema
+export type LinkedinProfile = z.infer<typeof linkedinProfileSchema>;
