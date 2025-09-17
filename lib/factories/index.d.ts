@@ -50,15 +50,28 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         sentAt: TimestampStub | null;
         responseReceivedAt: TimestampStub | null;
         error: string | null;
-        response?: {
-            response: string;
-            costCents: number;
-            model: string;
+        rawResponse?: {
+            object: "chat.completion";
+            id: string;
+            model: "gpt-4-0613";
+            created: number;
+            usage: {
+                completion_tokens: number;
+                prompt_tokens: number;
+                total_tokens: number;
+            };
+            choices: [{
+                message: {
+                    content: string;
+                };
+                finish_reason: "stop";
+                index: 0;
+            }];
         } | undefined;
         approved?: true | undefined;
         actualApiCostCents?: number | undefined;
         estimatedApiCostCents?: number | undefined;
-    }, ("createdAt" | "updatedAt" | "communityId" | "seekerResponseId" | "seekerAskId" | "runId" | "prompt" | "providerResponseIds" | "systemMessage" | "sentAt" | "responseReceivedAt" | "error") | ("response" | "approved" | "actualApiCostCents" | "estimatedApiCostCents")>;
+    }, ("createdAt" | "updatedAt" | "communityId" | "seekerResponseId" | "seekerAskId" | "runId" | "prompt" | "providerResponseIds" | "systemMessage" | "sentAt" | "responseReceivedAt" | "error") | ("rawResponse" | "approved" | "actualApiCostCents" | "estimatedApiCostCents")>;
     responseFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
@@ -69,10 +82,8 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         canOffer: string;
         finalizedAt: TimestampStub | null;
         email: string;
-        linkedinProfileUrl?: string | undefined;
         linkedinProfile?: {
             state: string;
-            headline: string;
             accomplishment_patents: any[];
             country: string;
             occupation: string;
@@ -101,6 +112,7 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             public_identifier: string;
             profile_pic_url: string;
             first_name: string;
+            headline: string;
             connections: number;
             summary: string;
             similarly_named_profiles: any[];
@@ -121,7 +133,8 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             accomplishment_projects: any[];
             accomplishment_honors_awards: any[];
         } | undefined;
-    }, ("createdAt" | "updatedAt" | "communityId" | "name" | "uid" | "helpWanted" | "canOffer" | "finalizedAt" | "email") | ("linkedinProfileUrl" | "linkedinProfile")>;
+        linkedinProfileUrl?: string | undefined;
+    }, ("createdAt" | "updatedAt" | "communityId" | "name" | "uid" | "helpWanted" | "canOffer" | "finalizedAt" | "email") | ("linkedinProfile" | "linkedinProfileUrl")>;
     runFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
@@ -148,15 +161,67 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         updatedAt: TimestampStub;
         name: string;
         uid: string;
+        communityId?: string | undefined;
+        headline?: string | undefined;
         helpWanted?: string | undefined;
         canOffer?: string | undefined;
-        headline?: string | undefined;
         photoStoragePath?: string | undefined;
         emailPreferences?: {
             emailInsideCommunities: boolean;
             emailOutsideCommunities: boolean;
         } | undefined;
-    }, ("createdAt" | "updatedAt" | "name" | "uid") | ("helpWanted" | "canOffer" | "headline" | "photoStoragePath" | "emailPreferences")>;
+        linkedinProfile?: {
+            state: string;
+            accomplishment_patents: any[];
+            country: string;
+            occupation: string;
+            education: any[];
+            gender: string;
+            city: string;
+            people_also_viewed: any[];
+            birth_date: string | null;
+            inferred_salary: {
+                min: number | null;
+                max: number | null;
+            };
+            background_cover_image_url: string;
+            industry: string;
+            follower_count: number | null;
+            recommendations: string[];
+            skills: string[];
+            accomplishment_publications: any[];
+            extra: {
+                github_profile_id: string | null;
+                twitter_profile_id: string | null;
+                facebook_profile_id: string | null;
+            };
+            personal_numbers: any[];
+            volunteer_work: any[];
+            public_identifier: string;
+            profile_pic_url: string;
+            first_name: string;
+            headline: string;
+            connections: number;
+            summary: string;
+            similarly_named_profiles: any[];
+            languages: string[];
+            accomplishment_courses: any[];
+            groups: any[];
+            last_name: string;
+            certifications: any[];
+            experiences: any[];
+            country_full_name: string;
+            full_name: string;
+            accomplishment_organisations: any[];
+            activities: any[];
+            personal_emails: string[];
+            accomplishment_test_scores: any[];
+            interests: any[];
+            articles: any[];
+            accomplishment_projects: any[];
+            accomplishment_honors_awards: any[];
+        } | undefined;
+    }, ("createdAt" | "updatedAt" | "name" | "uid") | ("communityId" | "headline" | "helpWanted" | "canOffer" | "photoStoragePath" | "emailPreferences" | "linkedinProfile")>;
     mailFactory: import("factory.ts").Factory<{
         template: {
             name: string;

@@ -13,12 +13,25 @@ export declare const makeAssessmentRequestFactory: (TimestampKlass: typeof Times
     sentAt: TimestampStub | null;
     responseReceivedAt: TimestampStub | null;
     error: string | null;
-    response?: {
-        response: string;
-        costCents: number;
-        model: string;
+    rawResponse?: {
+        object: "chat.completion";
+        id: string;
+        model: "gpt-4-0613";
+        created: number;
+        usage: {
+            completion_tokens: number;
+            prompt_tokens: number;
+            total_tokens: number;
+        };
+        choices: [{
+            message: {
+                content: string;
+            };
+            finish_reason: "stop";
+            index: 0;
+        }];
     } | undefined;
     approved?: true | undefined;
     actualApiCostCents?: number | undefined;
     estimatedApiCostCents?: number | undefined;
-}, ("createdAt" | "updatedAt" | "communityId" | "seekerResponseId" | "seekerAskId" | "runId" | "prompt" | "providerResponseIds" | "systemMessage" | "sentAt" | "responseReceivedAt" | "error") | ("response" | "approved" | "actualApiCostCents" | "estimatedApiCostCents")>;
+}, ("createdAt" | "updatedAt" | "communityId" | "seekerResponseId" | "seekerAskId" | "runId" | "prompt" | "providerResponseIds" | "systemMessage" | "sentAt" | "responseReceivedAt" | "error") | ("rawResponse" | "approved" | "actualApiCostCents" | "estimatedApiCostCents")>;

@@ -1,8 +1,5 @@
 import { z } from 'zod';
-import {
-  chatGptCompletionResultSchema,
-  llmCompletionResultSchema,
-} from './utils/chatgpt';
+import { chatGptCompletionResultSchema } from './utils/chatgpt';
 import { timestampStubSchema } from './utils/timestamps';
 
 // Zod schema for AssessmentRequest
@@ -17,7 +14,7 @@ export const assessmentRequestSchema = z.object({
   providerResponseIds: z.array(z.string()),
   systemMessage: z.string(),
   sentAt: timestampStubSchema.nullable(),
-  response: llmCompletionResultSchema.optional(),
+  rawResponse: chatGptCompletionResultSchema.optional(),
   responseReceivedAt: timestampStubSchema.nullable(),
   approved: z.literal(true).optional(),
   error: z.string().nullable(),
@@ -27,7 +24,6 @@ export const assessmentRequestSchema = z.object({
 
 // TypeScript types inferred from zod schemas
 export type AssessmentRequest = z.infer<typeof assessmentRequestSchema>;
-export type LLMCompletionResult = z.infer<typeof llmCompletionResultSchema>;
 export type ChatGPTCompletionResult = z.infer<
   typeof chatGptCompletionResultSchema
 >;

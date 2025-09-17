@@ -76,7 +76,6 @@ export declare const responseSchema: z.ZodObject<{
         accomplishment_honors_awards: z.ZodArray<z.ZodAny, "many">;
     }, "strip", z.ZodTypeAny, {
         state: string;
-        headline: string;
         accomplishment_patents: any[];
         country: string;
         occupation: string;
@@ -105,6 +104,7 @@ export declare const responseSchema: z.ZodObject<{
         public_identifier: string;
         profile_pic_url: string;
         first_name: string;
+        headline: string;
         connections: number;
         summary: string;
         similarly_named_profiles: any[];
@@ -126,7 +126,6 @@ export declare const responseSchema: z.ZodObject<{
         accomplishment_honors_awards: any[];
     }, {
         state: string;
-        headline: string;
         accomplishment_patents: any[];
         country: string;
         occupation: string;
@@ -155,6 +154,7 @@ export declare const responseSchema: z.ZodObject<{
         public_identifier: string;
         profile_pic_url: string;
         first_name: string;
+        headline: string;
         connections: number;
         summary: string;
         similarly_named_profiles: any[];
@@ -185,10 +185,8 @@ export declare const responseSchema: z.ZodObject<{
     canOffer: string;
     finalizedAt: import("../utils/TimestampStub").TimestampStub | null;
     email: string;
-    linkedinProfileUrl?: string | undefined;
     linkedinProfile?: {
         state: string;
-        headline: string;
         accomplishment_patents: any[];
         country: string;
         occupation: string;
@@ -217,6 +215,7 @@ export declare const responseSchema: z.ZodObject<{
         public_identifier: string;
         profile_pic_url: string;
         first_name: string;
+        headline: string;
         connections: number;
         summary: string;
         similarly_named_profiles: any[];
@@ -237,6 +236,7 @@ export declare const responseSchema: z.ZodObject<{
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     } | undefined;
+    linkedinProfileUrl?: string | undefined;
 }, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
@@ -247,10 +247,8 @@ export declare const responseSchema: z.ZodObject<{
     canOffer: string;
     finalizedAt: import("../utils/TimestampStub").TimestampStub | null;
     email: string;
-    linkedinProfileUrl?: string | undefined;
     linkedinProfile?: {
         state: string;
-        headline: string;
         accomplishment_patents: any[];
         country: string;
         occupation: string;
@@ -279,6 +277,7 @@ export declare const responseSchema: z.ZodObject<{
         public_identifier: string;
         profile_pic_url: string;
         first_name: string;
+        headline: string;
         connections: number;
         summary: string;
         similarly_named_profiles: any[];
@@ -299,5 +298,6 @@ export declare const responseSchema: z.ZodObject<{
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     } | undefined;
+    linkedinProfileUrl?: string | undefined;
 }>;
 export type Response = z.infer<typeof responseSchema>;

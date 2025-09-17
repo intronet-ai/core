@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { timestampStubSchema } from './utils/timestamps';
+import { linkedinProfileSchema } from './linkedin';
 
 type EmailPreferenceKey = 'emailInsideCommunities' | 'emailOutsideCommunities';
 
@@ -20,6 +21,8 @@ export const profileSchema = z.object({
   headline: z.string().optional(),
   photoStoragePath: z.string().optional(),
   emailPreferences: emailPreferencesSchema.optional(),
+  linkedinProfile: linkedinProfileSchema.optional(),
+  communityId: z.string().optional(), // Added for community association
 });
 
 // TypeScript type inferred from zod schema

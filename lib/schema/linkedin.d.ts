@@ -65,7 +65,6 @@ export declare const linkedinProfileSchema: z.ZodObject<{
     accomplishment_honors_awards: z.ZodArray<z.ZodAny, "many">;
 }, "strip", z.ZodTypeAny, {
     state: string;
-    headline: string;
     accomplishment_patents: any[];
     country: string;
     occupation: string;
@@ -94,6 +93,7 @@ export declare const linkedinProfileSchema: z.ZodObject<{
     public_identifier: string;
     profile_pic_url: string;
     first_name: string;
+    headline: string;
     connections: number;
     summary: string;
     similarly_named_profiles: any[];
@@ -115,7 +115,6 @@ export declare const linkedinProfileSchema: z.ZodObject<{
     accomplishment_honors_awards: any[];
 }, {
     state: string;
-    headline: string;
     accomplishment_patents: any[];
     country: string;
     occupation: string;
@@ -144,6 +143,7 @@ export declare const linkedinProfileSchema: z.ZodObject<{
     public_identifier: string;
     profile_pic_url: string;
     first_name: string;
+    headline: string;
     connections: number;
     summary: string;
     similarly_named_profiles: any[];
