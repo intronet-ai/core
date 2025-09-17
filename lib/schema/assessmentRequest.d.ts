@@ -55,6 +55,7 @@ declare const chatGptCompletionResultSchema: z.ZodObject<{
     object: z.ZodLiteral<"chat.completion">;
 }, "strip", z.ZodTypeAny, {
     object: "chat.completion";
+    id: string;
     model: "gpt-4-0613";
     created: number;
     usage: {
@@ -62,7 +63,6 @@ declare const chatGptCompletionResultSchema: z.ZodObject<{
         prompt_tokens: number;
         total_tokens: number;
     };
-    id: string;
     choices: [{
         message: {
             content: string;
@@ -72,6 +72,7 @@ declare const chatGptCompletionResultSchema: z.ZodObject<{
     }];
 }, {
     object: "chat.completion";
+    id: string;
     model: "gpt-4-0613";
     created: number;
     usage: {
@@ -79,7 +80,6 @@ declare const chatGptCompletionResultSchema: z.ZodObject<{
         prompt_tokens: number;
         total_tokens: number;
     };
-    id: string;
     choices: [{
         message: {
             content: string;
@@ -142,6 +142,7 @@ export declare const assessmentRequestValueSchema: z.ZodObject<{
         object: z.ZodLiteral<"chat.completion">;
     }, "strip", z.ZodTypeAny, {
         object: "chat.completion";
+        id: string;
         model: "gpt-4-0613";
         created: number;
         usage: {
@@ -149,7 +150,6 @@ export declare const assessmentRequestValueSchema: z.ZodObject<{
             prompt_tokens: number;
             total_tokens: number;
         };
-        id: string;
         choices: [{
             message: {
                 content: string;
@@ -159,6 +159,7 @@ export declare const assessmentRequestValueSchema: z.ZodObject<{
         }];
     }, {
         object: "chat.completion";
+        id: string;
         model: "gpt-4-0613";
         created: number;
         usage: {
@@ -166,7 +167,6 @@ export declare const assessmentRequestValueSchema: z.ZodObject<{
             prompt_tokens: number;
             total_tokens: number;
         };
-        id: string;
         choices: [{
             message: {
                 content: string;
@@ -196,10 +196,10 @@ export declare const assessmentRequestValueSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
-    communityId: string;
     seekerResponseId: string;
     seekerAskId: string;
     runId: string;
+    communityId: string;
     prompt: string;
     providerResponseIds: string[];
     systemMessage: string;
@@ -213,6 +213,7 @@ export declare const assessmentRequestValueSchema: z.ZodObject<{
     } | undefined;
     rawResponse?: {
         object: "chat.completion";
+        id: string;
         model: "gpt-4-0613";
         created: number;
         usage: {
@@ -220,7 +221,6 @@ export declare const assessmentRequestValueSchema: z.ZodObject<{
             prompt_tokens: number;
             total_tokens: number;
         };
-        id: string;
         choices: [{
             message: {
                 content: string;
@@ -235,10 +235,10 @@ export declare const assessmentRequestValueSchema: z.ZodObject<{
 }, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
-    communityId: string;
     seekerResponseId: string;
     seekerAskId: string;
     runId: string;
+    communityId: string;
     prompt: string;
     providerResponseIds: string[];
     systemMessage: string;
@@ -252,6 +252,7 @@ export declare const assessmentRequestValueSchema: z.ZodObject<{
     } | undefined;
     rawResponse?: {
         object: "chat.completion";
+        id: string;
         model: "gpt-4-0613";
         created: number;
         usage: {
@@ -259,7 +260,6 @@ export declare const assessmentRequestValueSchema: z.ZodObject<{
             prompt_tokens: number;
             total_tokens: number;
         };
-        id: string;
         choices: [{
             message: {
                 content: string;

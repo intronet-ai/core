@@ -1,16 +1,14 @@
 import { z } from 'zod';
 import { timestampStubSchema } from './common';
 
-// Zod schema for Ask
-export const askSchema = z.object({
+// Zod schema for Offer
+export const offerSchema = z.object({
   id: z.string(),
   description: z.string(),
   createdAt: timestampStubSchema,
   updatedAt: timestampStubSchema,
   expiredAt: timestampStubSchema.optional(),
-  fulfilledAt: timestampStubSchema.optional(),
-  fulfilledByUid: z.string().optional(),
 });
 
 // TypeScript type inferred from zod schema
-export type Ask = z.infer<typeof askSchema>;
+export type Offer = z.infer<typeof offerSchema>;

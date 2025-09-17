@@ -25,7 +25,6 @@ export declare const assessmentValueSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
-    communityId: string;
     assessmentRequestId: string;
     seekerResponseId: string;
     seekerAskId: string;
@@ -33,6 +32,7 @@ export declare const assessmentValueSchema: z.ZodObject<{
     runId: string;
     score: number;
     explanation: string;
+    communityId: string;
     humanScore?: number | undefined;
     isSelected?: boolean | undefined;
     introRequestedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
@@ -48,7 +48,6 @@ export declare const assessmentValueSchema: z.ZodObject<{
 }, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
-    communityId: string;
     assessmentRequestId: string;
     seekerResponseId: string;
     seekerAskId: string;
@@ -56,6 +55,7 @@ export declare const assessmentValueSchema: z.ZodObject<{
     runId: string;
     score: number;
     explanation: string;
+    communityId: string;
     humanScore?: number | undefined;
     isSelected?: boolean | undefined;
     introRequestedAt?: import("../utils/TimestampStub").TimestampStub | undefined;

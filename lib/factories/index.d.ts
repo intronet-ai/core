@@ -1,17 +1,17 @@
 import { TimestampStub } from '../utils/TimestampStub';
 export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
     askFactory: import("factory.ts").Factory<{
+        id: string;
+        description: string;
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
-        responseId: string;
-        communityId: string;
-        text: string;
-        tags: string[];
-    }, "createdAt" | "updatedAt" | "responseId" | "communityId" | "text" | "tags">;
+        expiredAt?: TimestampStub | undefined;
+        fulfilledAt?: TimestampStub | undefined;
+        fulfilledByUid?: string | undefined;
+    }, ("id" | "description" | "createdAt" | "updatedAt") | ("expiredAt" | "fulfilledAt" | "fulfilledByUid")>;
     assessmentFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
-        communityId: string;
         assessmentRequestId: string;
         seekerResponseId: string;
         seekerAskId: string;
@@ -19,6 +19,7 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         runId: string;
         score: number;
         explanation: string;
+        communityId: string;
         humanScore?: number | undefined;
         isSelected?: boolean | undefined;
         introRequestedAt?: TimestampStub | undefined;
@@ -31,14 +32,14 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         seekerName?: string | undefined;
         seekerEmail?: string | undefined;
         askSummary?: string | undefined;
-    }, ("createdAt" | "updatedAt" | "communityId" | "assessmentRequestId" | "seekerResponseId" | "seekerAskId" | "providerResponseId" | "runId" | "score" | "explanation") | ("humanScore" | "isSelected" | "introRequestedAt" | "introRequestText" | "communityName" | "providerName" | "providerEmail" | "providerHeadline" | "providerPhotoStoragePath" | "seekerName" | "seekerEmail" | "askSummary")>;
+    }, ("createdAt" | "updatedAt" | "assessmentRequestId" | "seekerResponseId" | "seekerAskId" | "providerResponseId" | "runId" | "score" | "explanation" | "communityId") | ("humanScore" | "isSelected" | "introRequestedAt" | "introRequestText" | "communityName" | "providerName" | "providerEmail" | "providerHeadline" | "providerPhotoStoragePath" | "seekerName" | "seekerEmail" | "askSummary")>;
     assessmentRequestFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
-        communityId: string;
         seekerResponseId: string;
         seekerAskId: string;
         runId: string;
+        communityId: string;
         prompt: string;
         providerResponseIds: string[];
         systemMessage: string;
@@ -52,6 +53,7 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         } | undefined;
         rawResponse?: {
             object: "chat.completion";
+            id: string;
             model: "gpt-4-0613";
             created: number;
             usage: {
@@ -59,7 +61,6 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
                 prompt_tokens: number;
                 total_tokens: number;
             };
-            id: string;
             choices: [{
                 message: {
                     content: string;
@@ -71,7 +72,7 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         approved?: true | undefined;
         actualApiCostCents?: number | undefined;
         estimatedApiCostCents?: number | undefined;
-    }, ("createdAt" | "updatedAt" | "communityId" | "seekerResponseId" | "seekerAskId" | "runId" | "prompt" | "providerResponseIds" | "systemMessage" | "sentAt" | "responseReceivedAt" | "error") | ("response" | "rawResponse" | "approved" | "actualApiCostCents" | "estimatedApiCostCents")>;
+    }, ("createdAt" | "updatedAt" | "seekerResponseId" | "seekerAskId" | "runId" | "communityId" | "prompt" | "providerResponseIds" | "systemMessage" | "sentAt" | "responseReceivedAt" | "error") | ("response" | "rawResponse" | "approved" | "actualApiCostCents" | "estimatedApiCostCents")>;
     responseFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;

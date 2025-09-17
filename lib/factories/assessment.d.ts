@@ -3,7 +3,6 @@ import { TimestampStub } from '../utils/TimestampStub';
 export declare const makeAssessmentFactory: (TimestampKlass: typeof TimestampStub) => Factory.Sync.Factory<{
     createdAt: TimestampStub;
     updatedAt: TimestampStub;
-    communityId: string;
     assessmentRequestId: string;
     seekerResponseId: string;
     seekerAskId: string;
@@ -11,6 +10,7 @@ export declare const makeAssessmentFactory: (TimestampKlass: typeof TimestampStu
     runId: string;
     score: number;
     explanation: string;
+    communityId: string;
     humanScore?: number | undefined;
     isSelected?: boolean | undefined;
     introRequestedAt?: TimestampStub | undefined;
@@ -23,4 +23,4 @@ export declare const makeAssessmentFactory: (TimestampKlass: typeof TimestampStu
     seekerName?: string | undefined;
     seekerEmail?: string | undefined;
     askSummary?: string | undefined;
-}, ("createdAt" | "updatedAt" | "communityId" | "assessmentRequestId" | "seekerResponseId" | "seekerAskId" | "providerResponseId" | "runId" | "score" | "explanation") | ("humanScore" | "isSelected" | "introRequestedAt" | "introRequestText" | "communityName" | "providerName" | "providerEmail" | "providerHeadline" | "providerPhotoStoragePath" | "seekerName" | "seekerEmail" | "askSummary")>;
+}, ("createdAt" | "updatedAt" | "assessmentRequestId" | "seekerResponseId" | "seekerAskId" | "providerResponseId" | "runId" | "score" | "explanation" | "communityId") | ("humanScore" | "isSelected" | "introRequestedAt" | "introRequestText" | "communityName" | "providerName" | "providerEmail" | "providerHeadline" | "providerPhotoStoragePath" | "seekerName" | "seekerEmail" | "askSummary")>;

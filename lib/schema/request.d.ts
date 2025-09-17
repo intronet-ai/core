@@ -8,14 +8,14 @@ export declare const requestValueSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
-    responseId: string;
-    text: string;
     type: "ask" | "offer";
+    text: string;
+    responseId: string;
 }, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
-    responseId: string;
-    text: string;
     type: "ask" | "offer";
+    text: string;
+    responseId: string;
 }>;
 export type RequestValue = z.infer<typeof requestValueSchema>;

@@ -3,10 +3,10 @@ import { TimestampStub } from '../utils/TimestampStub';
 export declare const makeAssessmentRequestFactory: (TimestampKlass: typeof TimestampStub) => Factory.Sync.Factory<{
     createdAt: TimestampStub;
     updatedAt: TimestampStub;
-    communityId: string;
     seekerResponseId: string;
     seekerAskId: string;
     runId: string;
+    communityId: string;
     prompt: string;
     providerResponseIds: string[];
     systemMessage: string;
@@ -20,6 +20,7 @@ export declare const makeAssessmentRequestFactory: (TimestampKlass: typeof Times
     } | undefined;
     rawResponse?: {
         object: "chat.completion";
+        id: string;
         model: "gpt-4-0613";
         created: number;
         usage: {
@@ -27,7 +28,6 @@ export declare const makeAssessmentRequestFactory: (TimestampKlass: typeof Times
             prompt_tokens: number;
             total_tokens: number;
         };
-        id: string;
         choices: [{
             message: {
                 content: string;
@@ -39,4 +39,4 @@ export declare const makeAssessmentRequestFactory: (TimestampKlass: typeof Times
     approved?: true | undefined;
     actualApiCostCents?: number | undefined;
     estimatedApiCostCents?: number | undefined;
-}, ("createdAt" | "updatedAt" | "communityId" | "seekerResponseId" | "seekerAskId" | "runId" | "prompt" | "providerResponseIds" | "systemMessage" | "sentAt" | "responseReceivedAt" | "error") | ("response" | "rawResponse" | "approved" | "actualApiCostCents" | "estimatedApiCostCents")>;
+}, ("createdAt" | "updatedAt" | "seekerResponseId" | "seekerAskId" | "runId" | "communityId" | "prompt" | "providerResponseIds" | "systemMessage" | "sentAt" | "responseReceivedAt" | "error") | ("response" | "rawResponse" | "approved" | "actualApiCostCents" | "estimatedApiCostCents")>;

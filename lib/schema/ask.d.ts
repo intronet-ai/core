@@ -1,24 +1,27 @@
 import { z } from 'zod';
-export declare const askValueSchema: z.ZodObject<{
+export declare const askSchema: z.ZodObject<{
+    id: z.ZodString;
+    description: z.ZodString;
     createdAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
     updatedAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
-    responseId: z.ZodString;
-    communityId: z.ZodString;
-    text: z.ZodString;
-    tags: z.ZodArray<z.ZodString, "many">;
+    expiredAt: z.ZodOptional<z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>;
+    fulfilledAt: z.ZodOptional<z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>;
+    fulfilledByUid: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
+    id: string;
+    description: string;
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
-    responseId: string;
-    communityId: string;
-    text: string;
-    tags: string[];
+    expiredAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    fulfilledAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    fulfilledByUid?: string | undefined;
 }, {
+    id: string;
+    description: string;
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
-    responseId: string;
-    communityId: string;
-    text: string;
-    tags: string[];
+    expiredAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    fulfilledAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    fulfilledByUid?: string | undefined;
 }>;
-export type AskValue = z.infer<typeof askValueSchema>;
+export type Ask = z.infer<typeof askSchema>;
