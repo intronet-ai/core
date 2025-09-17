@@ -1,44 +1,55 @@
-import { TimestampStub } from '../utils/TimestampStub';
+import { z } from 'zod';
+import { timestampStubSchema } from './common';
 
-export interface AssessmentRequestValue {
-  createdAt: TimestampStub;
-  updatedAt: TimestampStub;
-  prompt: string;
-  runId: string;
-  communityId: string;
-  seekerResponseId: string;
-  seekerAskId: string;
-  providerResponseIds: Array<string>;
-  systemMessage: string;
-  sentAt: null | TimestampStub;
+// Zod schema for LLMCompletionResult
+const llmCompletionResultSchema = z.object({
+  response: z.string(),
+  costCents: z.number(),
+  model: z.string(),
+});
 
+// Zod schema for ChatGPTCompletionResult
+const chatGptCompletionResultSchema = z.object({
+  created: z.number(),
+  usage: z.object({
+    completion_tokens: z.number(),
+    prompt_tokens: z.number(),
+    total_tokens: z.number(),
+  }),
+  model: z.literal('gpt-4-0613'),
+  id: z.string(),
+  choices: z.tuple([z.object({
+    finish_reason: z.literal('stop'),
+    index: z.literal(0),
+    message: z.object({ content: z.string() }),
+  })]),
+  object: z.literal('chat.completion'),
+});
+
+// Zod schema for AssessmentRequestValue
+export const assessmentRequestValueSchema = z.object({
+  createdAt: timestampStubSchema,
+  updatedAt: timestampStubSchema,
+  prompt: z.string(),
+  runId: z.string(),
+  communityId: z.string(),
+  seekerResponseId: z.string(),
+  seekerAskId: z.string(),
+  providerResponseIds: z.array(z.string()),
+  systemMessage: z.string(),
+  sentAt: timestampStubSchema.nullable(),
   // Deprecated
-  rawResponse?: ChatGPTCompletionResult;
+  rawResponse: chatGptCompletionResultSchema.optional(),
   // Replaced with:
-  response?: LLMCompletionResult;
+  response: llmCompletionResultSchema.optional(),
+  responseReceivedAt: timestampStubSchema.nullable(),
+  approved: z.literal(true).optional(),
+  error: z.string().nullable(),
+  actualApiCostCents: z.number().optional(),
+  estimatedApiCostCents: z.number().optional(),
+});
 
-  responseReceivedAt: null | TimestampStub;
-  approved?: true;
-  error: null | string;
-  actualApiCostCents?: number;
-  estimatedApiCostCents?: number;
-}
-
-export interface LLMCompletionResult {
-  response: string;
-  costCents: number;
-  model: string;
-}
-
-export interface ChatGPTCompletionResult {
-  created: number;
-  usage: {
-    completion_tokens: number;
-    prompt_tokens: number;
-    total_tokens: number;
-  };
-  model: 'gpt-4-0613';
-  id: string;
-  choices: [{ finish_reason: 'stop'; index: 0; message: { content: string } }];
-  object: 'chat.completion';
-}
+// TypeScript types inferred from zod schemas
+export type AssessmentRequestValue = z.infer<typeof assessmentRequestValueSchema>;
+export type LLMCompletionResult = z.infer<typeof llmCompletionResultSchema>;
+export type ChatGPTCompletionResult = z.infer<typeof chatGptCompletionResultSchema>;

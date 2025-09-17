@@ -1,21 +1,21 @@
 import { z } from 'zod';
-export declare const requestValueSchema: z.ZodObject<{
+export declare const sessionSchema: z.ZodObject<{
+    id: z.ZodOptional<z.ZodString>;
+    userId: z.ZodString;
+    expiresAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
     createdAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
     updatedAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
-    type: z.ZodEnum<["ask", "offer"]>;
-    text: z.ZodString;
-    responseId: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
-    responseId: string;
-    text: string;
-    type: "ask" | "offer";
+    userId: string;
+    expiresAt: import("../utils/TimestampStub").TimestampStub;
+    id?: string | undefined;
 }, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
-    responseId: string;
-    text: string;
-    type: "ask" | "offer";
+    userId: string;
+    expiresAt: import("../utils/TimestampStub").TimestampStub;
+    id?: string | undefined;
 }>;
-export type RequestValue = z.infer<typeof requestValueSchema>;
+export type Session = z.infer<typeof sessionSchema>;

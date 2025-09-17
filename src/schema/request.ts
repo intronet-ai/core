@@ -1,10 +1,14 @@
-import { TimestampStub } from '../utils/TimestampStub';
+import { z } from 'zod';
+import { timestampStubSchema } from './common';
 
-// A request is either an ask or an offer.
-export interface RequestValue {
-  createdAt: TimestampStub;
-  updatedAt: TimestampStub;
-  type: 'ask' | 'offer';
-  text: string;
-  responseId: string; // The response identifies the user who made the request.
-}
+// Zod schema for RequestValue
+export const requestValueSchema = z.object({
+  createdAt: timestampStubSchema,
+  updatedAt: timestampStubSchema,
+  type: z.enum(['ask', 'offer']),
+  text: z.string(),
+  responseId: z.string(), // The response identifies the user who made the request.
+});
+
+// TypeScript type inferred from zod schema
+export type RequestValue = z.infer<typeof requestValueSchema>;

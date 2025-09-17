@@ -8,9 +8,11 @@ export const makeResponseFactory = (TimestampKlass: typeof TimestampStub) =>
   Factory.makeFactory<ResponseValue>({
     createdAt: TimestampKlass.now(),
     updatedAt: TimestampKlass.now(),
+    finalizedAt: null,
     name: faker.name.firstName(),
     email: faker.internet.email(),
     communityId: faker.random.alphaNumeric(28),
+    uid: null,
     canOffer: Factory.each(() => sample(canOfferSamples) as string),
     helpWanted: Factory.each(() => sample(helpWantedSamples) as string),
   });

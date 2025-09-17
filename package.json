@@ -11,9 +11,8 @@
   "scripts": {
     "tsc:build": "tsc --project tsconfig.build.json",
     "clean": "rm -rf ./lib/",
-    "build": "yarn clean && yarn tsc:build && yarn copy:html",
+    "build": "npm run clean && npm run tsc:build && npm run copy:html",
     "cm": "cz",
-    "prepare": "husky install",
     "semantic-release": "semantic-release",
     "copy:html": "ncp ./src/mailTemplates ./lib/mailTemplates",
     "test:watch": "jest --watch",
@@ -40,7 +39,6 @@
     "typescript",
     "vscode",
     "jest",
-    "husky",
     "commitizen",
     "semantic-release",
     "codecov"
@@ -58,7 +56,6 @@
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "expo-location": "^15.1.1",
     "expo-server-sdk": "^3.7.0",
-    "husky": "^6.0.0",
     "jest": "^29.5.0",
     "ncp": "^2.0.0",
     "prettier": "^2.2.1",
@@ -124,6 +121,7 @@
     "factory.ts": "^1.4.0",
     "firebase-admin": "^11.10.1",
     "lodash": "^4.17.21",
-    "pluralize": "^8.0.0"
+    "pluralize": "^8.0.0",
+    "zod": "^3.25.76"
   }
 }

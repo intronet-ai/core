@@ -1,4 +1,26 @@
 import * as Factory from 'factory.ts';
-import { AssessmentValue } from '../schema/assessment';
 import { TimestampStub } from '../utils/TimestampStub';
-export declare const makeAssessmentFactory: (TimestampKlass: typeof TimestampStub) => Factory.Sync.Factory<AssessmentValue, keyof AssessmentValue>;
+export declare const makeAssessmentFactory: (TimestampKlass: typeof TimestampStub) => Factory.Sync.Factory<{
+    createdAt: TimestampStub;
+    updatedAt: TimestampStub;
+    communityId: string;
+    assessmentRequestId: string;
+    seekerResponseId: string;
+    seekerAskId: string;
+    providerResponseId: string;
+    runId: string;
+    score: number;
+    explanation: string;
+    humanScore?: number | undefined;
+    isSelected?: boolean | undefined;
+    introRequestedAt?: TimestampStub | undefined;
+    introRequestText?: string | undefined;
+    communityName?: string | undefined;
+    providerName?: string | undefined;
+    providerEmail?: string | undefined;
+    providerHeadline?: string | undefined;
+    providerPhotoStoragePath?: string | undefined;
+    seekerName?: string | undefined;
+    seekerEmail?: string | undefined;
+    askSummary?: string | undefined;
+}, ("createdAt" | "updatedAt" | "communityId" | "assessmentRequestId" | "seekerResponseId" | "seekerAskId" | "providerResponseId" | "runId" | "score" | "explanation") | ("humanScore" | "isSelected" | "introRequestedAt" | "introRequestText" | "communityName" | "providerName" | "providerEmail" | "providerHeadline" | "providerPhotoStoragePath" | "seekerName" | "seekerEmail" | "askSummary")>;

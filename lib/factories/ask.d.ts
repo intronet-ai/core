@@ -1,4 +1,10 @@
 import * as Factory from 'factory.ts';
-import { AskValue } from '../schema';
 import { TimestampStub } from '../utils/TimestampStub';
-export declare const makeAskFactory: (TimestampKlass: typeof TimestampStub) => Factory.Sync.Factory<AskValue, keyof AskValue>;
+export declare const makeAskFactory: (TimestampKlass: typeof TimestampStub) => Factory.Sync.Factory<{
+    createdAt: TimestampStub;
+    updatedAt: TimestampStub;
+    responseId: string;
+    communityId: string;
+    text: string;
+    tags: string[];
+}, "createdAt" | "updatedAt" | "responseId" | "communityId" | "text" | "tags">;

@@ -1,16 +1,29 @@
-import { LinkedinProfile } from '../factories/exampleData/linkedin';
-import { TimestampStub } from '../utils/TimestampStub';
+import { z } from 'zod';
+import { timestampStubSchema } from './common';
 
-export interface ResponseValue {
-  createdAt: TimestampStub;
-  updatedAt: TimestampStub;
-  finalizedAt?: TimestampStub | null;
-  name: string;
-  email: string;
-  communityId: string;
-  uid?: string;
-  helpWanted: string;
-  canOffer: string;
-  linkedinProfileUrl?: string;
-  linkedinProfile?: LinkedinProfile;
-}
+// Zod schema for LinkedinProfile
+const linkedinProfileSchema = z.object({
+  name: z.string(),
+  headline: z.string(),
+  photoUrl: z.string(),
+  linkedinProfileUrl: z.string(),
+});
+
+// Zod schema for ResponseValue
+export const responseValueSchema = z.object({
+  createdAt: timestampStubSchema,
+  updatedAt: timestampStubSchema,
+  finalizedAt: timestampStubSchema.nullable(),
+  name: z.string(),
+  email: z.string(),
+  communityId: z.string(),
+  uid: z.string().nullable(),
+  helpWanted: z.string(),
+  canOffer: z.string(),
+  linkedinProfileUrl: z.string().optional(),
+  linkedinProfile: linkedinProfileSchema.optional(),
+});
+
+// TypeScript types inferred from zod schemas
+export type LinkedinProfile = z.infer<typeof linkedinProfileSchema>;
+export type ResponseValue = z.infer<typeof responseValueSchema>;

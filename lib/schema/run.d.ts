@@ -1,17 +1,48 @@
-import { TimestampStub } from '../utils/TimestampStub';
-export type Model = 'original';
-export interface RunValue {
-    createdAt: TimestampStub;
-    updatedAt: TimestampStub;
+import { z } from 'zod';
+declare const modelSchema: z.ZodLiteral<"original">;
+export declare const runValueSchema: z.ZodObject<{
+    createdAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
+    updatedAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
+    assessmentRequestCount: z.ZodNumber;
+    assessmentCount: z.ZodNumber;
+    model: z.ZodLiteral<"original">;
+    responseCount: z.ZodNumber;
+    communityId: z.ZodString;
+    batchSize: z.ZodNumber;
+    apiRequestsCompletedAt: z.ZodNullable<z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>;
+    introductionsCompletedAt: z.ZodNullable<z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>;
+    approvedAt: z.ZodNullable<z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>;
+    estimatedApiCostCents: z.ZodOptional<z.ZodNumber>;
+    actualApiCostCents: z.ZodOptional<z.ZodNumber>;
+}, "strip", z.ZodTypeAny, {
+    createdAt: import("../utils/TimestampStub").TimestampStub;
+    updatedAt: import("../utils/TimestampStub").TimestampStub;
+    communityId: string;
+    model: "original";
     assessmentRequestCount: number;
     assessmentCount: number;
-    model: Model;
     responseCount: number;
-    communityId: string;
     batchSize: number;
-    apiRequestsCompletedAt: TimestampStub | null;
-    introductionsCompletedAt: TimestampStub | null;
-    approvedAt: TimestampStub | null;
-    estimatedApiCostCents?: number;
-    actualApiCostCents?: number;
-}
+    apiRequestsCompletedAt: import("../utils/TimestampStub").TimestampStub | null;
+    introductionsCompletedAt: import("../utils/TimestampStub").TimestampStub | null;
+    approvedAt: import("../utils/TimestampStub").TimestampStub | null;
+    actualApiCostCents?: number | undefined;
+    estimatedApiCostCents?: number | undefined;
+}, {
+    createdAt: import("../utils/TimestampStub").TimestampStub;
+    updatedAt: import("../utils/TimestampStub").TimestampStub;
+    communityId: string;
+    model: "original";
+    assessmentRequestCount: number;
+    assessmentCount: number;
+    responseCount: number;
+    batchSize: number;
+    apiRequestsCompletedAt: import("../utils/TimestampStub").TimestampStub | null;
+    introductionsCompletedAt: import("../utils/TimestampStub").TimestampStub | null;
+    approvedAt: import("../utils/TimestampStub").TimestampStub | null;
+    actualApiCostCents?: number | undefined;
+    estimatedApiCostCents?: number | undefined;
+}>;
+export type Model = z.infer<typeof modelSchema>;
+export type RunValue = z.infer<typeof runValueSchema>;
+export {};

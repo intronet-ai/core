@@ -1,18 +1,29 @@
-import { TimestampStub } from '../utils/TimestampStub';
+import { z } from 'zod';
+import { timestampStubSchema } from './common';
 
 type EmailPreferenceKey = 'emailInsideCommunities' | 'emailOutsideCommunities';
 
-export interface ProfileValue {
-  createdAt: TimestampStub;
-  updatedAt: TimestampStub;
-  uid: string;
-  helpWanted?: string;
-  canOffer?: string;
-  name: string;
-  headline?: string;
-  photoStoragePath?: string;
-  emailPreferences?: { [key in EmailPreferenceKey]: boolean };
-}
+// Zod schema for email preferences
+const emailPreferencesSchema = z.object({
+  emailInsideCommunities: z.boolean(),
+  emailOutsideCommunities: z.boolean(),
+});
+
+// Zod schema for ProfileValue
+export const profileValueSchema = z.object({
+  createdAt: timestampStubSchema,
+  updatedAt: timestampStubSchema,
+  uid: z.string(),
+  helpWanted: z.string().optional(),
+  canOffer: z.string().optional(),
+  name: z.string(),
+  headline: z.string().optional(),
+  photoStoragePath: z.string().optional(),
+  emailPreferences: emailPreferencesSchema.optional(),
+});
+
+// TypeScript type inferred from zod schema
+export type ProfileValue = z.infer<typeof profileValueSchema>;
 
 export const DEFAULT_EMAIL_PREFERENCES: {
   [key in EmailPreferenceKey]: boolean;
