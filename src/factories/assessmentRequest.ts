@@ -1,11 +1,11 @@
 import * as Factory from 'factory.ts';
-import { AssessmentRequestValue } from '../schema';
+import { AssessmentRequest } from '../schema';
 import { TimestampStub } from '../utils/TimestampStub';
 
 export const makeAssessmentRequestFactory = (
   TimestampKlass: typeof TimestampStub
 ) =>
-  Factory.makeFactory<AssessmentRequestValue>({
+  Factory.makeFactory<AssessmentRequest>({
     createdAt: TimestampKlass.now(),
     updatedAt: TimestampKlass.now(),
     seekerResponseId: 'abc-123',

@@ -18,4 +18,4 @@ export declare const mailTemplateValueSchema: z.ZodObject<{
     subject: string;
     requiredDataKeys: string[];
 }>;
-export type MailTemplateValue = z.infer<typeof mailTemplateValueSchema>;
+export type MailTemplate = z.infer<typeof mailTemplateValueSchema>;

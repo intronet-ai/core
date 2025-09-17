@@ -1,8 +1,8 @@
 import { z } from 'zod';
-import { timestampStubSchema } from './common';
+import { timestampStubSchema } from './utils/timestamps';
 
-// Zod schema for RequestValue
-export const requestValueSchema = z.object({
+// Zod schema for Request
+export const requestSchema = z.object({
   createdAt: timestampStubSchema,
   updatedAt: timestampStubSchema,
   type: z.enum(['ask', 'offer']),
@@ -11,4 +11,4 @@ export const requestValueSchema = z.object({
 });
 
 // TypeScript type inferred from zod schema
-export type RequestValue = z.infer<typeof requestValueSchema>;
+export type Request = z.infer<typeof requestSchema>;

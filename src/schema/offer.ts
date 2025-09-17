@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { timestampStubSchema } from './common';
+import { timestampStubSchema } from './utils/timestamps';
 
 // Zod schema for Offer
 export const offerSchema = z.object({

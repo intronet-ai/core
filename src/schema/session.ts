@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { timestampStubSchema } from './common';
+import { timestampStubSchema } from './utils/timestamps';
 
 // Zod schema for Session
 export const sessionSchema = z.object({

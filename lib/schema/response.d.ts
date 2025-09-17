@@ -1,5 +1,5 @@
 import { z } from 'zod';
-export declare const responseValueSchema: z.ZodObject<{
+export declare const responseSchema: z.ZodObject<{
     createdAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
     updatedAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
     finalizedAt: z.ZodNullable<z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>;
@@ -300,4 +300,4 @@ export declare const responseValueSchema: z.ZodObject<{
         accomplishment_honors_awards: any[];
     } | undefined;
 }>;
-export type ResponseValue = z.infer<typeof responseValueSchema>;
+export type Response = z.infer<typeof responseSchema>;

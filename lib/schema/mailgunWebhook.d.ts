@@ -235,4 +235,4 @@ export declare const mailgunWebhookValueSchema: z.ZodObject<{
         token: string;
     };
 }>;
-export type MailgunWebhookValue = z.infer<typeof mailgunWebhookValueSchema>;
+export type MailgunWebhook = z.infer<typeof mailgunWebhookValueSchema>;

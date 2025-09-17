@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { timestampStubSchema } from './common';
+import { timestampStubSchema } from './utils/timestamps';
 
 type EmailPreferenceKey = 'emailInsideCommunities' | 'emailOutsideCommunities';
 
@@ -9,8 +9,8 @@ const emailPreferencesSchema = z.object({
   emailOutsideCommunities: z.boolean(),
 });
 
-// Zod schema for ProfileValue
-export const profileValueSchema = z.object({
+// Zod schema for Profile
+export const profileSchema = z.object({
   createdAt: timestampStubSchema,
   updatedAt: timestampStubSchema,
   uid: z.string(),
@@ -23,7 +23,7 @@ export const profileValueSchema = z.object({
 });
 
 // TypeScript type inferred from zod schema
-export type ProfileValue = z.infer<typeof profileValueSchema>;
+export type Profile = z.infer<typeof profileSchema>;
 
 export const DEFAULT_EMAIL_PREFERENCES: {
   [key in EmailPreferenceKey]: boolean;

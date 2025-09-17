@@ -1,11 +1,11 @@
 import { z } from 'zod';
-import { timestampStubSchema } from './common';
+import { timestampStubSchema } from './utils/timestamps';
 
 // Zod schema for Model type
 const modelSchema = z.literal('original'); // | z.literal('differentiated-asks') when needed
 
-// Zod schema for RunValue
-export const runValueSchema = z.object({
+// Zod schema for Run
+export const runSchema = z.object({
   createdAt: timestampStubSchema,
   updatedAt: timestampStubSchema,
   assessmentRequestCount: z.number(),
@@ -24,4 +24,4 @@ export const runValueSchema = z.object({
 
 // TypeScript types inferred from zod schemas
 export type Model = z.infer<typeof modelSchema>;
-export type RunValue = z.infer<typeof runValueSchema>;
+export type Run = z.infer<typeof runSchema>;

@@ -1,5 +1,5 @@
 import { z } from 'zod';
-export declare const communityValueSchema: z.ZodObject<{
+export declare const CommunitySchema: z.ZodObject<{
     createdAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
     updatedAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
     name: z.ZodString;
@@ -15,4 +15,4 @@ export declare const communityValueSchema: z.ZodObject<{
     name: string;
     coverPictureStoragePath?: string | undefined;
 }>;
-export type CommunityValue = z.infer<typeof communityValueSchema>;
+export type Community = z.infer<typeof CommunitySchema>;

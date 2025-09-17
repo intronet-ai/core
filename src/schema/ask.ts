@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { timestampStubSchema } from './common';
+import { timestampStubSchema } from './utils/timestamps';
 
 // Zod schema for Ask
 export const askSchema = z.object({
@@ -10,6 +10,10 @@ export const askSchema = z.object({
   expiredAt: timestampStubSchema.optional(),
   fulfilledAt: timestampStubSchema.optional(),
   fulfilledByUid: z.string().optional(),
+  source: z.enum(['whatsapp', 'web']),
+  responseId: z.string().optional(),
+  communityId: z.string(),
+  communityName: z.string().optional(),
 });
 
 // TypeScript type inferred from zod schema

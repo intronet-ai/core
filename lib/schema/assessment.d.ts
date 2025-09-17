@@ -1,5 +1,5 @@
 import { z } from 'zod';
-export declare const assessmentValueSchema: z.ZodObject<{
+export declare const assessmentSchema: z.ZodObject<{
     createdAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
     updatedAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
     assessmentRequestId: z.ZodString;
@@ -25,6 +25,7 @@ export declare const assessmentValueSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
+    communityId: string;
     assessmentRequestId: string;
     seekerResponseId: string;
     seekerAskId: string;
@@ -32,12 +33,11 @@ export declare const assessmentValueSchema: z.ZodObject<{
     runId: string;
     score: number;
     explanation: string;
-    communityId: string;
+    communityName?: string | undefined;
     humanScore?: number | undefined;
     isSelected?: boolean | undefined;
     introRequestedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     introRequestText?: string | undefined;
-    communityName?: string | undefined;
     providerName?: string | undefined;
     providerEmail?: string | undefined;
     providerHeadline?: string | undefined;
@@ -48,6 +48,7 @@ export declare const assessmentValueSchema: z.ZodObject<{
 }, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
+    communityId: string;
     assessmentRequestId: string;
     seekerResponseId: string;
     seekerAskId: string;
@@ -55,12 +56,11 @@ export declare const assessmentValueSchema: z.ZodObject<{
     runId: string;
     score: number;
     explanation: string;
-    communityId: string;
+    communityName?: string | undefined;
     humanScore?: number | undefined;
     isSelected?: boolean | undefined;
     introRequestedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     introRequestText?: string | undefined;
-    communityName?: string | undefined;
     providerName?: string | undefined;
     providerEmail?: string | undefined;
     providerHeadline?: string | undefined;
@@ -69,4 +69,4 @@ export declare const assessmentValueSchema: z.ZodObject<{
     seekerEmail?: string | undefined;
     askSummary?: string | undefined;
 }>;
-export type AssessmentValue = z.infer<typeof assessmentValueSchema>;
+export type Assessment = z.infer<typeof assessmentSchema>;

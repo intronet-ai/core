@@ -1,11 +1,11 @@
 import { faker } from '@faker-js/faker';
 import * as Factory from 'factory.ts';
 import { sample } from 'lodash';
-import { ResponseValue } from '../schema';
+import { Response } from '../schema';
 import { TimestampStub } from '../utils/TimestampStub';
 
 export const makeResponseFactory = (TimestampKlass: typeof TimestampStub) =>
-  Factory.makeFactory<ResponseValue>({
+  Factory.makeFactory<Response>({
     createdAt: TimestampKlass.now(),
     updatedAt: TimestampKlass.now(),
     finalizedAt: null,

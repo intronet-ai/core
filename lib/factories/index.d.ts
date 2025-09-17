@@ -5,13 +5,18 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         description: string;
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
+        source: "whatsapp" | "web";
+        communityId: string;
         expiredAt?: TimestampStub | undefined;
         fulfilledAt?: TimestampStub | undefined;
         fulfilledByUid?: string | undefined;
-    }, ("id" | "description" | "createdAt" | "updatedAt") | ("expiredAt" | "fulfilledAt" | "fulfilledByUid")>;
+        responseId?: string | undefined;
+        communityName?: string | undefined;
+    }, ("id" | "description" | "createdAt" | "updatedAt" | "source" | "communityId") | ("expiredAt" | "fulfilledAt" | "fulfilledByUid" | "responseId" | "communityName")>;
     assessmentFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
+        communityId: string;
         assessmentRequestId: string;
         seekerResponseId: string;
         seekerAskId: string;
@@ -19,12 +24,11 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         runId: string;
         score: number;
         explanation: string;
-        communityId: string;
+        communityName?: string | undefined;
         humanScore?: number | undefined;
         isSelected?: boolean | undefined;
         introRequestedAt?: TimestampStub | undefined;
         introRequestText?: string | undefined;
-        communityName?: string | undefined;
         providerName?: string | undefined;
         providerEmail?: string | undefined;
         providerHeadline?: string | undefined;
@@ -32,14 +36,14 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         seekerName?: string | undefined;
         seekerEmail?: string | undefined;
         askSummary?: string | undefined;
-    }, ("createdAt" | "updatedAt" | "assessmentRequestId" | "seekerResponseId" | "seekerAskId" | "providerResponseId" | "runId" | "score" | "explanation" | "communityId") | ("humanScore" | "isSelected" | "introRequestedAt" | "introRequestText" | "communityName" | "providerName" | "providerEmail" | "providerHeadline" | "providerPhotoStoragePath" | "seekerName" | "seekerEmail" | "askSummary")>;
+    }, ("createdAt" | "updatedAt" | "communityId" | "assessmentRequestId" | "seekerResponseId" | "seekerAskId" | "providerResponseId" | "runId" | "score" | "explanation") | ("communityName" | "humanScore" | "isSelected" | "introRequestedAt" | "introRequestText" | "providerName" | "providerEmail" | "providerHeadline" | "providerPhotoStoragePath" | "seekerName" | "seekerEmail" | "askSummary")>;
     assessmentRequestFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
+        communityId: string;
         seekerResponseId: string;
         seekerAskId: string;
         runId: string;
-        communityId: string;
         prompt: string;
         providerResponseIds: string[];
         systemMessage: string;
@@ -51,28 +55,10 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             costCents: number;
             model: string;
         } | undefined;
-        rawResponse?: {
-            object: "chat.completion";
-            id: string;
-            model: "gpt-4-0613";
-            created: number;
-            usage: {
-                completion_tokens: number;
-                prompt_tokens: number;
-                total_tokens: number;
-            };
-            choices: [{
-                message: {
-                    content: string;
-                };
-                finish_reason: "stop";
-                index: 0;
-            }];
-        } | undefined;
         approved?: true | undefined;
         actualApiCostCents?: number | undefined;
         estimatedApiCostCents?: number | undefined;
-    }, ("createdAt" | "updatedAt" | "seekerResponseId" | "seekerAskId" | "runId" | "communityId" | "prompt" | "providerResponseIds" | "systemMessage" | "sentAt" | "responseReceivedAt" | "error") | ("response" | "rawResponse" | "approved" | "actualApiCostCents" | "estimatedApiCostCents")>;
+    }, ("createdAt" | "updatedAt" | "communityId" | "seekerResponseId" | "seekerAskId" | "runId" | "prompt" | "providerResponseIds" | "systemMessage" | "sentAt" | "responseReceivedAt" | "error") | ("response" | "approved" | "actualApiCostCents" | "estimatedApiCostCents")>;
     responseFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
@@ -171,7 +157,82 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             emailOutsideCommunities: boolean;
         } | undefined;
     }, ("createdAt" | "updatedAt" | "name" | "uid") | ("helpWanted" | "canOffer" | "headline" | "photoStoragePath" | "emailPreferences")>;
-    mailFactory: import("factory.ts").Factory<import("..").MailValue<any>, keyof import("..").MailValue<any>>;
+    mailFactory: import("factory.ts").Factory<{
+        template: {
+            name: string;
+            data?: any;
+        };
+        to: string;
+        delivery: {
+            error: null;
+            info: {
+                response: string;
+                rejected: unknown[];
+                pending: unknown[];
+                messageId: string;
+                accepted: string[];
+            };
+            startTime: TimestampStub;
+            leaseExpireTime: null;
+            state: string;
+            endTime: TimestampStub;
+            attempts: number;
+        };
+        html?: string | undefined;
+        subject?: string | undefined;
+        events?: {
+            'delivery-status': {
+                'session-seconds': number;
+                'attempt-no': number;
+                code: number;
+                utf8: boolean;
+                description: string;
+                tls: boolean;
+                message: string;
+                'mx-host': string;
+                'certificate-verified': boolean;
+            };
+            flags: {
+                'is-system-test': boolean;
+                'is-routed': boolean;
+                'is-authenticated': boolean;
+                'is-test-mode': boolean;
+            };
+            storage: {
+                url: string;
+                key: string;
+            };
+            message: {
+                headers: {
+                    subject: string;
+                    'message-id': string;
+                    from: string;
+                    to: string;
+                };
+                attachments: never[];
+                size: number;
+            };
+            tags: string[];
+            'user-variables': {
+                'my-var-2': string;
+                my_var_1: string;
+            };
+            envelope: {
+                'sending-ip': string;
+                sender: string;
+                transport: string;
+                targets: string;
+            };
+            campaigns: never[];
+            'log-level': string;
+            recipient: string;
+            id: string;
+            'recipient-domain': string;
+            event: string;
+            timestamp: number;
+        }[] | undefined;
+        eventsSummary?: Record<string, TimestampStub> | undefined;
+    }, ("template" | "to" | "delivery") | ("html" | "subject" | "events" | "eventsSummary")>;
 };
 export { exampleLinkedinProfile } from './exampleData/linkedin';
 export { exampleMail } from './exampleData/mail';

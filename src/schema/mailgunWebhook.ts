@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { timestampStubSchema } from './common';
 import { MailgunEvent } from '../factories/exampleData/mailgunWebhook';
+import { timestampStubSchema } from './utils/timestamps';
 
 // Zod schema for signature object
 const signatureSchema = z.object({
@@ -13,7 +13,7 @@ const signatureSchema = z.object({
 // In the future, this could be converted to a proper zod schema
 const mailgunEventSchema = z.any() as z.ZodType<MailgunEvent>;
 
-// Zod schema for MailgunWebhookValue
+// Zod schema for MailgunWebhook
 export const mailgunWebhookValueSchema = z.object({
   'event-data': mailgunEventSchema,
   createdAt: timestampStubSchema,
@@ -22,4 +22,4 @@ export const mailgunWebhookValueSchema = z.object({
 });
 
 // TypeScript type inferred from zod schema
-export type MailgunWebhookValue = z.infer<typeof mailgunWebhookValueSchema>;
+export type MailgunWebhook = z.infer<typeof mailgunWebhookValueSchema>;

@@ -5,7 +5,11 @@ export declare const makeAskFactory: (TimestampKlass: typeof TimestampStub) => F
     description: string;
     createdAt: TimestampStub;
     updatedAt: TimestampStub;
+    source: "whatsapp" | "web";
+    communityId: string;
     expiredAt?: TimestampStub | undefined;
     fulfilledAt?: TimestampStub | undefined;
     fulfilledByUid?: string | undefined;
-}, ("id" | "description" | "createdAt" | "updatedAt") | ("expiredAt" | "fulfilledAt" | "fulfilledByUid")>;
+    responseId?: string | undefined;
+    communityName?: string | undefined;
+}, ("id" | "description" | "createdAt" | "updatedAt" | "source" | "communityId") | ("expiredAt" | "fulfilledAt" | "fulfilledByUid" | "responseId" | "communityName")>;

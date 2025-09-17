@@ -1,8 +1,8 @@
 import { z } from 'zod';
-import { timestampStubSchema } from './common';
+import { timestampStubSchema } from './utils/timestamps';
 
 // Zod schema for message roles
-export const roleSchema = z.enum(["user", "assistant", "tool", "system"]);
+export const roleSchema = z.enum(['user', 'assistant', 'tool', 'system']);
 
 // Zod schema for tool calls
 export const toolCallSchema = z.object({
@@ -10,7 +10,7 @@ export const toolCallSchema = z.object({
   role: roleSchema,
   args: z.unknown().optional(),
   result: z.unknown().optional(),
-  status: z.enum(["started", "success", "error"]).optional(),
+  status: z.enum(['started', 'success', 'error']).optional(),
   errorMessage: z.string().optional(),
   startedAt: timestampStubSchema.optional(),
   completedAt: timestampStubSchema.optional(),
@@ -25,7 +25,7 @@ const baseMessageSchema = z.object({
 
 // User message schema
 export const userMessageSchema = baseMessageSchema.extend({
-  role: z.literal("user"),
+  role: z.literal('user'),
   message: z.string(),
   senderId: z.string(),
   senderName: z.string(),
@@ -34,26 +34,26 @@ export const userMessageSchema = baseMessageSchema.extend({
 
 // Assistant message schema
 export const assistantMessageSchema = baseMessageSchema.extend({
-  role: z.literal("assistant"),
+  role: z.literal('assistant'),
   message: z.string(),
   toolCall: toolCallSchema.optional(),
 });
 
 // Tool message schema
 export const toolMessageSchema = baseMessageSchema.extend({
-  role: z.literal("tool"),
+  role: z.literal('tool'),
   message: z.string(),
   toolCall: toolCallSchema,
 });
 
 // System message schema
 export const systemMessageSchema = baseMessageSchema.extend({
-  role: z.literal("system"),
+  role: z.literal('system'),
   message: z.string(),
 });
 
 // Union schema for all message roles
-export const messageSchema = z.discriminatedUnion("role", [
+export const messageSchema = z.discriminatedUnion('role', [
   userMessageSchema,
   assistantMessageSchema,
   toolMessageSchema,
@@ -77,11 +77,11 @@ export type Message =
 
 // Type guards for message discrimination
 export const isUserMessage = (message: Message): message is UserMessage =>
-  message.role === "user";
+  message.role === 'user';
 export const isAssistantMessage = (
   message: Message
-): message is AssistantMessage => message.role === "assistant";
+): message is AssistantMessage => message.role === 'assistant';
 export const isToolMessage = (message: Message): message is ToolMessage =>
-  message.role === "tool";
+  message.role === 'tool';
 export const isSystemMessage = (message: Message): message is SystemMessage =>
-  message.role === "system";
+  message.role === 'system';

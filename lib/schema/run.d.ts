@@ -1,6 +1,6 @@
 import { z } from 'zod';
 declare const modelSchema: z.ZodLiteral<"original">;
-export declare const runValueSchema: z.ZodObject<{
+export declare const runSchema: z.ZodObject<{
     createdAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
     updatedAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
     assessmentRequestCount: z.ZodNumber;
@@ -44,5 +44,5 @@ export declare const runValueSchema: z.ZodObject<{
     estimatedApiCostCents?: number | undefined;
 }>;
 export type Model = z.infer<typeof modelSchema>;
-export type RunValue = z.infer<typeof runValueSchema>;
+export type Run = z.infer<typeof runSchema>;
 export {};

@@ -1,10 +1,10 @@
 import { faker } from '@faker-js/faker';
 import * as Factory from 'factory.ts';
-import { AssessmentValue } from '../schema/assessment';
+import { Assessment } from '../schema/assessment';
 import { TimestampStub } from '../utils/TimestampStub';
 
 export const makeAssessmentFactory = (TimestampKlass: typeof TimestampStub) =>
-  Factory.makeFactory<AssessmentValue>({
+  Factory.makeFactory<Assessment>({
     createdAt: TimestampKlass.now(),
     updatedAt: TimestampKlass.now(),
     assessmentRequestId: Factory.each(i => String(i)),

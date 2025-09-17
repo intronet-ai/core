@@ -1,8 +1,8 @@
 import { z } from 'zod';
-import { timestampStubSchema } from './common';
+import { timestampStubSchema } from './utils/timestamps';
 
-// Zod schema for AssessmentValue
-export const assessmentValueSchema = z.object({
+// Zod schema for Assessment
+export const assessmentSchema = z.object({
   createdAt: timestampStubSchema,
   updatedAt: timestampStubSchema,
   assessmentRequestId: z.string(),
@@ -28,4 +28,4 @@ export const assessmentValueSchema = z.object({
 });
 
 // TypeScript type inferred from zod schema
-export type AssessmentValue = z.infer<typeof assessmentValueSchema>;
+export type Assessment = z.infer<typeof assessmentSchema>;

@@ -1,9 +1,9 @@
 import * as Factory from 'factory.ts';
-import { RunValue } from '../schema';
+import { Run } from '../schema';
 import { TimestampStub } from '../utils/TimestampStub';
 
 export const makeRunFactory = (TimestampKlass: typeof TimestampStub) =>
-  Factory.makeFactory<RunValue>({
+  Factory.makeFactory<Run>({
     createdAt: TimestampKlass.now(),
     updatedAt: TimestampKlass.now(),
     assessmentRequestCount: 0,

@@ -1,6 +1,4 @@
 import { z } from 'zod';
-import { timestampStubSchema } from './common';
-import { MailgunEvent } from '../factories/exampleData/mailgunWebhook';
 export declare const mailValueSchema: <T extends z.ZodTypeAny>(dataSchema: T) => z.ZodObject<{
     template: z.ZodObject<{
         data: T;
@@ -887,29 +885,4 @@ export declare const mailValueSchema: <T extends z.ZodTypeAny>(dataSchema: T) =>
     }>, "many">>;
     eventsSummary: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>>;
 }>[k_3]; } : never>;
-export type MailValue<T> = {
-    template: {
-        data: T;
-        name: string;
-    };
-    to: string;
-    delivery: {
-        startTime: z.infer<typeof timestampStubSchema>;
-        error: null;
-        leaseExpireTime: null;
-        state: string;
-        endTime: z.infer<typeof timestampStubSchema>;
-        info: {
-            rejected: unknown[];
-            response: string;
-            pending: unknown[];
-            messageId: string;
-            accepted: string[];
-        };
-        attempts: number;
-    };
-    html?: string;
-    subject?: string;
-    events?: Array<MailgunEvent>;
-    eventsSummary?: Record<string, z.infer<typeof timestampStubSchema>>;
-};
+export type MailValue<T extends z.ZodType<any, any, any>> = z.infer<ReturnType<typeof mailValueSchema<T>>>;

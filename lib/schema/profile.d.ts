@@ -1,6 +1,6 @@
 import { z } from 'zod';
 type EmailPreferenceKey = 'emailInsideCommunities' | 'emailOutsideCommunities';
-export declare const profileValueSchema: z.ZodObject<{
+export declare const profileSchema: z.ZodObject<{
     createdAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
     updatedAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
     uid: z.ZodString;
@@ -46,7 +46,7 @@ export declare const profileValueSchema: z.ZodObject<{
         emailOutsideCommunities: boolean;
     } | undefined;
 }>;
-export type ProfileValue = z.infer<typeof profileValueSchema>;
+export type Profile = z.infer<typeof profileSchema>;
 export declare const DEFAULT_EMAIL_PREFERENCES: {
     [key in EmailPreferenceKey]: boolean;
 };

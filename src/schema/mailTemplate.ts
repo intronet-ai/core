@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import { timestampStubSchema } from './common';
+import { timestampStubSchema } from './utils/timestamps';
 
-// Zod schema for MailTemplateValue
+// Zod schema for MailTemplate
 export const mailTemplateValueSchema = z.object({
   createdAt: timestampStubSchema,
   updatedAt: timestampStubSchema,
@@ -11,4 +11,4 @@ export const mailTemplateValueSchema = z.object({
 });
 
 // TypeScript type inferred from zod schema
-export type MailTemplateValue = z.infer<typeof mailTemplateValueSchema>;
+export type MailTemplate = z.infer<typeof mailTemplateValueSchema>;
