@@ -20,9 +20,11 @@ export const profileSchema = z.object({
   name: z.string(),
   headline: z.string().optional(),
   photoStoragePath: z.string().optional(),
+  phoneNumber: z.string().optional(),
   emailPreferences: emailPreferencesSchema.optional(),
   linkedinProfile: linkedinProfileSchema.optional(),
   communityId: z.string().optional(), // Added for community association
+  isCoordinator: z.boolean().optional(), // Added for community coordinator role
 });
 
 // TypeScript type inferred from zod schema

@@ -9,6 +9,7 @@ export declare const profileSchema: z.ZodObject<{
     name: z.ZodString;
     headline: z.ZodOptional<z.ZodString>;
     photoStoragePath: z.ZodOptional<z.ZodString>;
+    phoneNumber: z.ZodOptional<z.ZodString>;
     emailPreferences: z.ZodOptional<z.ZodObject<{
         emailInsideCommunities: z.ZodBoolean;
         emailOutsideCommunities: z.ZodBoolean;
@@ -185,6 +186,7 @@ export declare const profileSchema: z.ZodObject<{
         accomplishment_honors_awards: any[];
     }>>;
     communityId: z.ZodOptional<z.ZodString>;
+    isCoordinator: z.ZodOptional<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
@@ -195,6 +197,7 @@ export declare const profileSchema: z.ZodObject<{
     helpWanted?: string | undefined;
     canOffer?: string | undefined;
     photoStoragePath?: string | undefined;
+    phoneNumber?: string | undefined;
     emailPreferences?: {
         emailInsideCommunities: boolean;
         emailOutsideCommunities: boolean;
@@ -250,6 +253,7 @@ export declare const profileSchema: z.ZodObject<{
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     } | undefined;
+    isCoordinator?: boolean | undefined;
 }, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
@@ -260,6 +264,7 @@ export declare const profileSchema: z.ZodObject<{
     helpWanted?: string | undefined;
     canOffer?: string | undefined;
     photoStoragePath?: string | undefined;
+    phoneNumber?: string | undefined;
     emailPreferences?: {
         emailInsideCommunities: boolean;
         emailOutsideCommunities: boolean;
@@ -315,6 +320,7 @@ export declare const profileSchema: z.ZodObject<{
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     } | undefined;
+    isCoordinator?: boolean | undefined;
 }>;
 export type Profile = z.infer<typeof profileSchema>;
 export declare const DEFAULT_EMAIL_PREFERENCES: {

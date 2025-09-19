@@ -5,4 +5,6 @@ export declare const makeCommunityFactory: (TimestampKlass: typeof TimestampStub
     updatedAt: TimestampStub;
     name: string;
     coverPictureStoragePath?: string | undefined;
-}, "coverPictureStoragePath" | ("createdAt" | "updatedAt" | "name")>;
+    context?: string | undefined;
+    botName?: string | undefined;
+}, ("createdAt" | "updatedAt" | "name") | ("coverPictureStoragePath" | "context" | "botName")>;

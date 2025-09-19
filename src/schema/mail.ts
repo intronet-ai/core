@@ -47,6 +47,23 @@ export const mailValueSchema = <T extends z.ZodTypeAny>(dataSchema: T) =>
   });
 
 // TypeScript type inferred from zod schema (generic)
-export type MailValue<T extends z.ZodType<any, any, any>> = z.infer<
+export type MailValue<T extends z.ZodType<any, any, any> = z.ZodAny> = z.infer<
   ReturnType<typeof mailValueSchema<T>>
 >;
+
+// Concrete schema that avoids circular reference issues
+const mailDocumentSchema = z.object({
+  template: z.object({
+    data: z.unknown().optional(),
+    name: z.string(),
+  }),
+  to: z.string(),
+  delivery: deliverySchema,
+  html: z.string().optional(),
+  subject: z.string().optional(),
+  events: z.array(mailgunEventSchema).optional(),
+  eventsSummary: z.record(z.string(), timestampStubSchema).optional(),
+});
+
+// Properly derived type from concrete schema
+export type MailDocument = z.infer<typeof mailDocumentSchema>;

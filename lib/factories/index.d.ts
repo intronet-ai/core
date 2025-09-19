@@ -155,7 +155,9 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         updatedAt: TimestampStub;
         name: string;
         coverPictureStoragePath?: string | undefined;
-    }, "coverPictureStoragePath" | ("createdAt" | "updatedAt" | "name")>;
+        context?: string | undefined;
+        botName?: string | undefined;
+    }, ("createdAt" | "updatedAt" | "name") | ("coverPictureStoragePath" | "context" | "botName")>;
     profileFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
@@ -166,6 +168,7 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         helpWanted?: string | undefined;
         canOffer?: string | undefined;
         photoStoragePath?: string | undefined;
+        phoneNumber?: string | undefined;
         emailPreferences?: {
             emailInsideCommunities: boolean;
             emailOutsideCommunities: boolean;
@@ -221,7 +224,8 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             accomplishment_projects: any[];
             accomplishment_honors_awards: any[];
         } | undefined;
-    }, ("createdAt" | "updatedAt" | "name" | "uid") | ("communityId" | "headline" | "helpWanted" | "canOffer" | "photoStoragePath" | "emailPreferences" | "linkedinProfile")>;
+        isCoordinator?: boolean | undefined;
+    }, ("createdAt" | "updatedAt" | "name" | "uid") | ("communityId" | "headline" | "helpWanted" | "canOffer" | "photoStoragePath" | "phoneNumber" | "emailPreferences" | "linkedinProfile" | "isCoordinator")>;
     mailFactory: import("factory.ts").Factory<{
         template: {
             name: string;

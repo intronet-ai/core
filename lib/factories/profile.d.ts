@@ -10,6 +10,7 @@ export declare const makeProfileFactory: (TimestampKlass: typeof TimestampStub) 
     helpWanted?: string | undefined;
     canOffer?: string | undefined;
     photoStoragePath?: string | undefined;
+    phoneNumber?: string | undefined;
     emailPreferences?: {
         emailInsideCommunities: boolean;
         emailOutsideCommunities: boolean;
@@ -65,4 +66,5 @@ export declare const makeProfileFactory: (TimestampKlass: typeof TimestampStub) 
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     } | undefined;
-}, ("createdAt" | "updatedAt" | "name" | "uid") | ("communityId" | "headline" | "helpWanted" | "canOffer" | "photoStoragePath" | "emailPreferences" | "linkedinProfile")>;
+    isCoordinator?: boolean | undefined;
+}, ("createdAt" | "updatedAt" | "name" | "uid") | ("communityId" | "headline" | "helpWanted" | "canOffer" | "photoStoragePath" | "phoneNumber" | "emailPreferences" | "linkedinProfile" | "isCoordinator")>;

@@ -7,6 +7,8 @@ export const CommunitySchema = z.object({
   updatedAt: timestampStubSchema,
   name: z.string(),
   coverPictureStoragePath: z.string().optional(),
+  context: z.string().optional(),
+  botName: z.string().optional(),
 });
 
 // TypeScript type inferred from zod schema
