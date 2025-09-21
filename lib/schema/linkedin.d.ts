@@ -1,5 +1,5 @@
 import { z } from 'zod';
-export declare const linkedinProfileSchema: z.ZodObject<{
+export declare const linkedinUserSchema: z.ZodObject<{
     accomplishment_patents: z.ZodArray<z.ZodAny, "many">;
     country: z.ZodString;
     occupation: z.ZodString;
@@ -46,7 +46,7 @@ export declare const linkedinProfileSchema: z.ZodObject<{
     headline: z.ZodString;
     connections: z.ZodNumber;
     summary: z.ZodString;
-    similarly_named_profiles: z.ZodArray<z.ZodAny, "many">;
+    similarly_named_users: z.ZodArray<z.ZodAny, "many">;
     languages: z.ZodArray<z.ZodString, "many">;
     accomplishment_courses: z.ZodArray<z.ZodAny, "many">;
     groups: z.ZodArray<z.ZodAny, "many">;
@@ -96,7 +96,7 @@ export declare const linkedinProfileSchema: z.ZodObject<{
     headline: string;
     connections: number;
     summary: string;
-    similarly_named_profiles: any[];
+    similarly_named_users: any[];
     languages: string[];
     accomplishment_courses: any[];
     groups: any[];
@@ -146,7 +146,7 @@ export declare const linkedinProfileSchema: z.ZodObject<{
     headline: string;
     connections: number;
     summary: string;
-    similarly_named_profiles: any[];
+    similarly_named_users: any[];
     languages: string[];
     accomplishment_courses: any[];
     groups: any[];
@@ -164,4 +164,4 @@ export declare const linkedinProfileSchema: z.ZodObject<{
     accomplishment_projects: any[];
     accomplishment_honors_awards: any[];
 }>;
-export type LinkedinProfile = z.infer<typeof linkedinProfileSchema>;
+export type LinkedinUser = z.infer<typeof linkedinUserSchema>;

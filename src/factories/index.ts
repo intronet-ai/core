@@ -4,7 +4,7 @@ import { makeAssessmentFactory } from './assessment';
 import { makeAssessmentRequestFactory } from './assessmentRequest';
 import { makeCommunityFactory } from './community';
 import { makeMailFactory } from './mail';
-import { makeProfileFactory } from './profile';
+import { makeUserFactory } from './profile';
 import { makeResponseFactory } from './response';
 import { makeRunFactory } from './run';
 
@@ -19,11 +19,11 @@ export function makeFactories(TimestampKlass: typeof TimestampStub) {
     responseFactory: makeResponseFactory(TimestampKlass),
     runFactory: makeRunFactory(TimestampKlass),
     communityFactory: makeCommunityFactory(TimestampKlass),
-    profileFactory: makeProfileFactory(TimestampKlass),
+    profileFactory: makeUserFactory(TimestampKlass),
     mailFactory: makeMailFactory(TimestampKlass),
   };
 }
 
-export { exampleLinkedinProfile } from './exampleData/linkedin';
+export { exampleLinkedinUser } from './exampleData/linkedin';
 export { exampleMail } from './exampleData/mail';
 export { exampleMailgunWebhook } from './exampleData/mailgunWebhook';

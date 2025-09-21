@@ -1,21 +1,15 @@
 import * as Factory from 'factory.ts';
 import { TimestampStub } from '../utils/TimestampStub';
-export declare const makeProfileFactory: (TimestampKlass: typeof TimestampStub) => Factory.Sync.Factory<{
+export declare const makeUserFactory: (TimestampKlass: typeof TimestampStub) => Factory.Sync.Factory<{
     createdAt: TimestampStub;
     updatedAt: TimestampStub;
+    communityId: string;
     name: string;
     uid: string;
-    communityId?: string | undefined;
     headline?: string | undefined;
     helpWanted?: string | undefined;
     canOffer?: string | undefined;
-    photoStoragePath?: string | undefined;
-    phoneNumber?: string | undefined;
-    emailPreferences?: {
-        emailInsideCommunities: boolean;
-        emailOutsideCommunities: boolean;
-    } | undefined;
-    linkedinProfile?: {
+    linkedinUser?: {
         state: string;
         accomplishment_patents: any[];
         country: string;
@@ -48,7 +42,7 @@ export declare const makeProfileFactory: (TimestampKlass: typeof TimestampStub) 
         headline: string;
         connections: number;
         summary: string;
-        similarly_named_profiles: any[];
+        similarly_named_users: any[];
         languages: string[];
         accomplishment_courses: any[];
         groups: any[];
@@ -66,5 +60,11 @@ export declare const makeProfileFactory: (TimestampKlass: typeof TimestampStub) 
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     } | undefined;
+    photoStoragePath?: string | undefined;
+    phoneNumber?: string | undefined;
+    emailPreferences?: {
+        emailInsideCommunities: boolean;
+        emailOutsideCommunities: boolean;
+    } | undefined;
     isCoordinator?: boolean | undefined;
-}, ("createdAt" | "updatedAt" | "name" | "uid") | ("communityId" | "headline" | "helpWanted" | "canOffer" | "photoStoragePath" | "phoneNumber" | "emailPreferences" | "linkedinProfile" | "isCoordinator")>;
+}, ("createdAt" | "updatedAt" | "communityId" | "name" | "uid") | ("headline" | "helpWanted" | "canOffer" | "linkedinUser" | "photoStoragePath" | "phoneNumber" | "emailPreferences" | "isCoordinator")>;

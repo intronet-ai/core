@@ -77,12 +77,13 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         updatedAt: TimestampStub;
         communityId: string;
         name: string;
+        finalizedAt: TimestampStub | null;
+        email: string;
         uid: string | null;
         helpWanted: string;
         canOffer: string;
-        finalizedAt: TimestampStub | null;
-        email: string;
-        linkedinProfile?: {
+        linkedinUserUrl?: string | undefined;
+        linkedinUser?: {
             state: string;
             accomplishment_patents: any[];
             country: string;
@@ -115,7 +116,7 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             headline: string;
             connections: number;
             summary: string;
-            similarly_named_profiles: any[];
+            similarly_named_users: any[];
             languages: string[];
             accomplishment_courses: any[];
             groups: any[];
@@ -133,8 +134,7 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             accomplishment_projects: any[];
             accomplishment_honors_awards: any[];
         } | undefined;
-        linkedinProfileUrl?: string | undefined;
-    }, ("createdAt" | "updatedAt" | "communityId" | "name" | "uid" | "helpWanted" | "canOffer" | "finalizedAt" | "email") | ("linkedinProfile" | "linkedinProfileUrl")>;
+    }, ("createdAt" | "updatedAt" | "communityId" | "name" | "finalizedAt" | "email" | "uid" | "helpWanted" | "canOffer") | ("linkedinUserUrl" | "linkedinUser")>;
     runFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
@@ -161,19 +161,13 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
     profileFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
+        communityId: string;
         name: string;
         uid: string;
-        communityId?: string | undefined;
         headline?: string | undefined;
         helpWanted?: string | undefined;
         canOffer?: string | undefined;
-        photoStoragePath?: string | undefined;
-        phoneNumber?: string | undefined;
-        emailPreferences?: {
-            emailInsideCommunities: boolean;
-            emailOutsideCommunities: boolean;
-        } | undefined;
-        linkedinProfile?: {
+        linkedinUser?: {
             state: string;
             accomplishment_patents: any[];
             country: string;
@@ -206,7 +200,7 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             headline: string;
             connections: number;
             summary: string;
-            similarly_named_profiles: any[];
+            similarly_named_users: any[];
             languages: string[];
             accomplishment_courses: any[];
             groups: any[];
@@ -224,8 +218,14 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             accomplishment_projects: any[];
             accomplishment_honors_awards: any[];
         } | undefined;
+        photoStoragePath?: string | undefined;
+        phoneNumber?: string | undefined;
+        emailPreferences?: {
+            emailInsideCommunities: boolean;
+            emailOutsideCommunities: boolean;
+        } | undefined;
         isCoordinator?: boolean | undefined;
-    }, ("createdAt" | "updatedAt" | "name" | "uid") | ("communityId" | "headline" | "helpWanted" | "canOffer" | "photoStoragePath" | "phoneNumber" | "emailPreferences" | "linkedinProfile" | "isCoordinator")>;
+    }, ("createdAt" | "updatedAt" | "communityId" | "name" | "uid") | ("headline" | "helpWanted" | "canOffer" | "linkedinUser" | "photoStoragePath" | "phoneNumber" | "emailPreferences" | "isCoordinator")>;
     mailFactory: import("factory.ts").Factory<{
         template: {
             name: string;
@@ -303,6 +303,6 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         eventsSummary?: Record<string, TimestampStub> | undefined;
     }, ("template" | "to" | "delivery") | ("html" | "subject" | "events" | "eventsSummary")>;
 };
-export { exampleLinkedinProfile } from './exampleData/linkedin';
+export { exampleLinkedinUser } from './exampleData/linkedin';
 export { exampleMail } from './exampleData/mail';
 export { exampleMailgunWebhook } from './exampleData/mailgunWebhook';

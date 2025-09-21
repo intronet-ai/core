@@ -9,8 +9,8 @@ export declare const responseSchema: z.ZodObject<{
     uid: z.ZodNullable<z.ZodString>;
     helpWanted: z.ZodString;
     canOffer: z.ZodString;
-    linkedinProfileUrl: z.ZodOptional<z.ZodString>;
-    linkedinProfile: z.ZodOptional<z.ZodObject<{
+    linkedinUserUrl: z.ZodOptional<z.ZodString>;
+    linkedinUser: z.ZodOptional<z.ZodObject<{
         accomplishment_patents: z.ZodArray<z.ZodAny, "many">;
         country: z.ZodString;
         occupation: z.ZodString;
@@ -57,7 +57,7 @@ export declare const responseSchema: z.ZodObject<{
         headline: z.ZodString;
         connections: z.ZodNumber;
         summary: z.ZodString;
-        similarly_named_profiles: z.ZodArray<z.ZodAny, "many">;
+        similarly_named_users: z.ZodArray<z.ZodAny, "many">;
         languages: z.ZodArray<z.ZodString, "many">;
         accomplishment_courses: z.ZodArray<z.ZodAny, "many">;
         groups: z.ZodArray<z.ZodAny, "many">;
@@ -107,7 +107,7 @@ export declare const responseSchema: z.ZodObject<{
         headline: string;
         connections: number;
         summary: string;
-        similarly_named_profiles: any[];
+        similarly_named_users: any[];
         languages: string[];
         accomplishment_courses: any[];
         groups: any[];
@@ -157,7 +157,7 @@ export declare const responseSchema: z.ZodObject<{
         headline: string;
         connections: number;
         summary: string;
-        similarly_named_profiles: any[];
+        similarly_named_users: any[];
         languages: string[];
         accomplishment_courses: any[];
         groups: any[];
@@ -180,12 +180,13 @@ export declare const responseSchema: z.ZodObject<{
     updatedAt: import("../utils/TimestampStub").TimestampStub;
     communityId: string;
     name: string;
+    finalizedAt: import("../utils/TimestampStub").TimestampStub | null;
+    email: string;
     uid: string | null;
     helpWanted: string;
     canOffer: string;
-    finalizedAt: import("../utils/TimestampStub").TimestampStub | null;
-    email: string;
-    linkedinProfile?: {
+    linkedinUserUrl?: string | undefined;
+    linkedinUser?: {
         state: string;
         accomplishment_patents: any[];
         country: string;
@@ -218,7 +219,7 @@ export declare const responseSchema: z.ZodObject<{
         headline: string;
         connections: number;
         summary: string;
-        similarly_named_profiles: any[];
+        similarly_named_users: any[];
         languages: string[];
         accomplishment_courses: any[];
         groups: any[];
@@ -236,18 +237,18 @@ export declare const responseSchema: z.ZodObject<{
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     } | undefined;
-    linkedinProfileUrl?: string | undefined;
 }, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
     communityId: string;
     name: string;
+    finalizedAt: import("../utils/TimestampStub").TimestampStub | null;
+    email: string;
     uid: string | null;
     helpWanted: string;
     canOffer: string;
-    finalizedAt: import("../utils/TimestampStub").TimestampStub | null;
-    email: string;
-    linkedinProfile?: {
+    linkedinUserUrl?: string | undefined;
+    linkedinUser?: {
         state: string;
         accomplishment_patents: any[];
         country: string;
@@ -280,7 +281,7 @@ export declare const responseSchema: z.ZodObject<{
         headline: string;
         connections: number;
         summary: string;
-        similarly_named_profiles: any[];
+        similarly_named_users: any[];
         languages: string[];
         accomplishment_courses: any[];
         groups: any[];
@@ -298,6 +299,5 @@ export declare const responseSchema: z.ZodObject<{
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     } | undefined;
-    linkedinProfileUrl?: string | undefined;
 }>;
 export type Response = z.infer<typeof responseSchema>;

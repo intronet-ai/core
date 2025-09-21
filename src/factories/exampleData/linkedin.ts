@@ -1,4 +1,4 @@
-export const exampleLinkedinProfile = {
+export const exampleLinkedinUser = {
   accomplishment_patents: [],
   country: 'US',
   occupation: 'Founder at Impulse Training',
@@ -352,7 +352,7 @@ export const exampleLinkedinProfile = {
   connections: 500,
   summary:
     "Hi there - I'm Michael.\n\nI'm the founder of impulse - an app and wearable device to help on the journey of overcoming addictions and other impulses (https://impulse.training)\n\nI also a member of https://hitchhiker.vc, a seed VC. Feel free to connect to send me your pitch!\n\nI'm always open to saying hi, meeting passionate people, and hearing about interesting projects. I'm currently not available for new work opportunities.\n\nThanks for checking in!",
-  similarly_named_profiles: [
+  similarly_named_users: [
     {
       summary: 'Field Service Manager at Kawasaki Robotics',
       name: 'Michael Dawson',
@@ -676,4 +676,4 @@ export const exampleLinkedinProfile = {
   ],
 };
 
-export type LinkedinProfile = typeof exampleLinkedinProfile;
+export type LinkedinUser = typeof exampleLinkedinUser;

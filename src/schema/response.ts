@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { linkedinProfileSchema } from './linkedin';
+import { linkedinUserSchema } from './linkedin';
 import { timestampStubSchema } from './utils/timestamps';
 
 // Zod schema for Response
@@ -13,8 +13,8 @@ export const responseSchema = z.object({
   uid: z.string().nullable(),
   helpWanted: z.string(),
   canOffer: z.string(),
-  linkedinProfileUrl: z.string().optional(),
-  linkedinProfile: linkedinProfileSchema.optional(),
+  linkedinUserUrl: z.string().optional(),
+  linkedinUser: linkedinUserSchema.optional(),
 });
 
 // TypeScript types inferred from zod schemas

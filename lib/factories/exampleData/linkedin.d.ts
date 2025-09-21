@@ -1,4 +1,4 @@
-export declare const exampleLinkedinProfile: {
+export declare const exampleLinkedinUser: {
     accomplishment_patents: never[];
     country: string;
     occupation: string;
@@ -60,7 +60,7 @@ export declare const exampleLinkedinProfile: {
     headline: string;
     connections: number;
     summary: string;
-    similarly_named_profiles: {
+    similarly_named_users: {
         summary: string;
         name: string;
         link: string;
@@ -204,4 +204,4 @@ export declare const exampleLinkedinProfile: {
         issuer: string;
     }[];
 };
-export type LinkedinProfile = typeof exampleLinkedinProfile;
+export type LinkedinUser = typeof exampleLinkedinUser;

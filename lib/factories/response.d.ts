@@ -5,12 +5,13 @@ export declare const makeResponseFactory: (TimestampKlass: typeof TimestampStub)
     updatedAt: TimestampStub;
     communityId: string;
     name: string;
+    finalizedAt: TimestampStub | null;
+    email: string;
     uid: string | null;
     helpWanted: string;
     canOffer: string;
-    finalizedAt: TimestampStub | null;
-    email: string;
-    linkedinProfile?: {
+    linkedinUserUrl?: string | undefined;
+    linkedinUser?: {
         state: string;
         accomplishment_patents: any[];
         country: string;
@@ -43,7 +44,7 @@ export declare const makeResponseFactory: (TimestampKlass: typeof TimestampStub)
         headline: string;
         connections: number;
         summary: string;
-        similarly_named_profiles: any[];
+        similarly_named_users: any[];
         languages: string[];
         accomplishment_courses: any[];
         groups: any[];
@@ -61,5 +62,4 @@ export declare const makeResponseFactory: (TimestampKlass: typeof TimestampStub)
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     } | undefined;
-    linkedinProfileUrl?: string | undefined;
-}, ("createdAt" | "updatedAt" | "communityId" | "name" | "uid" | "helpWanted" | "canOffer" | "finalizedAt" | "email") | ("linkedinProfile" | "linkedinProfileUrl")>;
+}, ("createdAt" | "updatedAt" | "communityId" | "name" | "finalizedAt" | "email" | "uid" | "helpWanted" | "canOffer") | ("linkedinUserUrl" | "linkedinUser")>;

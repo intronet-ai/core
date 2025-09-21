@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
-// Zod schema for LinkedinProfile
-export const linkedinProfileSchema = z.object({
+// Zod schema for LinkedinUser
+export const linkedinUserSchema = z.object({
   accomplishment_patents: z.array(z.any()),
   country: z.string(),
   occupation: z.string(),
@@ -34,7 +34,7 @@ export const linkedinProfileSchema = z.object({
   headline: z.string(),
   connections: z.number(),
   summary: z.string(),
-  similarly_named_profiles: z.array(z.any()),
+  similarly_named_users: z.array(z.any()),
   languages: z.array(z.string()),
   accomplishment_courses: z.array(z.any()),
   groups: z.array(z.any()),
@@ -54,4 +54,4 @@ export const linkedinProfileSchema = z.object({
 });
 
 // TypeScript type inferred from zod schema
-export type LinkedinProfile = z.infer<typeof linkedinProfileSchema>;
+export type LinkedinUser = z.infer<typeof linkedinUserSchema>;
