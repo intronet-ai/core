@@ -1,33 +1,25 @@
 import * as admin from 'firebase-admin';
 
-const isProduction = process.env.NODE_ENV === 'production';
-
-const serviceAccounts = {
-  'intronet-88bc5': require('../../admin-service-account.production.json'),
-  'intronet-restore': require('../../admin-service-account.restore.json'),
-  production: '',
+// Initialize Firebase Admin with environment-based configuration
+// Service accounts should be provided by the consuming application
+const initializeFirebaseAdmin = () => {
+  if (admin.apps.length === 0) {
+    // Let Firebase Admin SDK use default credentials in production
+    // or application default credentials locally
+    admin.initializeApp();
+  }
+  return admin;
 };
 
-serviceAccounts.production = serviceAccounts['intronet-88bc5'];
+const firebaseAdmin = initializeFirebaseAdmin();
 
-const project = (process.env.FIREBASE_PROJECT ||
-  'intronet-88bc5') as keyof typeof serviceAccounts;
+export const firestore = firebaseAdmin.firestore();
+export const auth = firebaseAdmin.auth();
+export const storage = firebaseAdmin.storage();
+export const Timestamp = firebaseAdmin.firestore.Timestamp as any;
 
-export const serviceAccount = isProduction
-  ? serviceAccounts.production
-  : serviceAccounts[project];
+// Export project ID from environment or default
+export const projectId = process.env.FIREBASE_PROJECT || process.env.GCLOUD_PROJECT || 'intronet-88bc5';
+export const appEnv = process.env.NODE_ENV === 'production' ? 'production' : 'staging';
 
-export const appEnv = isProduction ? 'production' : 'staging';
-
-export const projectId = serviceAccount.project_id;
-
-admin.initializeApp({
-  projectId,
-  credential: admin.credential.cert(serviceAccount),
-});
-
-export const firestore = admin.firestore();
-export const auth = admin.auth();
-export const storage = admin.storage();
-export const Timestamp = admin.firestore.Timestamp as any;
-export default admin;
+export default firebaseAdmin;

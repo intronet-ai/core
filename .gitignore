@@ -117,3 +117,7 @@ dist
 
 # Compiled code
 # lib/ - temporarily commented out to include built files for GitHub installs
+
+# Service account files (should be in consuming applications, not core)
+admin-service-account.*.json
+*-firebase-adminsdk-*.json
