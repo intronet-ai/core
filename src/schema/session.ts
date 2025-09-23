@@ -5,6 +5,7 @@ import { timestampStubSchema } from './utils/timestamps';
 export const sessionSchema = z.object({
   id: z.string().optional(),
   userId: z.string(),
+  communityId: z.string(),
   expiresAt: timestampStubSchema,
   createdAt: timestampStubSchema,
   updatedAt: timestampStubSchema,
