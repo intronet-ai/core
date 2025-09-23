@@ -15,16 +15,11 @@ export const userSchema = z.object({
   createdAt: timestampStubSchema,
   updatedAt: timestampStubSchema,
   uid: z.string(),
-  helpWanted: z.string().optional(),
-  canOffer: z.string().optional(),
   name: z.string(),
-  headline: z.string().optional(),
   photoStoragePath: z.string().optional(),
   phoneNumber: z.string().optional(),
   emailPreferences: emailPreferencesSchema.optional(),
   linkedinUser: linkedinUserSchema.optional(),
-  communityId: z.string(), // Added for community association
-  isCoordinator: z.boolean().optional(), // Added for community coordinator role
 });
 
 // TypeScript type inferred from zod schema

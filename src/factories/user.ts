@@ -7,7 +7,6 @@ export const makeUserFactory = (TimestampKlass: typeof TimestampStub) =>
   Factory.makeFactory<User>({
     createdAt: TimestampKlass.now(),
     updatedAt: TimestampKlass.now(),
-    communityId: 'abc123',
     uid: faker.random.alphaNumeric(10),
     name: faker.name.fullName(),
   });

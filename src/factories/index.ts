@@ -4,9 +4,9 @@ import { makeAssessmentFactory } from './assessment';
 import { makeAssessmentRequestFactory } from './assessmentRequest';
 import { makeCommunityFactory } from './community';
 import { makeMailFactory } from './mail';
-import { makeUserFactory } from './profile';
 import { makeResponseFactory } from './response';
 import { makeRunFactory } from './run';
+import { makeUserFactory } from './user';
 
 // Our admin and client apps use the same factories, but the firebase-admin versus firebase client
 // libraries respectively. These use different Timestamp classes, so we pass in the class as an
