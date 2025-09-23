@@ -82,6 +82,7 @@ export declare const userSchema: z.ZodObject<{
         accomplishment_projects: z.ZodArray<z.ZodAny, "many">;
         accomplishment_honors_awards: z.ZodArray<z.ZodAny, "many">;
     }, "strip", z.ZodTypeAny, {
+        summary: string;
         state: string;
         accomplishment_patents: any[];
         country: string;
@@ -113,7 +114,6 @@ export declare const userSchema: z.ZodObject<{
         first_name: string;
         headline: string;
         connections: number;
-        summary: string;
         similarly_named_users: any[];
         languages: string[];
         accomplishment_courses: any[];
@@ -132,6 +132,7 @@ export declare const userSchema: z.ZodObject<{
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     }, {
+        summary: string;
         state: string;
         accomplishment_patents: any[];
         country: string;
@@ -163,7 +164,6 @@ export declare const userSchema: z.ZodObject<{
         first_name: string;
         headline: string;
         connections: number;
-        summary: string;
         similarly_named_users: any[];
         languages: string[];
         accomplishment_courses: any[];
@@ -187,7 +187,9 @@ export declare const userSchema: z.ZodObject<{
     updatedAt: import("../utils/TimestampStub").TimestampStub;
     name: string;
     uid: string;
+    phoneNumber?: string | undefined;
     linkedinUser?: {
+        summary: string;
         state: string;
         accomplishment_patents: any[];
         country: string;
@@ -219,7 +221,6 @@ export declare const userSchema: z.ZodObject<{
         first_name: string;
         headline: string;
         connections: number;
-        summary: string;
         similarly_named_users: any[];
         languages: string[];
         accomplishment_courses: any[];
@@ -239,7 +240,6 @@ export declare const userSchema: z.ZodObject<{
         accomplishment_honors_awards: any[];
     } | undefined;
     photoStoragePath?: string | undefined;
-    phoneNumber?: string | undefined;
     emailPreferences?: {
         emailInsideCommunities: boolean;
         emailOutsideCommunities: boolean;
@@ -249,7 +249,9 @@ export declare const userSchema: z.ZodObject<{
     updatedAt: import("../utils/TimestampStub").TimestampStub;
     name: string;
     uid: string;
+    phoneNumber?: string | undefined;
     linkedinUser?: {
+        summary: string;
         state: string;
         accomplishment_patents: any[];
         country: string;
@@ -281,7 +283,6 @@ export declare const userSchema: z.ZodObject<{
         first_name: string;
         headline: string;
         connections: number;
-        summary: string;
         similarly_named_users: any[];
         languages: string[];
         accomplishment_courses: any[];
@@ -301,7 +302,6 @@ export declare const userSchema: z.ZodObject<{
         accomplishment_honors_awards: any[];
     } | undefined;
     photoStoragePath?: string | undefined;
-    phoneNumber?: string | undefined;
     emailPreferences?: {
         emailInsideCommunities: boolean;
         emailOutsideCommunities: boolean;

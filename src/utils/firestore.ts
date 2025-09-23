@@ -13,7 +13,7 @@ import { DocumentSnapshotLike } from '../types/firebase';
 export interface DocumentReferenceLike<T> {
   id: string;
   path: string;
-  get(): Promise<DocumentSnapshotLike<T>>;
+  get(): Promise<any>; // More flexible to allow real DocumentSnapshot
   collection: (collectionPath: string) => any; // any for now
   parent: any;
   update(...args: any): Promise<any>;

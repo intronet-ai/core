@@ -84,6 +84,7 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         canOffer: string;
         linkedinUserUrl?: string | undefined;
         linkedinUser?: {
+            summary: string;
             state: string;
             accomplishment_patents: any[];
             country: string;
@@ -115,7 +116,6 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             first_name: string;
             headline: string;
             connections: number;
-            summary: string;
             similarly_named_users: any[];
             languages: string[];
             accomplishment_courses: any[];
@@ -154,16 +154,24 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
         name: string;
+        phoneNumber?: string | undefined;
         coverPictureStoragePath?: string | undefined;
         context?: string | undefined;
         botName?: string | undefined;
-    }, ("createdAt" | "updatedAt" | "name") | ("coverPictureStoragePath" | "context" | "botName")>;
+        knowledgeBase?: {
+            title: string;
+            summary: string;
+        }[] | undefined;
+        demoCallInstructions?: string | undefined;
+    }, ("createdAt" | "updatedAt" | "name") | ("phoneNumber" | "coverPictureStoragePath" | "context" | "botName" | "knowledgeBase" | "demoCallInstructions")>;
     profileFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
         name: string;
         uid: string;
+        phoneNumber?: string | undefined;
         linkedinUser?: {
+            summary: string;
             state: string;
             accomplishment_patents: any[];
             country: string;
@@ -195,7 +203,6 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             first_name: string;
             headline: string;
             connections: number;
-            summary: string;
             similarly_named_users: any[];
             languages: string[];
             accomplishment_courses: any[];
@@ -215,12 +222,11 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             accomplishment_honors_awards: any[];
         } | undefined;
         photoStoragePath?: string | undefined;
-        phoneNumber?: string | undefined;
         emailPreferences?: {
             emailInsideCommunities: boolean;
             emailOutsideCommunities: boolean;
         } | undefined;
-    }, ("createdAt" | "updatedAt" | "name" | "uid") | ("linkedinUser" | "photoStoragePath" | "phoneNumber" | "emailPreferences")>;
+    }, ("createdAt" | "updatedAt" | "name" | "uid") | ("phoneNumber" | "linkedinUser" | "photoStoragePath" | "emailPreferences")>;
     mailFactory: import("factory.ts").Factory<{
         template: {
             name: string;

@@ -5,7 +5,9 @@ export declare const makeUserFactory: (TimestampKlass: typeof TimestampStub) => 
     updatedAt: TimestampStub;
     name: string;
     uid: string;
+    phoneNumber?: string | undefined;
     linkedinUser?: {
+        summary: string;
         state: string;
         accomplishment_patents: any[];
         country: string;
@@ -37,7 +39,6 @@ export declare const makeUserFactory: (TimestampKlass: typeof TimestampStub) => 
         first_name: string;
         headline: string;
         connections: number;
-        summary: string;
         similarly_named_users: any[];
         languages: string[];
         accomplishment_courses: any[];
@@ -57,9 +58,8 @@ export declare const makeUserFactory: (TimestampKlass: typeof TimestampStub) => 
         accomplishment_honors_awards: any[];
     } | undefined;
     photoStoragePath?: string | undefined;
-    phoneNumber?: string | undefined;
     emailPreferences?: {
         emailInsideCommunities: boolean;
         emailOutsideCommunities: boolean;
     } | undefined;
-}, ("createdAt" | "updatedAt" | "name" | "uid") | ("linkedinUser" | "photoStoragePath" | "phoneNumber" | "emailPreferences")>;
+}, ("createdAt" | "updatedAt" | "name" | "uid") | ("phoneNumber" | "linkedinUser" | "photoStoragePath" | "emailPreferences")>;

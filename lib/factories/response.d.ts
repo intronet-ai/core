@@ -12,6 +12,7 @@ export declare const makeResponseFactory: (TimestampKlass: typeof TimestampStub)
     canOffer: string;
     linkedinUserUrl?: string | undefined;
     linkedinUser?: {
+        summary: string;
         state: string;
         accomplishment_patents: any[];
         country: string;
@@ -43,7 +44,6 @@ export declare const makeResponseFactory: (TimestampKlass: typeof TimestampStub)
         first_name: string;
         headline: string;
         connections: number;
-        summary: string;
         similarly_named_users: any[];
         languages: string[];
         accomplishment_courses: any[];

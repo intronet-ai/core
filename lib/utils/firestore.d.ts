@@ -1,9 +1,8 @@
 import { z } from 'zod';
-import { DocumentSnapshotLike } from '../types/firebase';
 export interface DocumentReferenceLike<T> {
     id: string;
     path: string;
-    get(): Promise<DocumentSnapshotLike<T>>;
+    get(): Promise<any>;
     collection: (collectionPath: string) => any;
     parent: any;
     update(...args: any): Promise<any>;
