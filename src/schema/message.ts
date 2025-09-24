@@ -37,6 +37,7 @@ export const assistantMessageSchema = baseMessageSchema.extend({
   role: z.literal('assistant'),
   message: z.string(),
   toolCall: toolCallSchema.optional(),
+  deliveredViaWhatsAppAt: timestampStubSchema.optional(),
 });
 
 // Tool message schema

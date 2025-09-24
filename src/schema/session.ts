@@ -6,6 +6,7 @@ export const sessionSchema = z.object({
   id: z.string().optional(),
   userId: z.string(),
   communityId: z.string(),
+  phoneNumber: z.string().optional(), // WhatsApp phone number for this community
   expiresAt: timestampStubSchema,
   createdAt: timestampStubSchema,
   updatedAt: timestampStubSchema,
