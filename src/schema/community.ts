@@ -15,6 +15,9 @@ export const CommunitySchema = z.object({
     summary: z.string(),
   })).optional(),
   demoCallInstructions: z.string().optional(),
+  // Encrypted Twilio credentials for community-specific WhatsApp sending
+  twilioAccountSid: z.string().optional(), // Encrypted
+  twilioAuthToken: z.string().optional(),  // Encrypted
 });
 
 // TypeScript type inferred from zod schema

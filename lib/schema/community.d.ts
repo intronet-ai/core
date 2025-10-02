@@ -18,6 +18,8 @@ export declare const CommunitySchema: z.ZodObject<{
         summary: string;
     }>, "many">>;
     demoCallInstructions: z.ZodOptional<z.ZodString>;
+    twilioAccountSid: z.ZodOptional<z.ZodString>;
+    twilioAuthToken: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
@@ -31,6 +33,8 @@ export declare const CommunitySchema: z.ZodObject<{
         summary: string;
     }[] | undefined;
     demoCallInstructions?: string | undefined;
+    twilioAccountSid?: string | undefined;
+    twilioAuthToken?: string | undefined;
 }, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
@@ -44,5 +48,7 @@ export declare const CommunitySchema: z.ZodObject<{
         summary: string;
     }[] | undefined;
     demoCallInstructions?: string | undefined;
+    twilioAccountSid?: string | undefined;
+    twilioAuthToken?: string | undefined;
 }>;
 export type Community = z.infer<typeof CommunitySchema>;

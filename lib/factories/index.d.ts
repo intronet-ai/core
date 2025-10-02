@@ -163,7 +163,9 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             summary: string;
         }[] | undefined;
         demoCallInstructions?: string | undefined;
-    }, ("createdAt" | "updatedAt" | "name") | ("phoneNumber" | "coverPictureStoragePath" | "context" | "botName" | "knowledgeBase" | "demoCallInstructions")>;
+        twilioAccountSid?: string | undefined;
+        twilioAuthToken?: string | undefined;
+    }, ("createdAt" | "updatedAt" | "name") | ("phoneNumber" | "coverPictureStoragePath" | "context" | "botName" | "knowledgeBase" | "demoCallInstructions" | "twilioAccountSid" | "twilioAuthToken")>;
     profileFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;

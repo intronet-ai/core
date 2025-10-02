@@ -13,4 +13,6 @@ export declare const makeCommunityFactory: (TimestampKlass: typeof TimestampStub
         summary: string;
     }[] | undefined;
     demoCallInstructions?: string | undefined;
-}, ("createdAt" | "updatedAt" | "name") | ("phoneNumber" | "coverPictureStoragePath" | "context" | "botName" | "knowledgeBase" | "demoCallInstructions")>;
+    twilioAccountSid?: string | undefined;
+    twilioAuthToken?: string | undefined;
+}, ("createdAt" | "updatedAt" | "name") | ("phoneNumber" | "coverPictureStoragePath" | "context" | "botName" | "knowledgeBase" | "demoCallInstructions" | "twilioAccountSid" | "twilioAuthToken")>;
