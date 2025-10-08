@@ -1,0 +1,33 @@
+import * as Factory from 'factory.ts';
+import { TimestampStub } from '../utils/TimestampStub';
+export declare const makeAnnouncementFactory: (TimestampKlass: typeof TimestampStub) => Factory.Sync.Factory<{
+    createdAt: TimestampStub;
+    updatedAt: TimestampStub;
+    communityId: string;
+    createdBy: string;
+    message: string;
+    status: "draft" | "queued" | "sending" | "completed" | "failed";
+    totalRecipients: number;
+    sentCount: number;
+    failedCount: number;
+    targetUserIds?: string[] | undefined;
+    excludeUserIds?: string[] | undefined;
+    scheduledAt?: TimestampStub | undefined;
+    startedSendingAt?: TimestampStub | undefined;
+    completedAt?: TimestampStub | undefined;
+    errorMessage?: string | undefined;
+}, ("createdAt" | "updatedAt" | "communityId" | "createdBy" | "message" | "status" | "totalRecipients" | "sentCount" | "failedCount") | ("targetUserIds" | "excludeUserIds" | "scheduledAt" | "startedSendingAt" | "completedAt" | "errorMessage")>;
+export declare const makeAnnouncementRecipientFactory: (TimestampKlass: typeof TimestampStub) => Factory.Sync.Factory<{
+    createdAt: TimestampStub;
+    updatedAt: TimestampStub;
+    status: "failed" | "pending" | "sent";
+    announcementId: string;
+    userId: string;
+    interpolatedMessage: string;
+    errorMessage?: string | undefined;
+    userName?: string | undefined;
+    userPhoneNumber?: string | undefined;
+    sentAt?: TimestampStub | undefined;
+    sessionId?: string | undefined;
+    messageId?: string | undefined;
+}, ("createdAt" | "updatedAt" | "status" | "announcementId" | "userId" | "interpolatedMessage") | ("errorMessage" | "userName" | "userPhoneNumber" | "sentAt" | "sessionId" | "messageId")>;

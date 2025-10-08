@@ -96,13 +96,13 @@ export declare const assessmentRequestSchema: z.ZodObject<{
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
     communityId: string;
+    sentAt: import("../utils/TimestampStub").TimestampStub | null;
     seekerResponseId: string;
     seekerAskId: string;
     runId: string;
     prompt: string;
     providerResponseIds: string[];
     systemMessage: string;
-    sentAt: import("../utils/TimestampStub").TimestampStub | null;
     responseReceivedAt: import("../utils/TimestampStub").TimestampStub | null;
     error: string | null;
     rawResponse?: {
@@ -130,13 +130,13 @@ export declare const assessmentRequestSchema: z.ZodObject<{
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
     communityId: string;
+    sentAt: import("../utils/TimestampStub").TimestampStub | null;
     seekerResponseId: string;
     seekerAskId: string;
     runId: string;
     prompt: string;
     providerResponseIds: string[];
     systemMessage: string;
-    sentAt: import("../utils/TimestampStub").TimestampStub | null;
     responseReceivedAt: import("../utils/TimestampStub").TimestampStub | null;
     error: string | null;
     rawResponse?: {

@@ -9,10 +9,10 @@ export declare const makeMailFactory: (TimestampKlass: typeof TimestampStub) => 
     delivery: {
         error: null;
         info: {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         };
         startTime: TimestampStub;

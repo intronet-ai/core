@@ -30,26 +30,26 @@ export declare const mailValueSchema: <T extends z.ZodTypeAny>(dataSchema: T) =>
             messageId: z.ZodString;
             accepted: z.ZodArray<z.ZodString, "many">;
         }, "strip", z.ZodTypeAny, {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         }, {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         }>;
         attempts: z.ZodNumber;
     }, "strip", z.ZodTypeAny, {
         error: null;
         info: {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         };
         startTime: import("../utils/TimestampStub").TimestampStub;
@@ -60,10 +60,10 @@ export declare const mailValueSchema: <T extends z.ZodTypeAny>(dataSchema: T) =>
     }, {
         error: null;
         info: {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         };
         startTime: import("../utils/TimestampStub").TimestampStub;
@@ -207,26 +207,26 @@ export declare const mailValueSchema: <T extends z.ZodTypeAny>(dataSchema: T) =>
             messageId: z.ZodString;
             accepted: z.ZodArray<z.ZodString, "many">;
         }, "strip", z.ZodTypeAny, {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         }, {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         }>;
         attempts: z.ZodNumber;
     }, "strip", z.ZodTypeAny, {
         error: null;
         info: {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         };
         startTime: import("../utils/TimestampStub").TimestampStub;
@@ -237,10 +237,10 @@ export declare const mailValueSchema: <T extends z.ZodTypeAny>(dataSchema: T) =>
     }, {
         error: null;
         info: {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         };
         startTime: import("../utils/TimestampStub").TimestampStub;
@@ -384,26 +384,26 @@ export declare const mailValueSchema: <T extends z.ZodTypeAny>(dataSchema: T) =>
             messageId: z.ZodString;
             accepted: z.ZodArray<z.ZodString, "many">;
         }, "strip", z.ZodTypeAny, {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         }, {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         }>;
         attempts: z.ZodNumber;
     }, "strip", z.ZodTypeAny, {
         error: null;
         info: {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         };
         startTime: import("../utils/TimestampStub").TimestampStub;
@@ -414,10 +414,10 @@ export declare const mailValueSchema: <T extends z.ZodTypeAny>(dataSchema: T) =>
     }, {
         error: null;
         info: {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         };
         startTime: import("../utils/TimestampStub").TimestampStub;
@@ -561,26 +561,26 @@ export declare const mailValueSchema: <T extends z.ZodTypeAny>(dataSchema: T) =>
             messageId: z.ZodString;
             accepted: z.ZodArray<z.ZodString, "many">;
         }, "strip", z.ZodTypeAny, {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         }, {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         }>;
         attempts: z.ZodNumber;
     }, "strip", z.ZodTypeAny, {
         error: null;
         info: {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         };
         startTime: import("../utils/TimestampStub").TimestampStub;
@@ -591,10 +591,10 @@ export declare const mailValueSchema: <T extends z.ZodTypeAny>(dataSchema: T) =>
     }, {
         error: null;
         info: {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         };
         startTime: import("../utils/TimestampStub").TimestampStub;
@@ -738,26 +738,26 @@ export declare const mailValueSchema: <T extends z.ZodTypeAny>(dataSchema: T) =>
             messageId: z.ZodString;
             accepted: z.ZodArray<z.ZodString, "many">;
         }, "strip", z.ZodTypeAny, {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         }, {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         }>;
         attempts: z.ZodNumber;
     }, "strip", z.ZodTypeAny, {
         error: null;
         info: {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         };
         startTime: import("../utils/TimestampStub").TimestampStub;
@@ -768,10 +768,10 @@ export declare const mailValueSchema: <T extends z.ZodTypeAny>(dataSchema: T) =>
     }, {
         error: null;
         info: {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         };
         startTime: import("../utils/TimestampStub").TimestampStub;
@@ -911,26 +911,26 @@ declare const mailDocumentSchema: z.ZodObject<{
             messageId: z.ZodString;
             accepted: z.ZodArray<z.ZodString, "many">;
         }, "strip", z.ZodTypeAny, {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         }, {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         }>;
         attempts: z.ZodNumber;
     }, "strip", z.ZodTypeAny, {
         error: null;
         info: {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         };
         startTime: import("../utils/TimestampStub").TimestampStub;
@@ -941,10 +941,10 @@ declare const mailDocumentSchema: z.ZodObject<{
     }, {
         error: null;
         info: {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         };
         startTime: import("../utils/TimestampStub").TimestampStub;
@@ -1066,10 +1066,10 @@ declare const mailDocumentSchema: z.ZodObject<{
     delivery: {
         error: null;
         info: {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         };
         startTime: import("../utils/TimestampStub").TimestampStub;
@@ -1141,10 +1141,10 @@ declare const mailDocumentSchema: z.ZodObject<{
     delivery: {
         error: null;
         info: {
-            response: string;
-            rejected: unknown[];
             pending: unknown[];
             messageId: string;
+            response: string;
+            rejected: unknown[];
             accepted: string[];
         };
         startTime: import("../utils/TimestampStub").TimestampStub;

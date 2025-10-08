@@ -16,12 +16,12 @@ export declare const askSchema: z.ZodObject<{
     introductionSentTo: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
     introductionSentAt: z.ZodOptional<z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>;
 }, "strip", z.ZodTypeAny, {
-    id: string;
-    description: string;
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
-    source: "whatsapp" | "web";
     communityId: string;
+    id: string;
+    description: string;
+    source: "whatsapp" | "web";
     expiredAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     fulfilledAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     fulfilledByUid?: string | undefined;
@@ -32,12 +32,12 @@ export declare const askSchema: z.ZodObject<{
     introductionSentTo?: string[] | undefined;
     introductionSentAt?: import("../utils/TimestampStub").TimestampStub | undefined;
 }, {
-    id: string;
-    description: string;
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
-    source: "whatsapp" | "web";
     communityId: string;
+    id: string;
+    description: string;
+    source: "whatsapp" | "web";
     expiredAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     fulfilledAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     fulfilledByUid?: string | undefined;

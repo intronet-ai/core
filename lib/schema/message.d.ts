@@ -13,20 +13,20 @@ export declare const toolCallSchema: z.ZodObject<{
     name: string;
     role: "user" | "assistant" | "tool" | "system";
     status?: "error" | "started" | "success" | undefined;
+    completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    errorMessage?: string | undefined;
     args?: unknown;
     result?: unknown;
-    errorMessage?: string | undefined;
     startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-    completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
 }, {
     name: string;
     role: "user" | "assistant" | "tool" | "system";
     status?: "error" | "started" | "success" | undefined;
+    completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    errorMessage?: string | undefined;
     args?: unknown;
     result?: unknown;
-    errorMessage?: string | undefined;
     startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-    completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
 }>;
 export declare const userMessageSchema: z.ZodObject<{
     id: z.ZodOptional<z.ZodString>;
@@ -43,18 +43,18 @@ export declare const userMessageSchema: z.ZodObject<{
     role: "user";
     senderId: string;
     senderName: string;
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
     senderAvatarUrl?: string | undefined;
 }, {
     message: string;
     role: "user";
     senderId: string;
     senderName: string;
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
     senderAvatarUrl?: string | undefined;
 }>;
 export declare const assistantMessageSchema: z.ZodObject<{
@@ -77,56 +77,56 @@ export declare const assistantMessageSchema: z.ZodObject<{
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     }, {
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     }>>;
     deliveredViaWhatsAppAt: z.ZodOptional<z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>;
     isAdminMessage: z.ZodOptional<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
     message: string;
     role: "assistant";
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
     toolCall?: {
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     } | undefined;
     deliveredViaWhatsAppAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     isAdminMessage?: boolean | undefined;
 }, {
     message: string;
     role: "assistant";
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
     toolCall?: {
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     } | undefined;
     deliveredViaWhatsAppAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     isAdminMessage?: boolean | undefined;
@@ -151,20 +151,20 @@ export declare const toolMessageSchema: z.ZodObject<{
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     }, {
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     }>;
 }, "strip", z.ZodTypeAny, {
     message: string;
@@ -173,15 +173,15 @@ export declare const toolMessageSchema: z.ZodObject<{
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     };
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
 }, {
     message: string;
     role: "tool";
@@ -189,15 +189,15 @@ export declare const toolMessageSchema: z.ZodObject<{
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     };
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
 }>;
 export declare const systemMessageSchema: z.ZodObject<{
     id: z.ZodOptional<z.ZodString>;
@@ -209,15 +209,15 @@ export declare const systemMessageSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     message: string;
     role: "system";
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
 }, {
     message: string;
     role: "system";
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
 }>;
 export declare const messageSchema: z.ZodDiscriminatedUnion<"role", [z.ZodObject<{
     id: z.ZodOptional<z.ZodString>;
@@ -234,18 +234,18 @@ export declare const messageSchema: z.ZodDiscriminatedUnion<"role", [z.ZodObject
     role: "user";
     senderId: string;
     senderName: string;
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
     senderAvatarUrl?: string | undefined;
 }, {
     message: string;
     role: "user";
     senderId: string;
     senderName: string;
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
     senderAvatarUrl?: string | undefined;
 }>, z.ZodObject<{
     id: z.ZodOptional<z.ZodString>;
@@ -267,56 +267,56 @@ export declare const messageSchema: z.ZodDiscriminatedUnion<"role", [z.ZodObject
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     }, {
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     }>>;
     deliveredViaWhatsAppAt: z.ZodOptional<z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>;
     isAdminMessage: z.ZodOptional<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
     message: string;
     role: "assistant";
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
     toolCall?: {
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     } | undefined;
     deliveredViaWhatsAppAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     isAdminMessage?: boolean | undefined;
 }, {
     message: string;
     role: "assistant";
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
     toolCall?: {
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     } | undefined;
     deliveredViaWhatsAppAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     isAdminMessage?: boolean | undefined;
@@ -340,20 +340,20 @@ export declare const messageSchema: z.ZodDiscriminatedUnion<"role", [z.ZodObject
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     }, {
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     }>;
 }, "strip", z.ZodTypeAny, {
     message: string;
@@ -362,15 +362,15 @@ export declare const messageSchema: z.ZodDiscriminatedUnion<"role", [z.ZodObject
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     };
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
 }, {
     message: string;
     role: "tool";
@@ -378,15 +378,15 @@ export declare const messageSchema: z.ZodDiscriminatedUnion<"role", [z.ZodObject
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     };
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
 }>, z.ZodObject<{
     id: z.ZodOptional<z.ZodString>;
     createdAt: z.ZodOptional<z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>;
@@ -397,15 +397,15 @@ export declare const messageSchema: z.ZodDiscriminatedUnion<"role", [z.ZodObject
 }, "strip", z.ZodTypeAny, {
     message: string;
     role: "system";
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
 }, {
     message: string;
     role: "system";
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
 }>]>;
 export type Role = z.infer<typeof roleSchema>;
 export type ToolCall = z.infer<typeof toolCallSchema>;
@@ -419,26 +419,26 @@ export declare const isUserMessage: (message: Message) => message is {
     role: "user";
     senderId: string;
     senderName: string;
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
     senderAvatarUrl?: string | undefined;
 };
 export declare const isAssistantMessage: (message: Message) => message is {
     message: string;
     role: "assistant";
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
     toolCall?: {
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     } | undefined;
     deliveredViaWhatsAppAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     isAdminMessage?: boolean | undefined;
@@ -450,20 +450,20 @@ export declare const isToolMessage: (message: Message) => message is {
         name: string;
         role: "user" | "assistant" | "tool" | "system";
         status?: "error" | "started" | "success" | undefined;
+        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+        errorMessage?: string | undefined;
         args?: unknown;
         result?: unknown;
-        errorMessage?: string | undefined;
         startedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
-        completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     };
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
 };
 export declare const isSystemMessage: (message: Message) => message is {
     message: string;
     role: "system";
-    id?: string | undefined;
     createdAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     updatedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    id?: string | undefined;
 };

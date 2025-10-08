@@ -4,13 +4,13 @@ export declare const makeAssessmentRequestFactory: (TimestampKlass: typeof Times
     createdAt: TimestampStub;
     updatedAt: TimestampStub;
     communityId: string;
+    sentAt: TimestampStub | null;
     seekerResponseId: string;
     seekerAskId: string;
     runId: string;
     prompt: string;
     providerResponseIds: string[];
     systemMessage: string;
-    sentAt: TimestampStub | null;
     responseReceivedAt: TimestampStub | null;
     error: string | null;
     rawResponse?: {
@@ -34,4 +34,4 @@ export declare const makeAssessmentRequestFactory: (TimestampKlass: typeof Times
     approved?: true | undefined;
     actualApiCostCents?: number | undefined;
     estimatedApiCostCents?: number | undefined;
-}, ("createdAt" | "updatedAt" | "communityId" | "seekerResponseId" | "seekerAskId" | "runId" | "prompt" | "providerResponseIds" | "systemMessage" | "sentAt" | "responseReceivedAt" | "error") | ("rawResponse" | "approved" | "actualApiCostCents" | "estimatedApiCostCents")>;
+}, ("createdAt" | "updatedAt" | "communityId" | "sentAt" | "seekerResponseId" | "seekerAskId" | "runId" | "prompt" | "providerResponseIds" | "systemMessage" | "responseReceivedAt" | "error") | ("rawResponse" | "approved" | "actualApiCostCents" | "estimatedApiCostCents")>;

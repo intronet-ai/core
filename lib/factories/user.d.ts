@@ -59,9 +59,10 @@ export declare const makeUserFactory: (TimestampKlass: typeof TimestampStub) => 
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     } | undefined;
+    firstName?: string | undefined;
     photoStoragePath?: string | undefined;
     emailPreferences?: {
         emailInsideCommunities: boolean;
         emailOutsideCommunities: boolean;
     } | undefined;
-}, ("createdAt" | "updatedAt" | "name" | "uid" | "karma") | ("communityId" | "phoneNumber" | "linkedinUser" | "photoStoragePath" | "emailPreferences")>;
+}, ("createdAt" | "updatedAt" | "name" | "uid" | "karma") | ("communityId" | "phoneNumber" | "linkedinUser" | "firstName" | "photoStoragePath" | "emailPreferences")>;

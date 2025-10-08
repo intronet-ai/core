@@ -1,12 +1,43 @@
 import { TimestampStub } from '../utils/TimestampStub';
 export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
-    askFactory: import("factory.ts").Factory<{
-        id: string;
-        description: string;
+    announcementFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
-        source: "whatsapp" | "web";
         communityId: string;
+        createdBy: string;
+        message: string;
+        status: "draft" | "queued" | "sending" | "completed" | "failed";
+        totalRecipients: number;
+        sentCount: number;
+        failedCount: number;
+        targetUserIds?: string[] | undefined;
+        excludeUserIds?: string[] | undefined;
+        scheduledAt?: TimestampStub | undefined;
+        startedSendingAt?: TimestampStub | undefined;
+        completedAt?: TimestampStub | undefined;
+        errorMessage?: string | undefined;
+    }, ("createdAt" | "updatedAt" | "communityId" | "createdBy" | "message" | "status" | "totalRecipients" | "sentCount" | "failedCount") | ("targetUserIds" | "excludeUserIds" | "scheduledAt" | "startedSendingAt" | "completedAt" | "errorMessage")>;
+    announcementRecipientFactory: import("factory.ts").Factory<{
+        createdAt: TimestampStub;
+        updatedAt: TimestampStub;
+        status: "failed" | "pending" | "sent";
+        announcementId: string;
+        userId: string;
+        interpolatedMessage: string;
+        errorMessage?: string | undefined;
+        userName?: string | undefined;
+        userPhoneNumber?: string | undefined;
+        sentAt?: TimestampStub | undefined;
+        sessionId?: string | undefined;
+        messageId?: string | undefined;
+    }, ("createdAt" | "updatedAt" | "status" | "announcementId" | "userId" | "interpolatedMessage") | ("errorMessage" | "userName" | "userPhoneNumber" | "sentAt" | "sessionId" | "messageId")>;
+    askFactory: import("factory.ts").Factory<{
+        createdAt: TimestampStub;
+        updatedAt: TimestampStub;
+        communityId: string;
+        id: string;
+        description: string;
+        source: "whatsapp" | "web";
         expiredAt?: TimestampStub | undefined;
         fulfilledAt?: TimestampStub | undefined;
         fulfilledByUid?: string | undefined;
@@ -16,7 +47,7 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         introductionBlurb?: string | undefined;
         introductionSentTo?: string[] | undefined;
         introductionSentAt?: TimestampStub | undefined;
-    }, ("id" | "description" | "createdAt" | "updatedAt" | "source" | "communityId") | ("expiredAt" | "fulfilledAt" | "fulfilledByUid" | "responseId" | "communityName" | "introductionRequestedFor" | "introductionBlurb" | "introductionSentTo" | "introductionSentAt")>;
+    }, ("createdAt" | "updatedAt" | "communityId" | "id" | "description" | "source") | ("expiredAt" | "fulfilledAt" | "fulfilledByUid" | "responseId" | "communityName" | "introductionRequestedFor" | "introductionBlurb" | "introductionSentTo" | "introductionSentAt")>;
     assessmentFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
@@ -45,13 +76,13 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
         communityId: string;
+        sentAt: TimestampStub | null;
         seekerResponseId: string;
         seekerAskId: string;
         runId: string;
         prompt: string;
         providerResponseIds: string[];
         systemMessage: string;
-        sentAt: TimestampStub | null;
         responseReceivedAt: TimestampStub | null;
         error: string | null;
         rawResponse?: {
@@ -75,7 +106,7 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         approved?: true | undefined;
         actualApiCostCents?: number | undefined;
         estimatedApiCostCents?: number | undefined;
-    }, ("createdAt" | "updatedAt" | "communityId" | "seekerResponseId" | "seekerAskId" | "runId" | "prompt" | "providerResponseIds" | "systemMessage" | "sentAt" | "responseReceivedAt" | "error") | ("rawResponse" | "approved" | "actualApiCostCents" | "estimatedApiCostCents")>;
+    }, ("createdAt" | "updatedAt" | "communityId" | "sentAt" | "seekerResponseId" | "seekerAskId" | "runId" | "prompt" | "providerResponseIds" | "systemMessage" | "responseReceivedAt" | "error") | ("rawResponse" | "approved" | "actualApiCostCents" | "estimatedApiCostCents")>;
     responseFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
@@ -229,12 +260,13 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             accomplishment_projects: any[];
             accomplishment_honors_awards: any[];
         } | undefined;
+        firstName?: string | undefined;
         photoStoragePath?: string | undefined;
         emailPreferences?: {
             emailInsideCommunities: boolean;
             emailOutsideCommunities: boolean;
         } | undefined;
-    }, ("createdAt" | "updatedAt" | "name" | "uid" | "karma") | ("communityId" | "phoneNumber" | "linkedinUser" | "photoStoragePath" | "emailPreferences")>;
+    }, ("createdAt" | "updatedAt" | "name" | "uid" | "karma") | ("communityId" | "phoneNumber" | "linkedinUser" | "firstName" | "photoStoragePath" | "emailPreferences")>;
     mailFactory: import("factory.ts").Factory<{
         template: {
             name: string;
@@ -244,10 +276,10 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         delivery: {
             error: null;
             info: {
-                response: string;
-                rejected: unknown[];
                 pending: unknown[];
                 messageId: string;
+                response: string;
+                rejected: unknown[];
                 accepted: string[];
             };
             startTime: TimestampStub;

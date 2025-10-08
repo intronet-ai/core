@@ -1,5 +1,6 @@
 export const DATE_FORMAT = 'yyyy-MM-dd';
 
+export * from './announcement';
 export * from './ask';
 export * from './assessment';
 export * from './assessmentRequest';

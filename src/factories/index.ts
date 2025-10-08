@@ -1,4 +1,5 @@
 import { TimestampStub } from '../utils/TimestampStub';
+import { makeAnnouncementFactory, makeAnnouncementRecipientFactory } from './announcement';
 import { makeAskFactory } from './ask';
 import { makeAssessmentFactory } from './assessment';
 import { makeAssessmentRequestFactory } from './assessmentRequest';
@@ -13,6 +14,8 @@ import { makeUserFactory } from './user';
 // injected dependency
 export function makeFactories(TimestampKlass: typeof TimestampStub) {
   return {
+    announcementFactory: makeAnnouncementFactory(TimestampKlass),
+    announcementRecipientFactory: makeAnnouncementRecipientFactory(TimestampKlass),
     askFactory: makeAskFactory(TimestampKlass),
     assessmentFactory: makeAssessmentFactory(TimestampKlass),
     assessmentRequestFactory: makeAssessmentRequestFactory(TimestampKlass),
