@@ -20,6 +20,7 @@ export const userSchema = z.object({
   phoneNumber: z.string().optional(),
   emailPreferences: emailPreferencesSchema.optional(),
   linkedinUser: linkedinUserSchema.optional(),
+  karma: z.number().optional().default(0), // Karma for requesting/accepting introductions
 });
 
 // TypeScript type inferred from zod schema

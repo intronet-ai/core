@@ -12,4 +12,8 @@ export declare const makeAskFactory: (TimestampKlass: typeof TimestampStub) => F
     fulfilledByUid?: string | undefined;
     responseId?: string | undefined;
     communityName?: string | undefined;
-}, ("id" | "description" | "createdAt" | "updatedAt" | "source" | "communityId") | ("expiredAt" | "fulfilledAt" | "fulfilledByUid" | "responseId" | "communityName")>;
+    introductionRequestedFor?: string[] | undefined;
+    introductionBlurb?: string | undefined;
+    introductionSentTo?: string[] | undefined;
+    introductionSentAt?: TimestampStub | undefined;
+}, ("id" | "description" | "createdAt" | "updatedAt" | "source" | "communityId") | ("expiredAt" | "fulfilledAt" | "fulfilledByUid" | "responseId" | "communityName" | "introductionRequestedFor" | "introductionBlurb" | "introductionSentTo" | "introductionSentAt")>;

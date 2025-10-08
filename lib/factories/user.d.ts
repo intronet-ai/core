@@ -5,6 +5,7 @@ export declare const makeUserFactory: (TimestampKlass: typeof TimestampStub) => 
     updatedAt: TimestampStub;
     name: string;
     uid: string;
+    karma: number;
     phoneNumber?: string | undefined;
     linkedinUser?: {
         summary: string;
@@ -62,4 +63,4 @@ export declare const makeUserFactory: (TimestampKlass: typeof TimestampStub) => 
         emailInsideCommunities: boolean;
         emailOutsideCommunities: boolean;
     } | undefined;
-}, ("createdAt" | "updatedAt" | "name" | "uid") | ("phoneNumber" | "linkedinUser" | "photoStoragePath" | "emailPreferences")>;
+}, ("createdAt" | "updatedAt" | "name" | "uid" | "karma") | ("phoneNumber" | "linkedinUser" | "photoStoragePath" | "emailPreferences")>;

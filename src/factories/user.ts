@@ -9,4 +9,5 @@ export const makeUserFactory = (TimestampKlass: typeof TimestampStub) =>
     updatedAt: TimestampKlass.now(),
     uid: faker.random.alphaNumeric(10),
     name: faker.name.fullName(),
+    karma: 0,
   });

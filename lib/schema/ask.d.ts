@@ -11,6 +11,10 @@ export declare const askSchema: z.ZodObject<{
     responseId: z.ZodOptional<z.ZodString>;
     communityId: z.ZodString;
     communityName: z.ZodOptional<z.ZodString>;
+    introductionRequestedFor: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
+    introductionBlurb: z.ZodOptional<z.ZodString>;
+    introductionSentTo: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
+    introductionSentAt: z.ZodOptional<z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>;
 }, "strip", z.ZodTypeAny, {
     id: string;
     description: string;
@@ -23,6 +27,10 @@ export declare const askSchema: z.ZodObject<{
     fulfilledByUid?: string | undefined;
     responseId?: string | undefined;
     communityName?: string | undefined;
+    introductionRequestedFor?: string[] | undefined;
+    introductionBlurb?: string | undefined;
+    introductionSentTo?: string[] | undefined;
+    introductionSentAt?: import("../utils/TimestampStub").TimestampStub | undefined;
 }, {
     id: string;
     description: string;
@@ -35,5 +43,9 @@ export declare const askSchema: z.ZodObject<{
     fulfilledByUid?: string | undefined;
     responseId?: string | undefined;
     communityName?: string | undefined;
+    introductionRequestedFor?: string[] | undefined;
+    introductionBlurb?: string | undefined;
+    introductionSentTo?: string[] | undefined;
+    introductionSentAt?: import("../utils/TimestampStub").TimestampStub | undefined;
 }>;
 export type Ask = z.infer<typeof askSchema>;

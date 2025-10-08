@@ -182,11 +182,13 @@ export declare const userSchema: z.ZodObject<{
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     }>>;
+    karma: z.ZodDefault<z.ZodOptional<z.ZodNumber>>;
 }, "strip", z.ZodTypeAny, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
     name: string;
     uid: string;
+    karma: number;
     phoneNumber?: string | undefined;
     linkedinUser?: {
         summary: string;
@@ -306,6 +308,7 @@ export declare const userSchema: z.ZodObject<{
         emailInsideCommunities: boolean;
         emailOutsideCommunities: boolean;
     } | undefined;
+    karma?: number | undefined;
 }>;
 export type User = z.infer<typeof userSchema>;
 export declare const DEFAULT_EMAIL_PREFERENCES: {

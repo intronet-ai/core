@@ -12,7 +12,11 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         fulfilledByUid?: string | undefined;
         responseId?: string | undefined;
         communityName?: string | undefined;
-    }, ("id" | "description" | "createdAt" | "updatedAt" | "source" | "communityId") | ("expiredAt" | "fulfilledAt" | "fulfilledByUid" | "responseId" | "communityName")>;
+        introductionRequestedFor?: string[] | undefined;
+        introductionBlurb?: string | undefined;
+        introductionSentTo?: string[] | undefined;
+        introductionSentAt?: TimestampStub | undefined;
+    }, ("id" | "description" | "createdAt" | "updatedAt" | "source" | "communityId") | ("expiredAt" | "fulfilledAt" | "fulfilledByUid" | "responseId" | "communityName" | "introductionRequestedFor" | "introductionBlurb" | "introductionSentTo" | "introductionSentAt")>;
     assessmentFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
@@ -171,6 +175,7 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         updatedAt: TimestampStub;
         name: string;
         uid: string;
+        karma: number;
         phoneNumber?: string | undefined;
         linkedinUser?: {
             summary: string;
@@ -228,7 +233,7 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             emailInsideCommunities: boolean;
             emailOutsideCommunities: boolean;
         } | undefined;
-    }, ("createdAt" | "updatedAt" | "name" | "uid") | ("phoneNumber" | "linkedinUser" | "photoStoragePath" | "emailPreferences")>;
+    }, ("createdAt" | "updatedAt" | "name" | "uid" | "karma") | ("phoneNumber" | "linkedinUser" | "photoStoragePath" | "emailPreferences")>;
     mailFactory: import("factory.ts").Factory<{
         template: {
             name: string;
