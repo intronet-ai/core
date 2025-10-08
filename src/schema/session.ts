@@ -10,7 +10,7 @@ export const sessionSchema = z.object({
   expiresAt: timestampStubSchema,
   createdAt: timestampStubSchema,
   updatedAt: timestampStubSchema,
-  analyzedAt: timestampStubSchema.optional(), // When the session was analyzed for asks/offers
+  analyzedAt: timestampStubSchema.nullable(), // When the session was analyzed for asks/offers
 });
 
 // TypeScript type inferred from zod schema

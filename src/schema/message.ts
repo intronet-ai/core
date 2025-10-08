@@ -38,6 +38,7 @@ export const assistantMessageSchema = baseMessageSchema.extend({
   message: z.string(),
   toolCall: toolCallSchema.optional(),
   deliveredViaWhatsAppAt: timestampStubSchema.optional(),
+  isAdminMessage: z.boolean().optional(),
 });
 
 // Tool message schema

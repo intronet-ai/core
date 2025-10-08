@@ -7,24 +7,24 @@ export declare const sessionSchema: z.ZodObject<{
     expiresAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
     createdAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
     updatedAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
-    analyzedAt: z.ZodOptional<z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>;
+    analyzedAt: z.ZodNullable<z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>;
 }, "strip", z.ZodTypeAny, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
     communityId: string;
     userId: string;
     expiresAt: import("../utils/TimestampStub").TimestampStub;
+    analyzedAt: import("../utils/TimestampStub").TimestampStub | null;
     id?: string | undefined;
     phoneNumber?: string | undefined;
-    analyzedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
 }, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
     communityId: string;
     userId: string;
     expiresAt: import("../utils/TimestampStub").TimestampStub;
+    analyzedAt: import("../utils/TimestampStub").TimestampStub | null;
     id?: string | undefined;
     phoneNumber?: string | undefined;
-    analyzedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
 }>;
 export type Session = z.infer<typeof sessionSchema>;

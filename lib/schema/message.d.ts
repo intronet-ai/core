@@ -93,6 +93,7 @@ export declare const assistantMessageSchema: z.ZodObject<{
         completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     }>>;
     deliveredViaWhatsAppAt: z.ZodOptional<z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>;
+    isAdminMessage: z.ZodOptional<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
     message: string;
     role: "assistant";
@@ -110,6 +111,7 @@ export declare const assistantMessageSchema: z.ZodObject<{
         completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     } | undefined;
     deliveredViaWhatsAppAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    isAdminMessage?: boolean | undefined;
 }, {
     message: string;
     role: "assistant";
@@ -127,6 +129,7 @@ export declare const assistantMessageSchema: z.ZodObject<{
         completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     } | undefined;
     deliveredViaWhatsAppAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    isAdminMessage?: boolean | undefined;
 }>;
 export declare const toolMessageSchema: z.ZodObject<{
     id: z.ZodOptional<z.ZodString>;
@@ -280,6 +283,7 @@ export declare const messageSchema: z.ZodDiscriminatedUnion<"role", [z.ZodObject
         completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     }>>;
     deliveredViaWhatsAppAt: z.ZodOptional<z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>;
+    isAdminMessage: z.ZodOptional<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
     message: string;
     role: "assistant";
@@ -297,6 +301,7 @@ export declare const messageSchema: z.ZodDiscriminatedUnion<"role", [z.ZodObject
         completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     } | undefined;
     deliveredViaWhatsAppAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    isAdminMessage?: boolean | undefined;
 }, {
     message: string;
     role: "assistant";
@@ -314,6 +319,7 @@ export declare const messageSchema: z.ZodDiscriminatedUnion<"role", [z.ZodObject
         completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     } | undefined;
     deliveredViaWhatsAppAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    isAdminMessage?: boolean | undefined;
 }>, z.ZodObject<{
     id: z.ZodOptional<z.ZodString>;
     createdAt: z.ZodOptional<z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>>;
@@ -435,6 +441,7 @@ export declare const isAssistantMessage: (message: Message) => message is {
         completedAt?: import("../utils/TimestampStub").TimestampStub | undefined;
     } | undefined;
     deliveredViaWhatsAppAt?: import("../utils/TimestampStub").TimestampStub | undefined;
+    isAdminMessage?: boolean | undefined;
 };
 export declare const isToolMessage: (message: Message) => message is {
     message: string;
