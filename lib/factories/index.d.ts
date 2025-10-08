@@ -176,6 +176,7 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
         name: string;
         uid: string;
         karma: number;
+        communityId?: string | undefined;
         phoneNumber?: string | undefined;
         linkedinUser?: {
             summary: string;
@@ -233,7 +234,7 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             emailInsideCommunities: boolean;
             emailOutsideCommunities: boolean;
         } | undefined;
-    }, ("createdAt" | "updatedAt" | "name" | "uid" | "karma") | ("phoneNumber" | "linkedinUser" | "photoStoragePath" | "emailPreferences")>;
+    }, ("createdAt" | "updatedAt" | "name" | "uid" | "karma") | ("communityId" | "phoneNumber" | "linkedinUser" | "photoStoragePath" | "emailPreferences")>;
     mailFactory: import("factory.ts").Factory<{
         template: {
             name: string;

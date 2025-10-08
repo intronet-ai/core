@@ -16,6 +16,7 @@ export const userSchema = z.object({
   updatedAt: timestampStubSchema,
   uid: z.string(),
   name: z.string(),
+  communityId: z.string().optional(), // Primary community association
   photoStoragePath: z.string().optional(),
   phoneNumber: z.string().optional(),
   emailPreferences: emailPreferencesSchema.optional(),

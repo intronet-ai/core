@@ -5,6 +5,7 @@ export declare const userSchema: z.ZodObject<{
     updatedAt: z.ZodType<import("../utils/TimestampStub").TimestampStub, z.ZodTypeDef, import("../utils/TimestampStub").TimestampStub>;
     uid: z.ZodString;
     name: z.ZodString;
+    communityId: z.ZodOptional<z.ZodString>;
     photoStoragePath: z.ZodOptional<z.ZodString>;
     phoneNumber: z.ZodOptional<z.ZodString>;
     emailPreferences: z.ZodOptional<z.ZodObject<{
@@ -189,6 +190,7 @@ export declare const userSchema: z.ZodObject<{
     name: string;
     uid: string;
     karma: number;
+    communityId?: string | undefined;
     phoneNumber?: string | undefined;
     linkedinUser?: {
         summary: string;
@@ -251,6 +253,7 @@ export declare const userSchema: z.ZodObject<{
     updatedAt: import("../utils/TimestampStub").TimestampStub;
     name: string;
     uid: string;
+    communityId?: string | undefined;
     phoneNumber?: string | undefined;
     linkedinUser?: {
         summary: string;
