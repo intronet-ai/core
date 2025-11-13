@@ -185,6 +185,7 @@ export declare const userSchema: z.ZodObject<{
         accomplishment_honors_awards: any[];
     }>>;
     karma: z.ZodDefault<z.ZodOptional<z.ZodNumber>>;
+    invitedByUid: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
@@ -244,6 +245,7 @@ export declare const userSchema: z.ZodObject<{
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     } | undefined;
+    invitedByUid?: string | undefined;
     firstName?: string | undefined;
     photoStoragePath?: string | undefined;
     emailPreferences?: {
@@ -308,6 +310,7 @@ export declare const userSchema: z.ZodObject<{
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     } | undefined;
+    invitedByUid?: string | undefined;
     firstName?: string | undefined;
     photoStoragePath?: string | undefined;
     emailPreferences?: {

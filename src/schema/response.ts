@@ -15,6 +15,9 @@ export const responseSchema = z.object({
   canOffer: z.string(),
   linkedinUserUrl: z.string().optional(),
   linkedinUser: linkedinUserSchema.optional(),
+  invitationCode: z.string().optional(), // Code for this user to invite others
+  invitedByInvitationCode: z.string().optional(), // Code of the user who invited them
+  invitedByUid: z.string().optional(), // UID of the user who invited them (resolved from invitationCode)
 });
 
 // TypeScript types inferred from zod schemas

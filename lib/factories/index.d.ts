@@ -169,7 +169,10 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             accomplishment_projects: any[];
             accomplishment_honors_awards: any[];
         } | undefined;
-    }, ("createdAt" | "updatedAt" | "communityId" | "name" | "finalizedAt" | "email" | "uid" | "helpWanted" | "canOffer") | ("linkedinUserUrl" | "linkedinUser")>;
+        invitationCode?: string | undefined;
+        invitedByInvitationCode?: string | undefined;
+        invitedByUid?: string | undefined;
+    }, ("createdAt" | "updatedAt" | "communityId" | "name" | "finalizedAt" | "email" | "uid" | "helpWanted" | "canOffer") | ("linkedinUserUrl" | "linkedinUser" | "invitationCode" | "invitedByInvitationCode" | "invitedByUid")>;
     runFactory: import("factory.ts").Factory<{
         createdAt: TimestampStub;
         updatedAt: TimestampStub;
@@ -260,13 +263,14 @@ export declare function makeFactories(TimestampKlass: typeof TimestampStub): {
             accomplishment_projects: any[];
             accomplishment_honors_awards: any[];
         } | undefined;
+        invitedByUid?: string | undefined;
         firstName?: string | undefined;
         photoStoragePath?: string | undefined;
         emailPreferences?: {
             emailInsideCommunities: boolean;
             emailOutsideCommunities: boolean;
         } | undefined;
-    }, ("createdAt" | "updatedAt" | "name" | "uid" | "karma") | ("communityId" | "phoneNumber" | "linkedinUser" | "firstName" | "photoStoragePath" | "emailPreferences")>;
+    }, ("createdAt" | "updatedAt" | "name" | "uid" | "karma") | ("communityId" | "phoneNumber" | "linkedinUser" | "invitedByUid" | "firstName" | "photoStoragePath" | "emailPreferences")>;
     mailFactory: import("factory.ts").Factory<{
         template: {
             name: string;

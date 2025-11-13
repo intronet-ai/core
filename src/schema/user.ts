@@ -23,6 +23,7 @@ export const userSchema = z.object({
   emailPreferences: emailPreferencesSchema.optional(),
   linkedinUser: linkedinUserSchema.optional(),
   karma: z.number().optional().default(0), // Karma for requesting/accepting introductions
+  invitedByUid: z.string().optional(), // UID of the user who invited them
 });
 
 // TypeScript type inferred from zod schema

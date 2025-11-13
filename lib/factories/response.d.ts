@@ -62,4 +62,7 @@ export declare const makeResponseFactory: (TimestampKlass: typeof TimestampStub)
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     } | undefined;
-}, ("createdAt" | "updatedAt" | "communityId" | "name" | "finalizedAt" | "email" | "uid" | "helpWanted" | "canOffer") | ("linkedinUserUrl" | "linkedinUser")>;
+    invitationCode?: string | undefined;
+    invitedByInvitationCode?: string | undefined;
+    invitedByUid?: string | undefined;
+}, ("createdAt" | "updatedAt" | "communityId" | "name" | "finalizedAt" | "email" | "uid" | "helpWanted" | "canOffer") | ("linkedinUserUrl" | "linkedinUser" | "invitationCode" | "invitedByInvitationCode" | "invitedByUid")>;

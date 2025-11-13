@@ -175,6 +175,9 @@ export declare const responseSchema: z.ZodObject<{
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     }>>;
+    invitationCode: z.ZodOptional<z.ZodString>;
+    invitedByInvitationCode: z.ZodOptional<z.ZodString>;
+    invitedByUid: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
@@ -237,6 +240,9 @@ export declare const responseSchema: z.ZodObject<{
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     } | undefined;
+    invitationCode?: string | undefined;
+    invitedByInvitationCode?: string | undefined;
+    invitedByUid?: string | undefined;
 }, {
     createdAt: import("../utils/TimestampStub").TimestampStub;
     updatedAt: import("../utils/TimestampStub").TimestampStub;
@@ -299,5 +305,8 @@ export declare const responseSchema: z.ZodObject<{
         accomplishment_projects: any[];
         accomplishment_honors_awards: any[];
     } | undefined;
+    invitationCode?: string | undefined;
+    invitedByInvitationCode?: string | undefined;
+    invitedByUid?: string | undefined;
 }>;
 export type Response = z.infer<typeof responseSchema>;
